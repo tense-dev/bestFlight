@@ -6,8 +6,12 @@ class mainFront extends CI_Controller {
         $this->load->view('index.html');
     }
     public function kuy(){
-        $this->load->view('home/home.html');
+        $this->load->view('home/packages.html');
     }
+    public function packagestour(){
+        $this->load->view('packages_tour.html');
+    }
+
     public function getLtProgramtour(){
         $objag = new Mod_programtour();
         $dataresult = $objag->getListPg();

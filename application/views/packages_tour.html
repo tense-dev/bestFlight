@@ -25,15 +25,16 @@
 
 <body ng-app="mainFront" ng-controller="mainctl">
     <?php $this->load->view('components/header.html'); ?> 
-    <section class="banner_part">
+    
+    
+    <section class="breadcrumb breadcrumb_bg" style="display: none;">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-10">
-                    <div class="banner_text text-center">
-                        <div class="banner_text_iner">
-                            <h1 class="text-uppercase"> bestflight Travel</h1>
-                            <p>Let’s start your journey with us, your dream will come true</p>
-                            <a href="#" class="btn_1">Discover Now</a>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>Packages</h2>
+                            <p>home . Packages</p>
                         </div>
                     </div>
                 </div>
@@ -41,228 +42,206 @@
         </div>
     </section>
     <!-- banner part start-->
+    <!-- banner part start-->
 
-    <!-- booking part start-->
-    <section class="booking_part">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="booking_menu">
-                        <ul class="nav nav-tabs"  role="tablist">
-                            <li class="nav-item mx-auto">
-                            <a class="nav-link active pb-2"  ><h4 class="text-thai">ค้นหาโปรแกรมทัวร์ที่คุณต้องการ</h4></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="booking_content">
-                        <div class="booking_form">
-                            <form action="#">
-                                <div class="form-row">
-                                    <div class="form_colum">
-                                        <input class="input-bestf w-100 text-thai" name="name" id="name" type="text" placeholder="ชื่อประเทศ">
-                                    </div>
-                                    <div class="form_colum">
-                                        <input class="input-bestf w-100 text-thai" name="name" id="programtour" type="text" placeholder="ชื่อทัวร์ / รหัสสินค้า">
-                                    </div>
-                                    <div class="form_colum">
-                                        <input id="datepicker_1" class="text-thai" placeholder="ช่วงเวลาเดินทางไป">
-                                    </div>
-                                    <div class="form_colum">
-                                        <input id="datepicker_2" class="text-thai" placeholder="ช่วงเวลาเดินทางกลับ">
-                                    </div>
-                                    
-                                    <div class="form_btn">
-                                      <!--   <a href="#" class="btn_1 text-cnter">Read More</a> -->
-                                        <a  href="#" class="btn_1 text-cnter">search</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Header part end-->
 
     <!--top place start-->
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-xs mt-5 h-100">
-                <div class="card shadow rounded-0 bd-best-blue">
-                    <div class="card-body" >
-                        <p class="text-fix-best-blue font-weight-bold bd-b-best-blue text-center mb-4">โปรแกรมทัวร์ต่างประเทศ</p>
-                        <div class="row py-2 " ng-class="(isOdd($index))?'bg-best-low':''" ng-repeat="obj in ltsrBCt">
-                            <div class="col-auto my-auto p-0">
-                                <img src="{{obj.ctimg}}" class="max-img-country" alt="">
+            <div class="col-lg-12 col-md-12 col-xl-12">
+                <section class="client_review bd-b-best-blue mt-5">
+                    <div class="row ">
+                        <div class="col-xl-6">
+                            <div class="section_tittle">
+                                <h2 class="text-fix-best-blue mb-0 text-thai">แพคเกจ<span class="text-fix-best-deep">มัลดิฟส์</span></h2>
+                                <p class="text-thai"></p>
                             </div>
-                            <div class="col">
-                                <h5 class="mb-0" ng-bind="obj.countryContent"></h5>
-                                <p ><span ng-bind="obj.unitPeriod"></span> พีเรียด เริ่มต้น <span class="text-fix-best-deep font-weight-bold" ng-bind="obj.prTwin|number:0"></span></p>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                                    <div class="col-12 pb-5">
+                                        <div class="card border-0 shadow rounded-0">
+                                            <div class="card-header p-0 border-0 bg-tranparent">
+                                                <div class="overlay">
+                                                    <div class="row p-3">
+                                                        <div class="col-12 mt-5">
+                                                            <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
+                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
+                                                            <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
+                                                </div>
+                                                <img src="{{objpmt.img}}" class="w-100" alt="">
+                                            </div>
+                                            <div class="card-body">
+                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                            <div class="row h-50px">
+                                                <div class="col my-auto">
+                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
+                                                        <span class="text-thai">วัน</span> 
+                                                        <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
+                                                        <span class="text-thai">คืน</span class="text-thai"></h3>
+                                                </div>
+                                                <div class="col-auto my-auto">
+                                                    <img src="{{objpmt.airimg}}" class="img-airline" alt="">
+                                                </div>
+                                            </div>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="client_review bd-b-best-blue mt-5">
+                <div class="row ">
+                    <div class="col-xl-6">
+                        <div class="section_tittle">
+                            <h2 class="text-fix-best-blue mb-0 text-thai">แพคเกจ<span class="text-fix-best-deep">ล่องเรือสำราญ</span></h2>
+                            <p class="text-thai"></p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-9 col-md-12 col-lg-9">
-                <section class="client_review bd-b-best-blue mt-5">
-                    <div class="row ">
-                        <div class="col-xl-6">
-                            <div class="section_tittle">
-                                <h2 class="text-fix-best-blue mb-0 text-thai">ทัวร์ราคา<span class="text-fix-best-deep">โปรโมชั่น</span></h2>
-                                <p class="text-thai">ทัวร์ราคาโปรโมชั่น ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี เที่ยวโปรแกรมใหม่ๆ</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 p-0">
-                            <data-owl-carousel class="owl-carousel " data-options="{{optionCursor}}">
-                                <div ng-repeat="objpmt in ltPromotion" owl-carousel-item=""  class="item ">
-                                    <div class="col-12 pb-5">
-                                        <div class="card border-0 shadow rounded-0">
-                                            <div class="card-header p-0 border-0 bg-tranparent">
-                                                <div class="overlay">
-                                                    <div class="row p-3">
-                                                        <div class="col-12 mt-5">
-                                                            <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                            <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
-                                                        </div>
+                <div class="row">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                                <div class="col-12 pb-5">
+                                    <div class="card border-0 shadow rounded-0">
+                                        <div class="card-header p-0 border-0 bg-tranparent">
+                                            <div class="overlay">
+                                                <div class="row p-3">
+                                                    <div class="col-12 mt-5">
+                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
+                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
                                                     </div>
-                                                    <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                                 </div>
-                                                <img src="{{objpmt.img}}" class="w-100" alt="">
+                                                <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                             </div>
-                                            <div class="card-body">
-                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
-                                            <div class="row h-50px">
-                                                <div class="col my-auto">
-                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                        <span class="text-thai">วัน</span> 
-                                                        <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                        <span class="text-thai">คืน</span class="text-thai"></h3>
-                                                </div>
-                                                <div class="col-auto my-auto">
-                                                    <img src="{{objpmt.airimg}}" class="img-airline" alt="">
-                                                </div>
+                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <div class="row h-50px">
+                                            <div class="col my-auto">
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
+                                                    <span class="text-thai">วัน</span> 
+                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
+                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
                                             </div>
-                                            
+                                            <div class="col-auto my-auto">
+                                                <img src="{{objpmt.airimg}}" class="img-airline" alt="">
                                             </div>
                                         </div>
-                                    </div>
-                                
-                                </div>
-                            </data-owl-carousel>
-
-                        </div>
-                    </div>
-                </section>
-                <section class="client_review bd-b-best-blue mt-5">
-                    <div class="row ">
-                        <div class="col-xl-6">
-                            <div class="section_tittle">
-                                <h2 class="text-fix-best-blue mb-0 text-thai">มีที่ไหน<span class="text-fix-best-deep">ไม่ถึงหมื่น</span></h2>
-                                <p class="text-thai">ทัวร์ราคาไม่ถึงหมื่น ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี เที่ยวโปรแกรมใหม่ๆ </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 p-0">
-                            <data-owl-carousel class="owl-carousel " data-options="{{optionCursor}}">
-                                <div ng-repeat="objpmt in ltlowPrice" owl-carousel-item=""  class="item ">
-                                    <div class="col-12 pb-5">
-                                        <div class="card border-0 shadow rounded-0">
-                                            <div class="card-header p-0 border-0 bg-tranparent">
-                                                <div class="overlay">
-                                                    <div class="row p-3">
-                                                        <div class="col-12 mt-5">
-                                                            <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                            <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
-                                                </div>
-                                                <img src="{{objpmt.img}}" class="w-100" alt="">
-                                            </div>
-                                            <div class="card-body">
-                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
-                                            <div class="row h-50px">
-                                                <div class="col my-auto">
-                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                        <span class="text-thai">วัน</span> 
-                                                        <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                        <span class="text-thai">คืน</span class="text-thai"></h3>
-                                                </div>
-                                                <div class="col-auto my-auto">
-                                                    <img src="{{objpmt.airimg}}" class="img-airline" alt="">
-                                                </div>
-                                            </div>
-                                            
-                                            </div>
+                                        
                                         </div>
                                     </div>
-                                
                                 </div>
-                            </data-owl-carousel>
 
+                    </div>
+                </div>
+               </section>
+               
+               <section class="client_review bd-b-best-blue mt-5">
+                <div class="row ">
+                    <div class="col-xl-6">
+                        <div class="section_tittle">
+                            <h2 class="text-fix-best-blue mb-0 text-thai">แพคเกจ<span class="text-fix-best-deep">3</span></h2>
+                            <p class="text-thai"></p>
                         </div>
                     </div>
-                </section>
-                <section class="client_review  mt-5">
-                    <div class="row ">
-                        <div class="col-xl-6">
-                            <div class="section_tittle">
-                                <h2 class="text-fix-best-blue mb-0 text-thai">สุดยอด<span class="text-fix-best-deep">ทัวร์ยอดนิยม</span></h2>
-                                <p class="text-thai">ทัวร์ยอดนิยม ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี เที่ยวโปรแกรมใหม่ๆ </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 p-0">
-                            <data-owl-carousel class="owl-carousel " data-options="{{optionCursor}}">
-                                <div ng-repeat="objpmt in ltlowPrice" owl-carousel-item=""  class="item ">
-                                    <div class="col-12 pb-5">
-                                        <div class="card border-0 shadow rounded-0">
-                                            <div class="card-header p-0 border-0 bg-tranparent">
-                                                <div class="overlay">
-                                                    <div class="row p-3">
-                                                        <div class="col-12 mt-5">
-                                                            <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                            <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
-                                                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                                <div class="col-12 pb-5">
+                                    <div class="card border-0 shadow rounded-0">
+                                        <div class="card-header p-0 border-0 bg-tranparent">
+                                            <div class="overlay">
+                                                <div class="row p-3">
+                                                    <div class="col-12 mt-5">
+                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
+                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
                                                     </div>
-                                                    <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                                 </div>
-                                                <img src="{{objpmt.img}}" class="w-100" alt="">
+                                                <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                             </div>
-                                            <div class="card-body">
-                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
-                                            <div class="row h-50px">
-                                                <div class="col my-auto">
-                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                        <span class="text-thai">วัน</span> 
-                                                        <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                        <span class="text-thai">คืน</span class="text-thai"></h3>
-                                                </div>
-                                                <div class="col-auto my-auto">
-                                                    <img src="{{objpmt.airimg}}" class="img-airline" alt="">
-                                                </div>
+                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <div class="row h-50px">
+                                            <div class="col my-auto">
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
+                                                    <span class="text-thai">วัน</span> 
+                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
+                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
                                             </div>
-                                            
+                                            <div class="col-auto my-auto">
+                                                <img src="{{objpmt.airimg}}" class="img-airline" alt="">
                                             </div>
                                         </div>
+                                        
+                                        </div>
                                     </div>
-                                
                                 </div>
-                            </data-owl-carousel>
 
+                    </div>
+                </div>
+               </section>
+
+
+               <section class="client_review mt-5">
+                <div class="row ">
+                    <div class="col-xl-6">
+                        <div class="section_tittle">
+                            <h2 class="text-fix-best-blue mb-0 text-thai">แพคเกจ<span class="text-fix-best-deep">4</span></h2>
+                            <p class="text-thai"></p>
                         </div>
                     </div>
-                </section>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                                <div class="col-12 pb-5">
+                                    <div class="card border-0 shadow rounded-0">
+                                        <div class="card-header p-0 border-0 bg-tranparent">
+                                            <div class="overlay">
+                                                <div class="row p-3">
+                                                    <div class="col-12 mt-5">
+                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
+                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
+                                            </div>
+                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <div class="row h-50px">
+                                            <div class="col my-auto">
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
+                                                    <span class="text-thai">วัน</span> 
+                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
+                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
+                                            </div>
+                                            <div class="col-auto my-auto">
+                                                <img src="{{objpmt.airimg}}" class="img-airline" alt="">
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+                </div>
+               </section>
+
             </div>
         </div>
     </div>
@@ -518,7 +497,7 @@
     <!--::industries end::-->
 
     <!-- footer part start-->
-   
+  
     <?php $this->load->view('components/footer.html'); ?> 
     <!-- footer part end-->
 
