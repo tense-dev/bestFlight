@@ -5,7 +5,7 @@ app.directive("owlCarousel", ['$timeout',function($timeout) {
         transclude: false,
         link: function (scope) {
             scope.initCarousel = function(element) {
-               $timeout(function () {
+               $timeout(function () { 
                   // provide any default options you want
                     var defaultOptions = {
                     };
