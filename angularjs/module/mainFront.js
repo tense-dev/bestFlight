@@ -155,4 +155,37 @@ app.controller('mainctl', ($scope,$http)=> {
 
 
 
+
+app.controller('mainpgi', ($scope,$http)=> {
+$scope.getLtAsiaPass = ()=>{
+  $http({
+    method: 'GET',
+    url: configapp.baseUrl+'packagespass/getLtAsiaPass',
+    headers: {'Content-Type': undefined},
+     }).then(successCallback = (response)=> {   
+       const datares = response.data;
+       console.log(datares);
+       $scope.ltasiapass = datares;
+    }); 
+
+}
+$scope.getLtJapan = ()=>{
+  $http({
+    method: 'GET',
+    url: configapp.baseUrl+'packagespass/getLtJapan',
+    headers: {'Content-Type': undefined},
+     }).then(successCallback = (response)=> {   
+       const datares = response.data;
+       console.log(datares);
+       $scope.ltjapan = datares;
+    }); 
+
+}
+$scope.getLtAsiaPass();
+$scope.getLtJapan();
+
+});
+
+
+
 //////////////////////

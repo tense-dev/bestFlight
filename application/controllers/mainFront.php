@@ -38,6 +38,4 @@ class mainFront extends CI_Controller {
         echo json_encode($dataresult);
     }
     
-
-    
 }

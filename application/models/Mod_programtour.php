@@ -56,9 +56,6 @@ public function getListPg(){
     $query = $this->db->get();
     $result = $query->result();          
     return $result;      
-   /*  $data = $this->db->query("CALL list_location_name()");
-    $result = $data->result();
-    return $result; */
 }
 public function getListCountry(){
     $this->db->select('*');       
