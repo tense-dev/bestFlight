@@ -5,18 +5,98 @@
 .text-thai{
   font-family: 'Kanit', sans-serif !important;
 }
+.text-fix-best-blue{
+  color: rgb(28, 73, 185) !important;
+}
+.text-fix-best-deep{
+  color: rgb(254, 92, 36) !important;
+}
+.bd-best-blue{
+  border: 1px solid rgb(28, 73, 185);
+}
+.bd-b-best-blue{
+  border-bottom: 1px solid rgb(28, 73, 185);
+}
 .bg-bestf-over{
   background-color: rgba(27, 75, 183, 0.14);
+}
+.bg-best-low{
+  background: rgba(0, 123, 255, 0.05)!important; 
+}
+.bg-tranparent{
+  background-color: transparent !important;
 }
 .logo-bestf{
   width: 50px;
 }
+.max-h-img-sled{
+  height: 13em;
+}
+.max-img-country{
+  max-width: 40px !important;
+  max-height: 40px !important;
+}
 .input-bestf{
-  border: 1px solid #2493e0;
+  border: 1px solid rgb(28, 73, 185);
   padding: 16px;
-  color: #2493e0;
+  color: rgb(28, 73, 185);
   font-size: 14px;
   height: 50px;
+}
+.h-50px{
+  height: 50px;
+}
+.img-airline{
+  max-height: 50px;
+  max-width: 80px;
+}
+.bg-lok {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  height: 4em;
+  width: 3em;
+  transition: .5s ease;
+  background-color: rgba(28, 73, 185, 0.62);
+  z-index: 1050;
+}
+.text-1row{
+  text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(28, 73, 185, 0.9);
+  z-index: 1050;
+}
+
+.card-header:hover .overlay {
+  opacity: 1;
+ 
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .btn_4 {
   background-image: -webkit-linear-gradient(131deg, #feb47b, #ff7e5f, #ff7e5f, #ff7e5f);
@@ -511,7 +591,7 @@ ul {
 /* line 35, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_button.scss */
 .btn_1:hover, .btn_2:hover {
   color: #fff;
-  background-color: #2493e0;
+  background-color: rgb(28, 73, 185);
 }
 
 @media (max-width: 991px) {
@@ -2549,7 +2629,7 @@ ul {
 /* line 106, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_banner.scss */
 .banner_part .banner_text .btn_1 {
   margin-top: 60px;
-  background-color: #2493e0;
+  background-color: rgb(28, 73, 185);
   padding: 23px 79px;
 }
 
@@ -2632,9 +2712,9 @@ ul {
 /* line 43, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_booking.scss */
 .booking_part .form-row .form_colum .nc_select, .booking_part .form-row .form_colum .gj-datepicker {
   width: 100%;
-  border-color: #2493e0;
+  border-color: rgb(28, 73, 185);
   border-radius: 0;
-  color: #2493e0;
+  color: rgb(28, 73, 185);
   height: 50px;
   display: flex;
   align-items: center;
@@ -2642,8 +2722,8 @@ ul {
 
 /* line 52, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_booking.scss */
 .booking_part .form-row .form_colum .nice-select:after {
-  border-bottom: 2px solid #2493e0;
-  border-right: 2px solid #2493e0;
+  border-bottom: 2px solid rgb(28, 73, 185);
+  border-right: 2px solid rgb(28, 73, 185);
   content: '';
   display: block;
   height: 8px;
@@ -2653,9 +2733,9 @@ ul {
 
 /* line 61, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_booking.scss */
 .booking_part .form-row .form_colum .gj-textbox-md {
-  border: 1px solid #2493e0;
+  border: 1px solid rgb(28, 73, 185);
   padding: 16px;
-  color: #2493e0;
+  color: rgb(28, 73, 185);
   font-size: 14px;
 }
 
@@ -2669,12 +2749,12 @@ ul {
 
 /* line 73, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_booking.scss */
 .booking_part .form-row .form_colum ::placeholder {
-  color: #2493e0;
+  color: rgb(28, 73, 185);
 }
 
 /* line 78, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_booking.scss */
 .booking_part .nav-link.active {
-  border-bottom: 3px solid #2493e0 !important;
+  border-bottom: 3px solid rgb(28, 73, 185) !important;
 }
 
 /**************** about css start ****************/
@@ -3241,7 +3321,7 @@ ul {
 /******** client review part css *********/
 /* line 2, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_client_review.scss */
 .client_review {
-  background-color: #0c3e72;
+/*   background-color: #0c3e72; */
 }
 
 /* line 5, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_client_review.scss */
@@ -3251,7 +3331,7 @@ ul {
 
 /* line 9, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_client_review.scss */
 .client_review .single_review_slider {
-  background-color: #0e477d;
+/*   background-color: #0e477d; */
   padding: 30px;
 }
 
@@ -3294,7 +3374,7 @@ ul {
   line-height: 45px;
   text-align: center;
   display: inline-block;
-  background-color: #2493e0 !important;
+  background-color: rgb(28, 73, 185) !important;
   color: #fff !important;
 }
 

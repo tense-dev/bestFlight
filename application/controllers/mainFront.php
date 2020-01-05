@@ -15,7 +15,7 @@ class mainFront extends CI_Controller {
     }
     public function getListPromote(){
         $objpg = new Mod_programtour();
-        $dataresult = $objpg->getListPg();
+        $dataresult = $objpg->getListPromote();
         echo json_encode($dataresult);
     }
     public function getListPromotion(){
@@ -23,5 +23,17 @@ class mainFront extends CI_Controller {
         $dataresult = $objpg->getListPromotion();
         echo json_encode($dataresult);
     }
+    public function getListProgramtourByCountry(){
+        $objpg = new Mod_programtour();
+        $dataresult = $objpg->getListProgramtourByCountry();
+        echo json_encode($dataresult);
+    }
+    public function getListLowPriceProgramtour(){
+        $objpg = new Mod_programtour();
+        $dataresult = $objpg->getListLowPriceProgramtour();
+        echo json_encode($dataresult);
+    }
+    
+
     
 }

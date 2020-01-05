@@ -69,12 +69,22 @@ public function getListCountry(){
     return $result;      
 }
 public function getListPromote(){
-    $data = $this->db->query("CALL GetListPromoteProgramtourAll()");
+    $data = $this->db->query("CALL GetListPromoteProgramtour()");
     $result = $data->result();
     return $result;
 }
 public function getListPromotion(){
     $data = $this->db->query("CALL GetListPromotionProgramtour()");
+    $result = $data->result();
+    return $result;
+}
+public function getListLowPriceProgramtour(){
+    $data = $this->db->query("CALL GetListLowPriceProgramtour()");
+    $result = $data->result();
+    return $result;
+}
+public function getListProgramtourByCountry(){
+    $data = $this->db->query("CALL GetListProgramtourByCountry()");
     $result = $data->result();
     return $result;
 }
