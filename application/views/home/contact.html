@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.css">
     <!-- animate CSS -->
     <link rel="stylesheet" href="css/animate.css">
     <!-- owl carousel CSS -->
@@ -28,104 +29,24 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/validate.css">
+    <style>
+        .contact-section {
+            padding: 20px 0 100px;
+        }
+    </style>
 </head>
-
 <body>
-   <!--::header part start::-->
-   <header class="main_menu">
-        <div class="sub_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12 col-md-6">
-                        <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
-                            <a href="#">Asia</a>
-                            <a href="#">Europe</a>
-                            <a href="#">America</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 col-md-6">
-                        <div class="sub_menu_social_icon">
-                            <a href="#"><i class="flaticon-facebook"></i></a>
-                            <a href="#"><i class="flaticon-twitter"></i></a>
-                            <a href="#"><i class="flaticon-skype"></i></a>
-                            <a href="#"><i class="flaticon-instagram"></i></a>
-                            <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main_menu_iner">
-            <div class="container">
-                <div class="row align-items-center ">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                                id="navbarSupportedContent">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="about.html">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="packages.html">packages</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Blog
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog.html">Blog</a>
-                                            <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            pages
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">top place</a>
-                                            <a class="dropdown-item" href="tour_details.html">tour details</a>
-                                            <a class="dropdown-item" href="elements.html">Elements</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn_1 d-none d-lg-block">book now</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header part end-->
-
+  
+    <?php $this->load->view('components/header.html'); ?> 
+    <?php $this->load->view('components/callout.html'); ?> 
     <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
+    <section class="breadcrumb" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item text-center">
-                            <h2>contact</h2>
-                            <p>home . contact</p>
                         </div>
                     </div>
                 </div>
@@ -137,199 +58,333 @@
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
         <div class="container">
-            <div class="d-none d-sm-block mb-5 pb-4">
-                <div id="map" style="height: 480px;"></div>
-                <script>
-                    function initMap() {
-                        var uluru = {
-                            lat: -25.363,
-                            lng: 131.044
-                        };
-                        var grayStyles = [{
-                            featureType: "all",
-                            stylers: [{
-                                saturation: -90
-                            }, {
-                                lightness: 50
-                            }]
-                        }, {
-                            elementType: 'labels.text.fill',
-                            stylers: [{
-                                color: '#ccdee9'
-                            }]
-                        }];
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            center: {
-                                lat: -31.197,
-                                lng: 150.744
-                            },
-                            zoom: 9,
-                            styles: grayStyles,
-                            scrollwheel: false
-                        });
-                    }
-                </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap">
-                </script>
-
-            </div>
-
+           
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contact-title">Get in Touch</h2>
+                    <h2 class="contact-title">แบบฟอร์มการจองและติดต่อ กรุณากรอกข้อมูลที่ถูกต้องครบถ้วน เพื่อการตอบกลับที่รวดเร็ว</h2>
                 </div>
-                <div class="col-lg-8">
-                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <div class="col-lg-7">
+                    <form class="form-contact" id="contactform" action="contact/send" method="post" id="contactForm">
                         <div class="row">
-                            <div class="col-12">
+                           
+                            <div class="col-sm-6">
+                                <label class="control-label">ชื่อผู้ติดต่อ <span class="required">*</span></label>
                                 <div class="form-group">
+                                    <input class="form-control" required name="contact_name" id="contact_name" type="text" placeholder="ชื่อผู้ติดต่อ">
+                                </div>
+                            </div>
 
-                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder='Enter Message'></textarea>
+                            <div class="col-sm-6">
+                                <label class="control-label">นามสกุล <span class="required">*</span></label>
+                                <div class="form-group">
+                                    <input class="form-control" required name="contact_lastname" id="contact_lastname" type="text" placeholder="นามสกุล">
+                                </div>
+                            </div>
+                           
+                            <div class="col-sm-6">
+                                <label class="control-label">เบอร์โทรศัพท์ <span class="required">*</span></label>
+                                <div class="form-group">
+                                    <input class="form-control" required name="contact_phone" id="contact_phone" type="text" placeholder="เบอร์โทรศัพท์">
                                 </div>
                             </div>
                             <div class="col-sm-6">
+                                <label class="control-label">เบอร์มือถือ</label>
                                 <div class="form-group">
-                                    <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                                    <input class="form-control"  name="contact_mobile" id="contact_mobile" type="text" placeholder="เบอร์มือถือ">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="control-label">เบอร์แฟกซ์ (ถ้ามี)</label>
+                                <div class="form-group">
+                                    <input class="form-control" name="contact_fax" id="contact_fax" type="text" placeholder="เบอร์แฟกซ์ (ถ้ามี)">
                                 </div>
                             </div>
                             <div class="col-sm-6">
+                                <label class="control-label">อีเมล <span class="required">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                                    <input class="form-control" required name="contact_email" id="contact_email" type="text" placeholder="อีเมล">
                                 </div>
                             </div>
-                            <div class="col-12">
+
+                            <div class="col-sm-6">
+                                <label class="control-label">ประเทศ  <span class="required">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
+                                    <select class="form-control select2" required name="contact_country" id="contact_country">
+                                        <option value="">
+                                            กรุณาเลือกประเทศ</option>
+                                        <option value="ไทย">ไทย</option>
+                                        <option value="ฮ่องกง">ฮ่องกง</option>
+                                        <option value="สิงคโปร์">สิงคโปร์</option>
+                                        <option value="มาเลเซีย">มาเลเซีย</option>
+                                        <option value="ลาว">ลาว</option>
+                                        <option value="ฝรั่งเศส">ฝรั่งเศส</option>
+                                        <option value="อิตาลี">อิตาลี</option>
+                                        <option value="ญี่ปุ่น">ญี่ปุ่น</option>
+                                        <option value="มัลดีฟส์">มัลดีฟส์</option>
+                                        <option value="อัลบาเนีย">อัลบาเนีย</option>
+                                        <option value="แอนติกาและบาร์บูดา">แอนติกาและบาร์บูดา</option>
+                                        <option value="อาร์เจนตินา">อาร์เจนตินา</option>
+                                        <option value="อาเมเนีย">อาเมเนีย</option>
+                                        <option value="อารูบา">อารูบา</option>
+                                        <option value="ออสเตรเลีย">ออสเตรเลีย</option>
+                                        <option value="ออสเตรีย">ออสเตรีย</option>
+                                        <option value="อาเซอร์ไบจาน">อาเซอร์ไบจาน</option>
+                                        <option value="บาฮามาส">บาฮามาส</option>
+                                        <option value="บาห์เรน">บาห์เรน</option>
+                                        <option value="บังกลาเทศ">บังกลาเทศ</option>
+                                        <option value="บาร์เบโดส">บาร์เบโดส</option>
+                                        <option value="เบลารุส">เบลารุส</option>
+                                        <option value="เบลเยียม">เบลเยียม</option>
+                                        <option value="เบอร์มิวดา">เบอร์มิวดา</option>
+                                        <option value="โบลิเวีย">โบลิเวีย</option>
+                                        <option value="บอสเนียและเฮอร์เซโกวีนา">บอสเนียและเฮอร์เซโกวีนา</option>
+                                        <option value="บอตสวานา">บอตสวานา</option>
+                                        <option value="บราซิล">บราซิล</option>
+                                        <option value="หมู่เกาะบริติชเวอร์จิน">หมู่เกาะบริติชเวอร์จิน</option>
+                                        <option value="บรูไน">บรูไน</option>
+                                        <option value="บัลแกเรีย">บัลแกเรีย</option>
+                                        <option value="กัมพูชา">กัมพูชา</option>
+                                        <option value="แคเมอรูน">แคเมอรูน</option>
+                                        <option value="แคนาดา">แคนาดา</option>
+                                        <option value="หมู่เกาะเคย์แมน">หมู่เกาะเคย์แมน</option>
+                                        <option value="ชิลี">ชิลี</option>
+                                        <option value="จีน">จีน</option>
+                                        <option value="โคลอมเบีย">โคลอมเบีย</option>
+                                        <option value="สาธารณรัฐคองโก">สาธารณรัฐคองโก</option>
+                                        <option value="หมู่เกาะคุก">หมู่เกาะคุก</option>
+                                        <option value="คอสตาริกา">คอสตาริกา</option>
+                                        <option value="โครเอเชีย">โครเอเชีย</option>
+                                        <option value="คิวบา">คิวบา</option>
+                                        <option value="ไซปรัส">ไซปรัส</option>
+                                        <option value="สาธารณรัฐเช็ก">สาธารณรัฐเช็ก</option>
+                                        <option value="เดนมาร์ก">เดนมาร์ก</option>
+                                        <option value="สาธารณรัฐโดมินิกัน">สาธารณรัฐโดมินิกัน</option>
+                                        <option value="เอกวาดอร์">เอกวาดอร์</option>
+                                        <option value="อียิปต์">อียิปต์</option>
+                                        <option value="เอสโตเนีย">เอสโตเนีย</option>
+                                        <option value="เอธิโอเปีย">เอธิโอเปีย</option>
+                                        <option value="ฟีจี">ฟีจี</option>
+                                        <option value="ฟินแลนด์">ฟินแลนด์</option>
+                                        <option value="เฟรนช์พอลินีเชีย">เฟรนช์พอลินีเชีย</option>
+                                        <option value="กาบอง">กาบอง</option>
+                                        <option value="แกมเบีย">แกมเบีย</option>
+                                        <option value="จอร์เจีย">จอร์เจีย</option>
+                                        <option value="เยอรมนี">เยอรมนี</option>
+                                        <option value="ยิบรอลตาร์">ยิบรอลตาร์</option>
+                                        <option value="กรีซ">กรีซ</option>
+                                        <option value="กรีนแลนด์">กรีนแลนด์</option>
+                                        <option value="เกรเนดา">เกรเนดา</option>
+                                        <option value="กัวเดอลุป">กัวเดอลุป</option>
+                                        <option value="กวม">กวม</option>
+                                        <option value="กัวเตมาลา">กัวเตมาลา</option>
+                                        <option value="เฮติ">เฮติ</option>
+                                        <option value="ฮอนดูรัส">ฮอนดูรัส</option>
+                                        <option value="ฮังการี">ฮังการี</option>
+                                        <option value="ไอซ์แลนด์">ไอซ์แลนด์</option>
+                                        <option value="อินเดีย">อินเดีย</option>
+                                        <option value="อินโดนีเซีย">อินโดนีเซีย</option>
+                                        <option value="อิหร่าน">อิหร่าน</option>
+                                        <option value="อิรัก">อิรัก</option>
+                                        <option value="ไอร์แลนด์">ไอร์แลนด์</option>
+                                        <option value="อิสราเอล">อิสราเอล</option>
+                                        <option value="จาเมกา">จาเมกา</option>
+                                        <option value="จอร์แดน">จอร์แดน</option>
+                                        <option value="คาซัคสถาน">คาซัคสถาน</option>
+                                        <option value="เคนยา">เคนยา</option>
+                                        <option value="คูเวต">คูเวต</option>
+                                        <option value="คีร์กีซสถาน">คีร์กีซสถาน</option>
+                                        <option value="ลัตเวีย">ลัตเวีย</option>
+                                        <option value="เลบานอน">เลบานอน</option>
+                                        <option value="ลิเบีย">ลิเบีย</option>
+                                        <option value="ลิกเตนสไตน์">ลิกเตนสไตน์</option>
+                                        <option value="ลิทัวเนีย">ลิทัวเนีย</option>
+                                        <option value="ลักเซมเบิร์ก">ลักเซมเบิร์ก</option>
+                                        <option value="มาเก๊า">มาเก๊า</option>
+                                        <option value="มาซิโดเนีย">มาซิโดเนีย</option>
+                                        <option value="มาลี">มาลี</option>
+                                        <option value="มอลตา">มอลตา</option>
+                                        <option value="มอริเชียส">มอริเชียส</option>
+                                        <option value="เม็กซิโก">เม็กซิโก</option>
+                                        <option value="ไมโครนีเซีย">ไมโครนีเซีย</option>
+                                        <option value="มอลโดวา">มอลโดวา</option>
+                                        <option value="มองโกเลีย">มองโกเลีย</option>
+                                        <option value="โมรอคโค">โมรอคโค</option>
+                                        <option value="โมซัมบิก">โมซัมบิก</option>
+                                        <option value="พม่า">พม่า</option>
+                                        <option value="นามิเบีย">นามิเบีย</option>
+                                        <option value="เนปาล">เนปาล</option>
+                                        <option value="เนเธอร์แลนด์">เนเธอร์แลนด์</option>
+                                        <option value="เนเธอร์แลนด์แอนทิลลีส">เนเธอร์แลนด์แอนทิลลีส</option>
+                                        <option value="นิวแคลิโดเนีย">นิวแคลิโดเนีย</option>
+                                        <option value="นิวซีแลนด์">นิวซีแลนด์</option>
+                                        <option value="นิการากัว">นิการากัว</option>
+                                        <option value="ไนจีเรีย">ไนจีเรีย</option>
+                                        <option value="เกาะนอร์ฟอล์ก">เกาะนอร์ฟอล์ก</option>
+                                        <option value="เกาหลีเหนือ">เกาหลีเหนือ</option>
+                                        <option value="หมู่เกาะนอร์เทิร์นมาเรียนา">หมู่เกาะนอร์เทิร์นมาเรียนา</option>
+                                        <option value="นอร์เวย์">นอร์เวย์</option>
+                                        <option value="โอมาน">โอมาน</option>
+                                        <option value="ปากีสถาน">ปากีสถาน</option>
+                                        <option value="ปาเลา">ปาเลา</option>
+                                        <option value="ปานามา">ปานามา</option>
+                                        <option value="ปารากวัย">ปารากวัย</option>
+                                        <option value="เปรู">เปรู</option>
+                                        <option value="ฟิลิปปินส์">ฟิลิปปินส์</option>
+                                        <option value="โปแลนด์">โปแลนด์</option>
+                                        <option value="โปรตุเกส">โปรตุเกส</option>
+                                        <option value="เปอร์โตริโก">เปอร์โตริโก</option>
+                                        <option value="กาตาร์">กาตาร์</option>
+                                        <option value="โรมาเนีย">โรมาเนีย</option>
+                                        <option value="รัสเซีย">รัสเซีย</option>
+                                        <option value="แซ็ง บาร์เตเลมี">แซ็ง บาร์เตเลมี</option>
+                                        <option value="ซามัว">ซามัว</option>
+                                        <option value="ซานมารีโน">ซานมารีโน</option>
+                                        <option value="ซาอุดิอาระเบีย">ซาอุดิอาระเบีย</option>
+                                        <option value="เซเนกัล">เซเนกัล</option>
+                                        <option value="เซอร์เบีย">เซอร์เบีย</option>
+                                        <option value="เซเชลส์">เซเชลส์</option>
+                                        <option value="สโลวาเกีย">สโลวาเกีย</option>
+                                        <option value="สโลวีเนีย">สโลวีเนีย</option>
+                                        <option value="แอฟริกาใต้">แอฟริกาใต้</option>
+                                        <option value="เกาหลีใต้">เกาหลีใต้</option>
+                                        <option value="สเปน">สเปน</option>
+                                        <option value="ศรีลังกา">ศรีลังกา</option>
+                                        <option value="เซนต์คิตส์และเนวิส">เซนต์คิตส์และเนวิส</option>
+                                        <option value="เซนต์ลูเชีย">เซนต์ลูเชีย</option>
+                                        <option value="เซนต์วินเซนต์และเกรนาดีนส์">เซนต์วินเซนต์และเกรนาดีนส์</option>
+                                        <option value="สวาซิแลนด์">สวาซิแลนด์</option>
+                                        <option value="สวีเดน">สวีเดน</option>
+                                        <option value="สวิตเซอร์แลนด์">สวิตเซอร์แลนด์</option>
+                                        <option value="ซีเรีย">ซีเรีย</option>
+                                        <option value="ทาจิกิสถาน">ทาจิกิสถาน</option>
+                                        <option value="ไต้หวัน">ไต้หวัน</option>
+                                        <option value="แทนซาเนีย">แทนซาเนีย</option>
+                                        <option value="โตโก">โตโก</option>
+                                        <option value="ตองงา">ตองงา</option>
+                                        <option value="ตรินิแดดและโตเบโก">ตรินิแดดและโตเบโก</option>
+                                        <option value="ตูนีเซีย">ตูนีเซีย</option>
+                                        <option value="ตุรกี">ตุรกี</option>
+                                        <option value="เติร์กเมนิสถาน">เติร์กเมนิสถาน</option>
+                                        <option value="หมู่เกาะเติกส์และเคคอส">หมู่เกาะเติกส์และเคคอส</option>
+                                        <option value="ยูกันดา">ยูกันดา</option>
+                                        <option value="ยูเครน">ยูเครน</option>
+                                        <option value="สหรัฐอาหรับเอมิเรตส์">สหรัฐอาหรับเอมิเรตส์</option>
+                                        <option value="อังกฤษ">อังกฤษ</option>
+                                        <option value="สหรัฐอเมริกา">สหรัฐอเมริกา</option>
+                                        <option value="อุรุกวัย">อุรุกวัย</option>
+                                        <option value="อุซเบกิสถาน">อุซเบกิสถาน</option>
+                                        <option value="วานูวาตู">วานูวาตู</option>
+                                        <option value="เวเนซุเอลา">เวเนซุเอลา</option>
+                                        <option value="เวียดนาม">เวียดนาม</option>
+                                        <option value="หมู่เกาะเวอร์จินของสหรัฐอเมริกา">หมู่เกาะเวอร์จินของสหรัฐอเมริกา</option>
+                                        <option value="เยเมน">เยเมน</option>
+                                        <option value="ซาอีร์">ซาอีร์</option>
+                                        <option value="แซมเบีย">แซมเบีย</option>
+                                        <option value="ซิมบับเว">ซิมบับเว</option>
+                                        <option value="สกอตแลนด์">สกอตแลนด์</option>
+                                        <option value="เวลส์">เวลส์</option>
+                                        <option value="ภูฏาน">ภูฏาน</option>
+                                        <option value="กานา">กานา</option>
+                                        <option value="หน่อยคิงดอม">หน่อยคิงดอม</option>
+                                        <option value="มาดากัสการ์">มาดากัสการ์</option>
+                                        <option value="เอลซัลวาดอร์">เอลซัลวาดอร์</option>
+                                        <option value="นิวซีแลนด์">นิวซีแลนด์</option>
+                                        <option value="เนเธอร์แลนด์">เนเธอร์แลนด์</option>
+                                        <option value="อันดอร์รา">อันดอร์รา</option>
+                                        <option value="มอนเตเนโกร">มอนเตเนโกร</option>
+                                        <option value="ปาปัวนิวกินี">ปาปัวนิวกินี</option>
+                                        <option value="ติมอร์ เลสเต">ติมอร์ เลสเต</option>
+                                        <option value="รวันดา">รวันดา</option>
+                                        <option value="บุรันดี">บุรันดี</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="control-label">บริษัท </label>
+                                <div class="form-group">
+                                    <input class="form-control" name="contact_company" id="contact_company" type="text" placeholder="บริษัท">
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-sm-6">
+                                <label class="control-label">ที่อยู่ <span class="required">*</span></label>
+                                <div class="form-group">
+                                    <input class="form-control" required name="contact_address" id="contact_address" type="text" placeholder="ที่อยู่">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="control-label">รหัสไปรษณีย์ </label>
+                                <div class="form-group">
+                                    <input class="form-control" name="contact_postcode" id="contact_postcode" type="text" placeholder="รหัสไปรษณีย์">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label class="control-label">รายละเอียดของการติดต่อ <span class="required">*</span></label>
+                                <div class="form-group">
+                                    <textarea class="form-control" required placeholder="รายละเอียดของการติดต่อ" name="contact_description" id="contact_description" cols="30" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="button button-contactForm btn_1">Send Message</button>
+                            <button type="submit" name="submit" class="button button-contactForm btn_1"><i class="fa fa-paper-plane"></i> ส่งข้อมูล</button>
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-4">
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-home"></i></span>
-                        <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-                        <div class="media-body">
-                            <h3>00 (440) 9865 562</h3>
-                            <p>Mon to Fri 9am to 6pm</p>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-email"></i></span>
-                        <div class="media-body">
-                            <h3>support@colorlib.com</h3>
-                            <p>Send us your query anytime!</p>
-                        </div>
-                    </div>
+                <div class="col-lg-5">
+                        <img src="upload/map.jpg">
                 </div>
+                
             </div>
         </div>
     </section>
     <!-- ================ contact section end ================= -->
 
+    
+
+    <!--::industries end::-->
+
     <!-- footer part start-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
-                    <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
-                        <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
-                            <li><a href="#">Saintmartine, Bangladesh</a></li>
-                            <li><a href="#">Mount Everast, India</a></li>
-                            <li><a href="#">Sidney, Australia</a></li>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
-                            <li><a href="#">Saintmartine, Bangladesh</a></li>
-                            <li><a href="#">Mount Everast, India</a></li>
-                            <li><a href="#">Sidney, Australia</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                        <div class="social-icons">
-                            <a href="#"><i class="ti-facebook"></i></a>
-                            <a href="#"><i class="ti-twitter-alt"></i></a>
-                            <a href="#"><i class="ti-pinterest"></i></a>
-                            <a href="#"><i class="ti-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+  
+    <?php $this->load->view('components/footer.html'); ?> 
     <!-- footer part end-->
 
-    <!-- jquery plugins here-->
+
     <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- magnific js -->
     <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- masonry js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/masonry.pkgd.js"></script>
-    <!-- masonry js -->
-    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/select2.min.js"></script>
     <script src="js/gijgo.min.js"></script>
-    <!-- contact js -->
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/contact.js"></script>
-    <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script src="angularjs/module/mainFront.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+
+            $("#contactform").on("submit",function(){
+                var form = $(this)[0];
+                if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+            });     
+            
+        });
+        
+    </script>
 </body>
 
 </html>

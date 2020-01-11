@@ -57,4 +57,13 @@ return $obj;
         $result = $query->result();          
         return $result;      
     }
+
+    public function getListIndependent($param){
+        $this->db->select('*');       
+        $this->db->from('packageindependent');  
+        $this->db->where('mst_packagepass_id',$param);
+        $query = $this->db->get();
+        $result = $query->result();          
+        return $result;      
+    }
 }

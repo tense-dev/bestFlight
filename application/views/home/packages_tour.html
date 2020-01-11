@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body ng-app="mainFront" ng-controller="mainctl">
+<body ng-app="mainFront" ng-controller="mainpgitour">
     <?php $this->load->view('components/header.html'); ?> 
     <?php $this->load->view('components/callout.html'); ?> 
     
@@ -58,33 +58,29 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                        <div class="col-lg-3 p-0" ng-repeat="objpmt in lstIndependen1" class="item ">
                                     <div class="col-12 pb-5">
                                         <div class="card border-0 shadow rounded-0">
                                             <div class="card-header p-0 border-0 bg-tranparent">
                                                 <div class="overlay">
                                                     <div class="row p-3">
                                                         <div class="col-12 mt-5">
-                                                            <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                            <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
+                                                            <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.Description"></h4>
                                                         </div>
                                                         <div class="col-12 mt-5 text-center">
-                                                         <button type="button" class="btn btn-warning">รายละเอียดเพิ่มเติม</button>
+                                                         <button ng-click="funcGenPDF('{{objpmt.ObjectID}}')" type="button" class="btn btn-warning">รายละเอียดเพิ่มเติม</button>
                                                        </div>
                                                     </div>
                                                     <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                                 </div>
-                                                <img src="{{objpmt.img}}" class="w-100" alt="">
+                                                <img src="{{objpmt.ImagePath}}" class="w-100" alt="">
                                             </div>
                                             <div class="card-body">
-                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                            <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.Name"></h4>
                                             <div class="row h-50px">
                                                 <div class="col my-auto">
-                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                        <span class="text-thai">วัน</span> 
-                                                        <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                        <span class="text-thai">คืน</span class="text-thai"></h3>
+                                                    <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold"></span> 
+                                                    <h4 class="text-thai text-fix-best-deep ">{{objpmt.Price_title}} {{ objpmt.Price}} บาท</h4> 
                                                 </div>
                                                 <div class="col-auto my-auto">
                                                     <img src="{{objpmt.airimg}}" class="img-airline" alt="">
@@ -94,7 +90,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                         </div>
                     </div>
                 </section>
@@ -109,16 +104,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in lstIndependen2" class="item ">
                                 <div class="col-12 pb-5">
                                     <div class="card border-0 shadow rounded-0">
                                         <div class="card-header p-0 border-0 bg-tranparent">
                                             <div class="overlay">
                                                 <div class="row p-3">
                                                     <div class="col-12 mt-5">
-                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.Description"></h4>
                                                     </div>
                                                     <div class="col-12 mt-5 text-center">
                                                      <button type="button" class="btn btn-warning">รายละเอียดเพิ่มเติม</button>
@@ -126,16 +119,14 @@
                                                 </div>
                                                 <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                             </div>
-                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                            <img src="{{objpmt.ImagePath}}" class="w-100" alt="">
                                         </div>
                                         <div class="card-body">
-                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.Name"></h4>
                                         <div class="row h-50px">
                                             <div class="col my-auto">
-                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                    <span class="text-thai">วัน</span> 
-                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold"></span> 
+                                                <h4 class="text-thai text-fix-best-deep ">{{objpmt.Price_title}} {{ objpmt.Price}} บาท</h4> 
                                             </div>
                                             <div class="col-auto my-auto">
                                                 <img src="{{objpmt.airimg}}" class="img-airline" alt="">
@@ -145,7 +136,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                     </div>
                 </div>
                </section>
@@ -160,16 +150,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in lstIndependen3" class="item ">
                                 <div class="col-12 pb-5">
                                     <div class="card border-0 shadow rounded-0">
                                         <div class="card-header p-0 border-0 bg-tranparent">
                                             <div class="overlay">
                                                 <div class="row p-3">
                                                     <div class="col-12 mt-5">
-                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>                                        
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.Description"></h4>
                                                     </div>
                                                     <div class="col-12 mt-5 text-center">
                                                      <button type="button" class="btn btn-warning">รายละเอียดเพิ่มเติม</button>
@@ -177,16 +165,14 @@
                                                 </div>
                                                 <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                             </div>
-                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                            <img src="{{objpmt.ImagePath}}" class="w-100" alt="">
                                         </div>
                                         <div class="card-body">
-                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.Name"></h4>
                                         <div class="row h-50px">
                                             <div class="col my-auto">
-                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                    <span class="text-thai">วัน</span> 
-                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold"></span> 
+                                                <h4 class="text-thai text-fix-best-deep ">{{objpmt.Price_title}} {{ objpmt.Price}} บาท</h4> 
                                             </div>
                                             <div class="col-auto my-auto">
                                                 <img src="{{objpmt.airimg}}" class="img-airline" alt="">
@@ -196,7 +182,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                     </div>
                 </div>
                </section>
@@ -212,33 +197,29 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 p-0" ng-repeat="objpmt in ltPromotion" class="item ">
+                    <div class="col-lg-3 p-0" ng-repeat="objpmt in lstIndependen4" class="item ">
                                 <div class="col-12 pb-5">
                                     <div class="card border-0 shadow rounded-0">
                                         <div class="card-header p-0 border-0 bg-tranparent">
                                             <div class="overlay">
                                                 <div class="row p-3">
                                                     <div class="col-12 mt-5">
-                                                        <h1 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtCode"></h1>
-                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.pgtName"></h4>
-                                                        <h3 class="font-weight-bold text-thai text-white mt-3">โรงแรม (<span><i class="fas fa-star text-warning" ng-repeat="n in range(1,objpmt.hotelStar)"></i></span>)</h3>
+                                                        <h4 class="font-weight-bold text-thai text-white" ng-bind="objpmt.Description"></h4>
                                                     </div>
                                                     <div class="col-12 mt-5 text-center">
-                                                     <button type="button" class="btn btn-warning">รายละเอียดเพิ่มเติม</button>
+                                                     <a type="button" href="xx.html" class="btn btn-warning">รายละเอียดเพิ่มเติม</a>
                                                    </div>
                                                 </div>
                                                 <!-- <div class="text" ng-bind="objpmt.pgtName"></div> -->
                                             </div>
-                                            <img src="{{objpmt.img}}" class="w-100" alt="">
+                                            <img src="{{objpmt.ImagePath}}" class="w-100" alt="">
                                         </div>
                                         <div class="card-body">
-                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.pgtName"></h4>
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-1row " ng-bind="objpmt.Name"></h4>
                                         <div class="row h-50px">
                                             <div class="col my-auto">
-                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prDay"></span> 
-                                                    <span class="text-thai">วัน</span> 
-                                                    <span class="text-fix-best-deep font-weight-bold" ng-bind="objpmt.prNight"></span> 
-                                                    <span class="text-thai">คืน</span class="text-thai"></h3>
+                                                <h3 class="mb-0"><span class="text-fix-best-deep font-weight-bold"></span> 
+                                                <h4 class="text-thai text-fix-best-deep ">{{objpmt.Price_title}} {{ objpmt.Price}} บาท</h4> 
                                             </div>
                                             <div class="col-auto my-auto">
                                                 <img src="{{objpmt.airimg}}" class="img-airline" alt="">
@@ -248,7 +229,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                     </div>
                 </div>
                </section>

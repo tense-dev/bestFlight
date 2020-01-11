@@ -188,4 +188,71 @@ $scope.getLtJapan();
 
 
 
+
+app.controller('mainpgitour', ($scope,$http)=> {
+
+  $scope.getListIndependent1 = ()=>{
+    $http({
+      method: 'GET',
+      url: configapp.baseUrl+'packagestour/getListIndependent1',
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+         const datares = response.data;
+         $scope.lstIndependen1 = datares;
+      }); 
+  
+  }
+
+  $scope.getListIndependent2 = ()=>{
+    $http({
+      method: 'GET',
+      url: configapp.baseUrl+'packagestour/getListIndependent2',
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+         const datares = response.data;
+         $scope.lstIndependen2 = datares;
+      }); 
+  
+  }
+
+  $scope.getListIndependent3 = ()=>{
+    $http({
+      method: 'GET',
+      url: configapp.baseUrl+'packagestour/getListIndependent3',
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+         const datares = response.data;
+         $scope.lstIndependen3 = datares;
+      }); 
+  
+
+  }
+  $scope.getListIndependent4 = ()=>{
+    $http({
+      method: 'GET',
+      url: configapp.baseUrl+'packagestour/getListIndependent4',
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+         const datares = response.data;
+         $scope.lstIndependen4 = datares;
+      }); 
+  }
+
+  $scope.funcGenPDF = function (msg) {
+    $http({
+      method: 'POST',
+      url: configapp.baseUrl,
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+      }); 
+    }
+
+  $scope.getListIndependent1();
+  $scope.getListIndependent2();
+  $scope.getListIndependent3();
+  $scope.getListIndependent4();
+  
+  });
+
+
 //////////////////////

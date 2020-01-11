@@ -18,4 +18,5 @@ class packagespass extends CI_Controller {
         $dataresult = $this->Mod_packageIndependent->getListJapan();
         echo json_encode($dataresult);
     }
+
 }
