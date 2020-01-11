@@ -255,4 +255,45 @@ app.controller('mainpgitour', ($scope,$http)=> {
   });
 
 
-//////////////////////
+/////////ticketplane/////////////
+
+
+
+app.controller('mainticketplan', ($scope,$http)=> {
+  $scope.getListticketplane = ()=>{
+    $http({
+      method: 'GET',
+      url: configapp.baseUrl+'ticketplane/getListticketplane',
+      headers: {'Content-Type': undefined},
+       }).then(successCallback = (response)=> {   
+         const datares = response.data;
+         $scope.lstticketplancontry = datares;
+      }); 
+  }
+  $scope.getListticketplane();
+  });
+
+  app.controller('mainticketplan_details', ($scope,$http)=> {
+    $scope.getlistticketplan_details = (ticketplane_id)=>{
+      $http({
+        method: 'POST',
+        url: configapp.baseUrl+'ticketplane/getListticketplane_details_byticketplaneID',
+        data : JSON.stringify({ticketplane_id:ticketplane_id}),
+        headers: {'Content-Type': undefined},
+         }).then(successCallback = (response)=> {   
+           var datares = response.data;
+           console.log(datares);
+           const groups = datares.reduce(function(obj,item){
+            obj[item.ticket_to] = obj[item.ticket_to] || [];
+            obj[item.ticket_to].push(item);
+            return obj;
+            }, {});
+            const myArray = Object.keys(groups).map(function(key){
+                return {rowlength :datares.length ,groupname: key ,rowgrouplength:groups[key].length, listgroup: groups[key]};
+            });
+            console.log(myArray);
+           $scope.lstticketplan_details = myArray;
+        }); 
+    }
+    $scope.getlistticketplan_details();
+    });

@@ -3784,7 +3784,7 @@ ul {
 /* line 5, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_breadcrumb.scss */
 .breadcrumb {
   position: relative;
-  z-index: 1;
+  background-color :#162b45;
 }
 
 /* line 9, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_breadcrumb.scss */
@@ -5699,4 +5699,35 @@ h6 {
 
 .required {
     color:red;
+}
+
+.dropdown-menu a:hover {
+  background-color:#f15c14;
+}
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+
+.btn-orange {
+  color: #ffffff;
+  background-color: #f15c14;
+  border-color: #f15c14;
+}
+
+.btn-orange:hover {
+  color: #ffffff;
+  background-color: #f15c14;
+  border-color: #f15c14;
+}
+
+.tablebackgroud{
+  background-color: #1c49b9;
+  color: #ffffff;
+}
+.tablebackgroud th{
+  padding: 5px !important;
 }
