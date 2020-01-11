@@ -30,6 +30,17 @@ class ticketplane extends CI_Controller {
         echo json_encode($dataresult);
     }
 
+    public function getticketplane_byid(){
+        $postdata = file_get_contents("php://input");
+        $request = json_decode($postdata);
+        $id = $request->id;
+        $this->load->model('Mod_ticketplane');
+        $dataresult = $this->Mod_ticketplane->getticketplane_byid($id );
+        echo json_encode($dataresult);
+    }
+
+    
+
     public function getListticketplane_details_byticketplaneID(){
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);

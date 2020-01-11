@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 
-    <?php $this->load->helper('url');?>
+<?php $this->load->helper('url');?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,7 +15,7 @@
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <!-- themify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
@@ -24,31 +25,33 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
 </head>
 <style>
-   .card-block  .cardtitle{
+    .card-block .cardtitle {
         text-align: left;
         padding-top: 10px;
         border-bottom: 1px solid rgb(28, 73, 185);
     }
-    .card-block{ 
+    
+    .card-block {
         margin-bottom: 15px;
     }
 </style>
+
 <body ng-app="mainFront">
-    <?php $this->load->view('components/header.html'); ?> 
-    <?php $this->load->view('components/callout.html'); ?> 
-    
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+
     <section class="breadcrumb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                        <div class="text-center ">
-                               <p class="text-left text-white">ตั๋วเครื่องบิน / ราคาตั๋วเครื่องบินต่างประเทศ </p>
-                        </div>
+                    <div class="text-center ">
+                        <p class="text-left text-white">ตั๋วเครื่องบิน / ราคาตั๋วเครื่องบินต่างประเทศ </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-   
+
 
     <div class="container">
         <div class="row">
@@ -61,57 +64,57 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row ">
-                        <div class="col-xl-12 mb-3">
-                            <div class="card horizontal shadow rounded-0">
-                                <div class="row no-gutters p-0 border-0 bg-tranparent">
-                                    <div class="col-md-4">
-                                        <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="100%" height="200" alt="">
+                    <div class="row " ng-controller="mainticketplan">
+                        <div class=" col-xl-12 mb-3" ng-init="getListticketplane_byid(<?php echo $ticketplane_id?>)">
+                            <div class="card horizontal shadow rounded-0 " ng-repeat="objpmt in ticketplane">
+                                <div class="row no-gutters p-0 border-0 bg-tranparent ">
+                                    <div class="col-md-4 ">
+                                        <img src="<?php echo base_url(); ?>upload/{{objpmt.ImagePath?objpmt.ImagePath:''}}" class="img" width="100%" height="200" alt="">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-block px-2">
                                             <div class="col-md-12">
-                                              <div class="cardtitle">
-                                                  <h4 class="text-thai text-fix-best-blue font-weight-bold">เวียดนาม</h4>
+                                                <div class="cardtitle">
+                                                    <h4 class="text-thai text-fix-best-blue font-weight-bold">{{objpmt.title}}</h4>
                                                 </div>
-                                                </div>
-                                                <div class="col-md-12 pt-2">
-                                                <label class="text-secondary">ตั๋วเครื่องบินไปกลับ กรุงเทพฯ - เวียดนาม หลากหลายสายการบิน</label>
-                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pt-2">
+                                                <label class="text-secondary">{{objpmt.Description}}</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    <div class="row "  ng-controller="mainticketplan_details">
-                        <div class="col-xl-12 mb-3"   ng-init="getlistticketplan_details(<?php echo $ticketplane_id?>)">
+
+
+                    <div class="row " ng-controller="mainticketplan_details">
+                        <div class="col-xl-12 mb-3" ng-init="getlistticketplan_details(<?php echo $ticketplane_id?>)">
                             <table class="table table-bordered  shadow rounded-0">
                                 <thead class="tablebackgroud">
-                                  <tr>
-                                    <th class="text-center">จาก</th>
-                                    <th class="text-center">ถึง</th>
-                                    <th class="text-center">ราคา</th>
-                                    <th class="text-center">สายการบิน</th>
-                                    <th class="text-center"></th>
-                                  </tr>
+                                    <tr>
+                                        <th class="text-center">จาก</th>
+                                        <th class="text-center">ถึง</th>
+                                        <th class="text-center">ราคา</th>
+                                        <th class="text-center">สายการบิน</th>
+                                        <th class="text-center"></th>
+                                    </tr>
                                 </thead>
                                 <tbody ng-repeat="objpmt in lstticketplan_details">
-                                  <tr >
-                                    <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowlength}}">กรุงเทพฯ (BKK)</td>
-                                    <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowgrouplength}}" >{{objpmt.groupname}}</td>
-                                    <td class="text-center">{{objpmt.listgroup[0].ticket_price}}</td>
-                                    <td class="text-center w-15" > <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
-                                    <td class="text-center w-15" >  <a target="_blank" href="<?php echo base_url(); ?>ticketplane/details/6" class="btn btn-sm btn-orange">จอง</a></td>
-                                  </tr>
+                                    <tr>
+                                        <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowlength}}">กรุงเทพฯ (BKK)</td>
+                                        <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowgrouplength}}">{{objpmt.groupname}}</td>
+                                        <td class="text-center">{{objpmt.listgroup[0].ticket_price}}</td>
+                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
+                                    </tr>
 
-                                  <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
-                                    <td class="text-center">{{v.ticket_price}}</td>
-                                    <td class="text-center w-15" > <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
-                                    <td class="text-center w-15" >  <a target="_blank" href="<?php echo base_url(); ?>ticketplane/details/6" class="btn btn-sm btn-orange">จอง</a></td>
-                                  </tr>
+                                    <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                        <td class="text-center">{{v.ticket_price}}</td>
+                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
+                                    </tr>
 
                                 </tbody>
                             </table>
@@ -127,8 +130,8 @@
     <!--::industries end::-->
 
     <!-- footer part start-->
-  
-    <?php $this->load->view('components/footer.html'); ?> 
+
+    <?php $this->load->view('components/footer.html'); ?>
     <!-- footer part end-->
 
 

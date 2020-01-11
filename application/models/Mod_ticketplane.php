@@ -10,7 +10,7 @@ class Mod_ticketplane extends CI_Model {
     public $CreateDate;
     public $Visible;
     public $Description;
-    public $Image;
+    public $ImagePath;
     public function DatatoObj($data)
     {
     $this->ticketplane_oid=$data->ticketplane_oid;
@@ -19,7 +19,7 @@ class Mod_ticketplane extends CI_Model {
     $this->CreateDate=$data->CreateDate;
     $this->Visible=$data->Visible;
     $this->Description=$data->Description;
-    $this->Image=$data->Image;
+    $this->ImagePath=$data->ImagePath;
     }
     
     public function ObjData()
@@ -31,7 +31,7 @@ class Mod_ticketplane extends CI_Model {
     'CreateDate'=>$this->CreateDate,
     'Visible'=>$this->Visible,
     'Description'=>$this->Description,
-    'Image'=>$this->Image,
+    'ImagePath'=>$this->ImagePath,
     );
     return $obj;
     }
@@ -44,5 +44,15 @@ class Mod_ticketplane extends CI_Model {
         return $result;      
     }
 
-     
+    public function getticketplane_byid($id){
+        $this->db->select('*');       
+        $this->db->from('ticketplane');  
+        $this->db->where('ticketplane_oid',$id);
+        
+        $query = $this->db->get();
+        $result = $query->result();          
+        return $result;      
     }
+
+     
+}
