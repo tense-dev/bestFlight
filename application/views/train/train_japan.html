@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<?php $this->load->helper('url');?>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Martine</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+</head>
+<style>
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .card-block {
+        margin-bottom: 15px;
+    }
+</style>
+
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
+
+
+    <div class="container" ng-controller="train_japan">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xl-12">
+                <section class="mt-5">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn">เจอาร์ เรลพาส <span class="text-fix-best-deep"></span></h2>
+                                <p class="text-dark">เจอาร์ เรลพาส (JR Rail Pass หรือ Japan Rail Pass) เสนอความสะดวกที่มีค่ายิ่งสำหรับนักท่องเที่ยวจากต่างแดนในการใช้คูปองรถไฟท่องเที่ยวโดยไม่จำกัดระยะทางใช้ได้ทั้งโดยรถไฟเจอาร์ รถบัส หรือเรือเฟอรี่ที่เป็นของเจอาร์ รวมถึงรถไฟฟ้าด่วนพิเศษชินคันเซนด้วย
+                                    (ยกเว้นขบวน Nozomi ซึ่งแล่นระหว่าง Tokyo Shin Osaka และ Fukuoka สาย Tokaido และ Sanyo และรถไฟใต้ดินตามเมืองต่างๆ)</p>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ประเภทของ JR Rail Pass </h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters p-0 border-0 bg-tranparent">
+                                            <div class="col-md-4">
+                                                <img src="<?php echo base_url(); ?>img/train/ordinary.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12">
+                                                        <div class="cardtitle">
+                                                            <h4 class="text-thai text-fix-best-blue font-weight-bold">Ordinary Class</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">Ordinary Class (สำหรับชั้น Tourist Class)</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters p-0 border-0 bg-tranparent">
+                                            <div class="col-md-4">
+                                                <img src="<?php echo base_url(); ?>img/train/Green.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12">
+                                                        <div class="cardtitle">
+                                                            <h4 class="text-thai text-fix-best-blue font-weight-bold">Green Class</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">Green Class (สำหรับชั้น First Class Green Car)</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">เส้นทาง JR Rail Pass</h2>
+                            </div>
+
+                            <div class="row" ng-repeat="objpmt in lsttrainjapan">
+                                <div class="col-xl-12 mb-3">
+
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters p-0 border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/{{objpmt.ImagePath}}" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12">
+                                                        <div class="cardtitle">
+                                                            <h4 class="text-thai text-fix-best-blue font-weight-bold">{{objpmt.Name}}</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">{{objpmt.Description}}</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 mb-3 mt-3">
+                                                <div class="card-block px-2">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead class="tablebackgroud">
+                                                                <tr>
+                                                                    <th class="text-center" width="200">ประเภทตั๋ว</th>
+                                                                    <th class="text-center" width="150">ระยะเวลา</th>
+                                                                    <th class="text-center">ผู้ใหญ่</th>
+                                                                    <th class="text-center">เด็ก (6-11 ปี) </th>
+                                                                    <th class="text-center"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody ng-repeat="x in objpmt.details">
+                                                                <tr>
+                                                                    <td align="middle" width="150" rowspan="10"><b>{{x.ticket}}</b></td>
+                                                                    <td align="middle" width="150">{{x.duration}}</td>
+                                                                    <td width="150" class="text-center">{{x.Adult | number}} เยน</td>
+                                                                    <td width="150" class="text-center">{{x.Child | number}} เยน</td>
+                                                                    <td width="80" class="text-center"> <a href="<?php echo base_url(); ?>contact/booking/Japan{{x.ticket}}{{x.duration}}" class="btn btn-sm btn-success">จองเลย</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="text-dark">หมายเหตุ : เด็กอายุต่ำกว่า 6 ปี สามารถเดินทางฟรีเมื่อไม่ต้องการที่นั่งหรือที่นอนส่วนตัว</p>
+                                                        <p class="" style="color:red;">*ราคาอาจมีการเปลี่ยนแปลงได้ โดยไม่แจ้งให้ทราบล่วงหน้า</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+</body>
+
+</html>

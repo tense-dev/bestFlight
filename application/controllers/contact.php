@@ -7,6 +7,12 @@ class contact extends CI_Controller {
         //$this->load->view('home/single-blog.html');
     }
 
+    public function booking(){
+        $dataid['booking'] = $this->uri->segment(3);
+        $this->load->view('home/contact.html');
+        //$this->load->view('home/single-blog.html');
+    }
+
     public function send(){
         //$this->load->view('home/test.html');
         //$this->load->view('home/single-blog.html');

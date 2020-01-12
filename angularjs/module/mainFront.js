@@ -284,6 +284,7 @@ app.controller('mainticketplan', ($scope, $http) => {
     $scope.getListticketplane();
 });
 
+
 app.controller('mainticketplan_details', ($scope, $http) => {
     $scope.getlistticketplan_details = (ticketplane_id) => {
         $http({
@@ -302,7 +303,6 @@ app.controller('mainticketplan_details', ($scope, $http) => {
             const myArray = Object.keys(groups).map(function(key) {
                 return { rowlength: datares.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
             });
-            console.log(myArray);
             $scope.lstticketplan_details = myArray;
         });
     }
@@ -331,4 +331,63 @@ app.controller('mainticketplan_details', ($scope, $http) => {
 
     //$scope.getlistticketplan_detailsbymenu();
     $scope.getlistticketplan_details();
+});
+
+
+
+/* รถไฟ ๆ  ๆ ๆ  ๆ ๆ */
+
+app.controller('train_japan', ($scope, $http) => {
+
+
+    const data = "";
+    $scope.getListtrainJapan = () => {
+        $http({
+            method: 'GET',
+            url: configapp.baseUrl + 'train/getListtrainJapan',
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            if (datares.length > 0) {
+                $scope.getListtrain_details_Japan(datares);
+            }
+        });
+    }
+
+    $scope.getListtrain_details_Japan = (res) => {
+        if (res.length > 0) {
+            const datas = [];
+            for (var i = 0; i < res.length; i++) {
+                const row = i;
+                const dataheader = res[i];
+                const data_new = {
+                    'Code': dataheader.Code,
+                    'Description': dataheader.Description,
+                    'ImagePath': dataheader.ImagePath,
+                    'Name': dataheader.Name,
+                    'region': dataheader.region,
+                };
+                datas.push(data_new);
+
+                $http({
+                    method: 'POST',
+                    url: configapp.baseUrl + 'train/getListtrain_details_Japan',
+                    data: JSON.stringify({ train_oid: dataheader.ObjectID }),
+                    headers: { 'Content-Type': undefined },
+                }).then(successCallback = (response) => {
+                    const dataresx = response.data;
+                    datas[row].details = dataresx;
+
+                });
+            }
+            console.log(datas);
+            $scope.lsttrainjapan = datas;
+        }
+    }
+
+
+
+
+    //$scope.getlistticketplan_detailsbymenu();
+    $scope.getListtrainJapan();
 });

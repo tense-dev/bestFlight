@@ -1,77 +1,73 @@
 <!doctype html>
 <html lang="en">
 
+<?php $this->load->helper('url');?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Martine</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="<?php echo base_url(); ?>img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/select2.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/select2.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.carousel.min.css">
     <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/themify-icons.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
     <!-- fontawesome CSS -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>fontawesome/css/all.min.css">
     <!-- magnific CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/gijgo.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/gijgo.min.css">
     <!-- niceselect CSS -->
-    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
     <!-- slick CSS -->
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/validate.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/validate.css">
     <style>
         .contact-section {
             padding: 20px 0 100px;
         }
+        
         .page-title-container {
             height: 86px;
             padding-top: 20px;
             padding-bottom: 20px;
         }
+        
         .page-title-container {
             height: 56px;
             background: #f15c14;
         }
+        
         .pull-right {
-    float: right!important;
-}
+            float: right!important;
+        }
     </style>
 </head>
+
 <body>
-  
-    <?php $this->load->view('components/header.html'); ?> 
-    <?php $this->load->view('components/callout.html'); ?> 
+
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
     <!-- breadcrumb start-->
-   
-    
-    <section class="breadcrumb">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                        <div class="text-center ">
-                               <p class="text-left text-white">ติดต่อเรา</p>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
     <!-- breadcrumb start-->
 
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
         <div class="container">
-           
+
             <div class="row">
                 <div class="col-12">
                     <h2 class="contact-title">แบบฟอร์มการจองและติดต่อ กรุณากรอกข้อมูลที่ถูกต้องครบถ้วน เพื่อการตอบกลับที่รวดเร็ว</h2>
@@ -79,7 +75,7 @@
                 <div class="col-lg-7">
                     <form class="form-contact" id="contactform" action="contact/send" method="post" id="contactForm">
                         <div class="row">
-                           
+
                             <div class="col-sm-6">
                                 <label class="control-label">ชื่อผู้ติดต่อ <span class="required">*</span></label>
                                 <div class="form-group">
@@ -93,7 +89,7 @@
                                     <input class="form-control" required name="contact_lastname" id="contact_lastname" type="text" placeholder="นามสกุล">
                                 </div>
                             </div>
-                           
+
                             <div class="col-sm-6">
                                 <label class="control-label">เบอร์โทรศัพท์ <span class="required">*</span></label>
                                 <div class="form-group">
@@ -103,7 +99,7 @@
                             <div class="col-sm-6">
                                 <label class="control-label">เบอร์มือถือ</label>
                                 <div class="form-group">
-                                    <input class="form-control"  name="contact_mobile" id="contact_mobile" type="text" placeholder="เบอร์มือถือ">
+                                    <input class="form-control" name="contact_mobile" id="contact_mobile" type="text" placeholder="เบอร์มือถือ">
                                 </div>
                             </div>
 
@@ -321,7 +317,7 @@
                                 </div>
                             </div>
 
-                            
+
                             <div class="col-sm-6">
                                 <label class="control-label">ที่อยู่ <span class="required">*</span></label>
                                 <div class="form-group">
@@ -349,54 +345,53 @@
                     </form>
                 </div>
                 <div class="col-lg-5">
-                        <img src="upload/map.jpg">
+                    <img src="<?php echo base_url(); ?>upload/map.jpg">
                 </div>
-                
+
             </div>
         </div>
     </section>
     <!-- ================ contact section end ================= -->
 
-    
+
 
     <!--::industries end::-->
 
     <!-- footer part start-->
-  
-    <?php $this->load->view('components/footer.html'); ?> 
+
+    <?php $this->load->view('components/footer.html'); ?>
     <!-- footer part end-->
 
 
-    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/masonry.pkgd.js"></script>
-    <script src="js/select2.min.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="angularjs/module/mainFront.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/select2.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
     <script>
         $(document).ready(function() {
             $('.select2').select2();
 
-            $("#contactform").on("submit",function(){
+            $("#contactform").on("submit", function() {
                 var form = $(this)[0];
                 if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
+                    event.preventDefault();
+                    event.stopPropagation();
                 }
-            });     
-            
+            });
+
         });
-        
     </script>
 </body>
 

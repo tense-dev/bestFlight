@@ -1,0 +1,72 @@
+<style>
+    .banner_partx {
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .carousel-item {
+        height: 350px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    .carousel-caption {
+        position: absolute;
+        right: 15%;
+        top: 80px;
+        left: 15%;
+        z-index: 10;
+        /* padding-top: 20px; */
+        padding-bottom: 20px;
+        color: #fff;
+        text-align: center;
+    }
+    
+    .lead {
+        color: #ffffff;
+        font-size: 70px;
+    }
+    
+    .textheader {
+        font-size: 70px;
+    }
+</style>
+
+<section class="banner_partx">
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item active" style="background-image: url('<?php echo base_url(); ?>img/banner_bg.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="text-uppercase text-white textheader">Best Flight Travel</h3>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('<?php echo base_url(); ?>img/event_bg.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="text-uppercase text-white textheader">Best Flight Travel</h3>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+</section>
