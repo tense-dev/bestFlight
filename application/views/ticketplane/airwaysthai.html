@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<?php $this->load->helper('url');?>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Martine</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+</head>
+<style>
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .card-block {
+        margin-bottom: 15px;
+    }
+</style>
+
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center ">
+                        <p class="text-left text-white">ตั๋วเครื่องบิน / ตั๋วเครื่องบินโปรโมชั่นการบินไทย </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xl-12">
+                <section class="mt-5">
+                    <div class="row ">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3 animated zoomIn">
+                                <h2 class="text-fix-best-blue mb-0 text-thai">ตั๋วเครื่องบินไปกลับ โปรโมชั่นการบินไทย <span class="text-fix-best-deep">ราคาถูก</span></h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row " ng-controller="mainticketplan_details">
+                        <div class="col-xl-12 mb-3" ng-init="getlistticketplan_detailsbymenu(2)">
+                            <table class="table table-bordered  shadow rounded-0">
+                                <thead class="tablebackgroud">
+                                    <tr>
+                                        <th class="text-center">จาก</th>
+                                        <th class="text-center">ถึง</th>
+                                        <th class="text-center">ราคา</th>
+                                        <th class="text-center">สายการบิน</th>
+                                        <th class="text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="objpmt in lstticketplan_detailsbymenu">
+                                    <tr>
+                                        <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowlength}}">กรุงเทพฯ (BKK)</td>
+                                        <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowgrouplength}}">{{objpmt.groupname}}</td>
+                                        <td class="text-center">{{objpmt.listgroup[0].ticket_price}}</td>
+                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>img/image_airline/{{objpmt.listgroup[0].airplan_icon}}" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
+                                    </tr>
+
+                                    <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                        <td class="text-center">{{v.ticket_price}}</td>
+                                        <td class="text-center" style="width:200px;"> <img src="<?php echo base_url(); ?>img/image_airline/{{v.airplan_icon}}" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+</body>
+
+</html>

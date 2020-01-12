@@ -11,6 +11,7 @@ class Mod_ticketplane extends CI_Model {
     public $Visible;
     public $Description;
     public $ImagePath;
+    public $ticketplanemenu_id;
     public function DatatoObj($data)
     {
     $this->ticketplane_oid=$data->ticketplane_oid;
@@ -20,6 +21,7 @@ class Mod_ticketplane extends CI_Model {
     $this->Visible=$data->Visible;
     $this->Description=$data->Description;
     $this->ImagePath=$data->ImagePath;
+    $this->ticketplanemenu_id=$data->ticketplanemenu_id;
     }
     
     public function ObjData()
@@ -32,6 +34,7 @@ class Mod_ticketplane extends CI_Model {
     'Visible'=>$this->Visible,
     'Description'=>$this->Description,
     'ImagePath'=>$this->ImagePath,
+    'ticketplanemenu_id'=>$this->ticketplanemenu_id,
     );
     return $obj;
     }

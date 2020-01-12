@@ -306,5 +306,29 @@ app.controller('mainticketplan_details', ($scope, $http) => {
             $scope.lstticketplan_details = myArray;
         });
     }
+
+    $scope.getlistticketplan_detailsbymenu = (ticketplanmenu_id) => {
+        if (ticketplanmenu_id > 0) {
+            $http({
+                method: 'POST',
+                url: configapp.baseUrl + 'ticketplane/getListticketplane_details_bymenuid',
+                data: JSON.stringify({ ticketplanmenu_id: ticketplanmenu_id }),
+                headers: { 'Content-Type': undefined },
+            }).then(successCallback = (response) => {
+                var datares = response.data;
+                const groups = datares.reduce(function(obj, item) {
+                    obj[item.ticket_to] = obj[item.ticket_to] || [];
+                    obj[item.ticket_to].push(item);
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: datares.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.lstticketplan_detailsbymenu = myArray;
+            });
+        }
+    }
+
+    //$scope.getlistticketplan_detailsbymenu();
     $scope.getlistticketplan_details();
 });

@@ -59,8 +59,8 @@
                 <section class="mt-5">
                     <div class="row ">
                         <div class="col-xl-12">
-                            <div class="section_tittle mb-3">
-                                <h2 class="text-fix-best-blue mb-0 text-thai">ตั๋วเครื่องบิน <span class="text-fix-best-deep">ราคาถูก</span></h2>
+                            <div class="section_tittle mb-3 animated zoomIn">
+                                <h2 class="text-fix-best-blue mb-0 text-thai">ตั๋วเครื่องบินไปกลับ <span class="text-fix-best-deep">ราคาถูก</span></h2>
                             </div>
                         </div>
                     </div>
@@ -106,13 +106,13 @@
                                         <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowlength}}">กรุงเทพฯ (BKK)</td>
                                         <td style="vertical-align : middle;text-align:center;" class="text-center w-15" rowspan="{{objpmt.rowgrouplength}}">{{objpmt.groupname}}</td>
                                         <td class="text-center">{{objpmt.listgroup[0].ticket_price}}</td>
-                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>img/image_airline/{{objpmt.listgroup[0].airplan_icon}}" class="img" width="80" height="25" alt=""></td>
                                         <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
                                     </tr>
 
                                     <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
                                         <td class="text-center">{{v.ticket_price}}</td>
-                                        <td class="text-center w-15"> <img src="<?php echo base_url(); ?>upload/japan.jpg" class="img" width="80" height="25" alt=""></td>
+                                        <td class="text-center" style="width:200px;"> <img src="<?php echo base_url(); ?>img/image_airline/{{v.airplan_icon}}" class="img" width="80" height="25" alt=""></td>
                                         <td class="text-center w-15"> <a href="<?php echo base_url(); ?>contact" class="btn btn-sm btn-orange">จอง</a></td>
                                     </tr>
 
