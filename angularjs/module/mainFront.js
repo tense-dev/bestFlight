@@ -384,10 +384,87 @@ app.controller('train_japan', ($scope, $http) => {
             $scope.lsttrainjapan = datas;
         }
     }
-
-
-
-
-    //$scope.getlistticketplan_detailsbymenu();
     $scope.getListtrainJapan();
+});
+
+app.controller('train_euroup', ($scope, $http) => {
+
+    //Eurail Global Pass
+    $scope.getListtrain_euroup_egp = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+            data: JSON.stringify({ train_code: 'EGP' }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            $scope.lst_egp = datares;
+        });
+    }
+    $scope.getListtrain_euroup_egp();
+    ////Eurail Global Pass
+    $scope.getListtrain_euroup_egp = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+            data: JSON.stringify({ train_code: 'ERP' }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            $scope.lst_erp = datares;
+        });
+    }
+
+    $scope.getListtrain_euroup_egp = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+            data: JSON.stringify({ train_code: 'EGP' }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            $scope.lst_egp = datares;
+        });
+    }
+
+
+    //Eurail One Country Pass
+    $scope.getListtrain_euroup_eocp = () => {
+            $http({
+                method: 'POST',
+                url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+                data: JSON.stringify({ train_code: 'EOCP' }),
+                headers: { 'Content-Type': undefined },
+            }).then(successCallback = (response) => {
+                const datares = response.data;
+                $scope.lst_eocp = datares;
+            });
+        }
+        //Other Regional Pass
+
+    $scope.getListtrain_euroup_orp = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+            data: JSON.stringify({ train_code: 'ORP' }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            $scope.lst_orp = datares;
+        });
+    }
+
+    //Other National Pass
+    $scope.getListtrain_euroup_onp = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'train/getListtrain_details_euroup',
+            data: JSON.stringify({ train_code: 'ONP' }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            $scope.lst_opn = datares;
+        });
+    }
+
 });
