@@ -44,5 +44,17 @@ return $obj;
         $result = $query->result();          
         return $result;      
     }
+
+    public function getListtrainJEurope(){
+        $this->db->select('*');       
+        $this->db->from('train');  
+        $this->db->where('Visible',1);
+        $this->db->where('region','Europe');
+       // $this->db->where('Code',$train_code);
+        $query = $this->db->get();
+        $result = $query->result();          
+        return $result;      
+    }
+
    
 }

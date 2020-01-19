@@ -12,12 +12,19 @@ class train extends CI_Controller {
     public function train_europe(){
         $this->load->view('train/train_europe.html');
     }
+    public function details(){
+        $dataid['dataid'] = $this->uri->segment(3);
+        $this->load->view('train/train_europe_details.html',$dataid);
+    }
+
+
     //JAPAN
     public function getListtrainJapan(){//--
         $this->load->model('Mod_train');
         $dataresult = $this->Mod_train->getListtrainJapan();
         echo json_encode($dataresult);
     }
+    
     public function getListtrain_details_Japan(){//--
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);
@@ -27,31 +34,46 @@ class train extends CI_Controller {
         echo json_encode($dataresult);
     }
     //EUROUPPPPPPP
-    public function getListtrain_details_euroup(){//--
-        $postdata = file_get_contents("php://input");
-        $request = json_decode($postdata);
-        $train_code = $request->train_code;
-        $this->load->model('Mod_train_details_euroup');
-        $dataresult = $this->Mod_train_details_euroup->getListtrain_details_euroup($train_code);
+    public function getListtrainJEurope(){//--
+        $this->load->model('Mod_train');
+        $dataresult = $this->Mod_train->getListtrainJEurope();
         echo json_encode($dataresult);
     }
 
-    public function getListtrain_details_euroup_GroupCountry(){//--
+    public function getListtrain_details(){//--
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);
-        $train_code = $request->train_code;
-        $this->load->model('Mod_train_details_euroup');
-        $dataresult = $this->Mod_train_details_euroup->getListtrain_details_euroup_GroupCountry($train_code);
+        $train_id = $request->train_id;
+        $this->load->model('Mod_train_details');
+        $dataresult = $this->Mod_train_details->getListtrain_details($train_id);
+        echo json_encode($dataresult);
+    }
+    public function getListtrain_details_bytrainid(){//--
+        $postdata = file_get_contents("php://input");
+        $request = json_decode($postdata);
+        $train_id = $request->train_id;
+        $this->load->model('Mod_train_details');
+        $dataresult = $this->Mod_train_details->getListtrain_details_bytrainid($train_id);
         echo json_encode($dataresult);
     }
 
-    public function getListtrain_details_euroup_byCountry(){//--
+
+    public function getListtrain_details_euroup_Group(){//--
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);
-        $train_code = $request->train_code;
-        $Country = $request->Country;
-        $this->load->model('Mod_train_details_euroup');
-        $dataresult = $this->Mod_train_details_euroup->getListtrain_details_euroup_byCountry($train_code,$Country);
+        $train_id = $request->train_id;
+        $this->load->model('Mod_train_details');
+        $dataresult = $this->Mod_train_details->getListtrain_details_euroup_Group($train_id);
+        echo json_encode($dataresult);
+    }
+
+    public function getListtrain_details_euroup_bygroup(){//--
+        $postdata = file_get_contents("php://input");
+        $request = json_decode($postdata);
+        $train_id = $request->train_id;
+        $Group = $request->Group;
+        $this->load->model('Mod_train_details');
+        $dataresult = $this->Mod_train_details->getListtrain_details_byGroup($train_id,$Group);
         echo json_encode($dataresult);
     }
 

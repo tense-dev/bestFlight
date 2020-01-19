@@ -7054,3 +7054,47 @@ h6 {
 .tablebackgroud th {
     padding: 5px !important;
 }
+
+.table thead th {
+    vertical-align: inherit !important;
+}
+
+th {
+    text-align: center;
+    background: #1c49b9 !important;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(217, 217, 217);
+}
+
+.table-blue {
+    width: 100% !important;
+    font-size: 16px !important;
+}
+
+tr th p {
+    font-size: 15px !important;
+    color: #ffffff !important;
+    font-weight: 400 !important;
+}
+
+tr th {
+    font-size: 15px !important;
+    color: #ffffff !important;
+    font-weight: 400 !important;
+}
+
+tr td {
+    font-size: 14px !important;
+}
+
+tr th span {
+    font-size: 15px !important;
+    color: #ffffff !important;
+    font-weight: 400 !important;
+}
+
+tr td span {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #000 !important;
+}

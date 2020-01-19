@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+
+<?php $this->load->helper('url');?>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Martine</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+</head>
+<style>
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .card-block {
+        margin-bottom: 15px;
+    }
+    
+    .inline-group {
+        display: -webkit-inline-box;
+    }
+    
+    .iconsize {
+        font-size: 16px !important;
+    }
+    
+    .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #f15c14;
+        border-color: #f15c14;
+    }
+    
+    .list-group-item:hover {
+        z-index: 2;
+        color: #fff;
+        background-color: #f15c14;
+        border-color: #f15c14;
+    }
+</style>
+
+<body ng-app="mainFront" ng-controller="train_euroup_detail">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xl-12">
+                <section class="mt-5">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+
+                            <?php if($dataid == 12){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Eurail Global Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe01.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">
+                                                            บัตร Eurail Global Pass เป็นบัตรโดยสารสำหรับการเดินทางโดยรถไฟ โดยไม่จำกัดระยะทาง แต่การโดยสารรถไฟด่วนพิเศษ จำเป็นต้องสำรองที่นั่งล่วงหน้าพร้อมกับชำระค่าธรรมเนียม เนื่องจากค่าใช้จ่ายในส่วนนี้ไม่รวมอยู่ในบัตรโดยสาร
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            บัตร Eurail Global Pass สามารถใช้เดินทางได้ 20 ประเทศทั่วยุโรป ได้แก่ ออสเตรีย, กรีซ, นอร์เวย์, เบลเยี่ยม, ฮังการี, โปรตุเกส, เดนมาร์ก, ไอร์แลนด์, โรมาเนีย, ฟินแลนด์, อิตาลี, สเปน, ฝรั่งเศส, ลักเซมเบอร์ก, สวีเดน, เยอรมัน, เนเธอร์แลนด์, สวิตเซอร์แลนด์,
+                                                            โครเอเทีย และ สโลเวเนีย คือประเทศใหม่ที่เพิ่งเพื่อเข้ามาสำหรับปีนี้ นอกจากนี้บัตรยูเรลยังถือว่า ลิกเทนสไตน์เป็นส่วนหนึ่งของออสเตรียและโมนาโกเป็นส่วนหนึ่งของฝรั่งเศสด้วย
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12">
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรยูเรลโกลบัสพาส สามารถใช้สำหรับการเดินทางด้วยเรือโดยสารสายสำคัญบางสาย</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">เป็นบัตรชั้น 1 (บัตรชั้น 2 เป็นบัตรสำหร้บเยาวชนเท่านั้น)</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรโดยสารชนิดนับวันเดินทางต่อเนื่อง เหมาะสำหรับการเดินทางระยะยาว บัตรมีอายุ 15 วัน, 21 วัน, 1 เดือน, 2 เดือน, 3 เดือน</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรโดยสารชนิดนับวันเฉพาะวันที่ใช้เดินทางโดยอิสระบัตรมีอายุ 10 หรือ 15 วัน ใช้ได้ภายใน 2 เดือน ซึ่งวันเดินทางอาจต่อเนื่องหรือไม่ต่อเนื่องก็ได้</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรโดยสารราคาประหยัด สำหรับเดินทาง สำหรับผู้โดยสาร 2-5 ท่านที่เดินทางด้วยกันตลอดเวลา</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">ประเภทของรถไฟ ที่สามารถใช้โดยสารด้วยบัตร Eurail Global Pass ได้</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">บัตรโดยสารราคาประหยัด สำหรับเดินทาง สำหรับผู้โดยสาร 2-5 ท่านที่เดินทางด้วยกันตลอดเวลา</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">ประเภทของรถไฟ ที่จำเป็นต้องสำรองที่นั่งล่วงหน้าและมีค่าใช้จ่ายเพิ่มเติม</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">รถไฟด่วน TGV ครอบคลุมในฝรั่งเศสหรือประเทศใกล้เคียง, รถไฟชมวิว Panoramic Train ในประเทศสวิตเซอร์แลนด์, รถไฟด่วนในประเทศสวิตเซอร์แลนด์, รถไฟด่วนในประเทศอิตาลี E* และรถไฟด่วน Cisalpino</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">ประเภทของรถไฟด่วนที่ต้องจ่ายอัตราค่าโดยสารต่างหาก</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">Eurostar, Thalys, AVE, Talgo 200, Talgo Day, Geneva Mad, TGV Lyria, Bruxelles-France TGV, Berlin-Warswazawa Express, Artersia, Day & Night, Paris-Germany Night, CityNightLine, Lusitania,
+                                                                    Elipsos
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-12 mb-3 mt-3">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p class="text-dark">
+                                                                หมายเหตุ : สำหรับผู้ที่ถือตั๋วยูเรลโกบัลพาส ขอมอบสิทธิประโยชน์และโบนัสต่างๆ ซึ่งท่านสามารถดูรายละเอียดได้จากปกตั๋วและกรอกข้อมูลต่างๆ โดยละเอียดและส่งไปรษณีย์มาตามที่อยู่มี่ระบุไว้เพียงเท่านี้ท่านก็ จะได้รับของที่ระลึกอันสวยเก๋และสุดแสนประทับใจ
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Eurail Global Pass</h2>
+                            </div>
+
+                            <?php }?>
+                            <?php if($dataid == 13){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Eurail Select Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe02.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">
+                                                            บัตร Eurail Select Pass เป็นบัตรโดยสารที่ใช้เดินทางโดยรถไฟโดยไม่จำกัดระยะทางได้ 3 หรือ 4 ประเทศ แต่ละประเทศจะต้องมีพรมแดนติดต่อเชื่อมโยงกัน และต้องเป็นประเทศที่มีเครืองข่ายใน กลุ่มประเทศยูเรล ซึ่งมี 23 ประเทศ ดังต่อไปนี้ ออสเตรีย(รวมทั้งลิกเทนสไตน์) บัลแกเรีย/มอนเตนิโกร/เซอร์เบีย,
+                                                            เบลเยี่ยม, โครเอเทีย, เดนมาร์ก, ฟินแลนด์, ฝรั่งเศส(รวมทั้งโมนาโก), เยอรมัน, กรีซ, ฮังการี, ไอร์แลนด์, อิตาลี, ลักเซมเบอร์ก, เนเธอร์แลนด์, นอร์เวย์, โปรตุเกส, โรมาเนีย, สโลเวเนีย, สเปน, สวีเดน
+                                                            และสวิตเซอร์แลนด์ สำหรับผู้โดยสารที่ต้องการเดินทางในประเทศเบลเยี่ยม เนเธอร์แลนด์ และลักเซมเบอร์ก 3 ประเทศนี้ถือเป็น 1 ประเทศ เรียกว่า Benelux
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            เส้นทางรถไฟบางสายอาจแล่นผ่านประเทศที่มิได้อยู่ในขอบเขตของการใช้บัตร ในกรณีนี้ผู้โดยสารจำเป็นต้องซื้อบัตรเพิ่มเติมต่างหากด้วย วันเดินทางอาจต่อเนื่องหรือไม่ต่อเนื่องก็ได้
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">เงื่อนไขการใช้บัตร</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ผู้โดยสารต้องนำบัตรมาผ่านการอนุมัติใช้ก่อนการเดินทางโดยรถไฟเที่ยวแรก หรือการใช้โบนัสกับเจ้าหน้าที่การรถไฟยุโรป (สถานีรถไฟ) และในการขออนุมัติใช้ตั๋วรถไฟ
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ผู้โดยสารจะต้องกรอกวันที่เดินทางให้ถูกต้องในช่องปฏิทินการเดินทาง ที่แสดงอยู่บนบัตรก่อนการเดินทางโดยรถไฟเที่ยวแรก และจะต้องกรอกเบอร์พาสปอร์ตที่ระบุบนบัตรด้วย (กรุณาอ่านรายละเอียดจากปกบัตรโดยสาร)
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">หมายเหตุ</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">บัตรโดยสารที่รวมถึงประเทศฟินแลนด์และสวีเดน อนุญาตให้ใช้บัตรร่วมกับการโดยสารเรือของบริษัท ซิลล ญ่า ที่แล่นออกจากท่าเรือ สต็อคโฮม ไปยัง เทอร์กุ หรือ เฮลซินกิ บัตรโดยสารที่รวมประเทศกรีซและอิตาลี
+                                                                    ท่านสามารถเลือกโดยสารกับเรือท่องเที่ยวระหว่างกรีซไปยังอิตาลี ซึ่งบริษัทเดินเรือที่ให้บริการก็คือ เรือข้ามฝาก บรู สตาร์, เรือข้ามฟาก มิเนาอัน ส่วนการใช้บัตรโดยสารเรือเดินทางในประเทศฟินแลนด์หรือนอร์เวย์
+                                                                    ขณะนั้นยังมิได้พิจารณาว่าจะให้เข้าร่วมเดินทางโดยรถไฟหรือโดยสารเรือ ในปีนี้มีประเทศที่เพิ่มเข้ามาคือ Croatia และ Slovenia
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Eurail Select Pass</h2>
+                            </div>
+
+                            <?php }?>
+
+                            <?php if($dataid == 14){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Eurail Regional Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe03.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">
+                                                            บัตร Eurail Select Pass เป็นบัตรโดยสารที่ใช้สำหรับการเดินทางโดยรถไฟในเครือข่ายของการรถไฟที่มีพรมแดนติดกัน 2 ประเทศ โดยไม่จำกัดระยะทาง วันเดินทางจะต่อเนื่องหรือไม่ต่อเนื่องก็ได้ เหมาะสำหรับท่านที่มีเวลาชื่นชมทัศนียภาพของประเทศนั้นๆ แบบมีเวลาจำกัด และในปีนี้ท่านสามารถเลือกซื้อบัตรโดยสารรถไฟแบบ
+                                                            2 ประเทศ วันเดินทางนั้นเริ่มต้น 4 วัน ไปจนถึง 10 วัน ภายใน 2 เดือน
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            เด็กอายุ 4-11 ปี วันแรกของการเดินทาง : ชำระครึ่งราคา *ไม่รวมค่าออกบัตร
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            เด็กอายุ 3 ขวบหรือต่ำกว่า วันแรกของการเดินทาง : ฟรีโดยใช้ที่นั่งร่วมกับผู้ใหญ่
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Eurail Regional Pass</h2>
+                            </div>
+
+                            <?php }?>
+
+
+                            <?php if($dataid == 15){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Eurail One Country Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe04.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-fix-best-blue">
+                                                            Eurail Italy Pass / Eurail Spain Pass / Eurail Czech Republic Pass
+                                                        </p>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">เป็นบัตรโดยสารที่ใช้สำหรับการเดินทางโดยรถไฟในเครือข่ายของการรถไฟแห่งชาติของประเทศนั้นๆ โดยไม่จำกัดระยะทาง วันเดินทางอาจต่อเนื่องหรือไม่ตอเนื่องก็ได้ เหมาะอย่างยิ่งสำหรับท่านที่ต้องการค้นหาความมหัศจรรย์ของทุกเมืองเพียงประเทศหนึ่งประเทศเดียว</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรโดยสารสำหรับเดินทางในประเทศเดียว จำนวนวันเดินทางของแต่ละประเทศจะแตกต่างกันไปซึ่งท่านสามารถสอบถามรายละเอียดได้ที่ตัวแทนจำหน่ายบัตรโดยสารในประเทศของท่าน</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">บัตรโดยสารรถไฟแบบประเทศเดียว เช่น เบเนลักซ์ พาส, โครเอทีย พาส, ฟินแลนด์ พาส, เดนมาร์ก พาส, กรีซ พาส, ฮอล์แลนด์ พาส, ไอร์แลนด์ พาส, นอร์เวย์ พาส, โปแลนด์ พาส, โรมาเนีย และ สวิตเซอร์แลนด์</p>
+                                                        </div>
+                                                        <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                            <p class="text-dark">สำหรับราคาบัตรโดยสารนั้น มีให้เลือกทั้งชั้น 1 และชั้น 2 จำนวนวันที่จะเลือกใช้บัตรนั้น ขึ้นอยู่กับผู้โดยสารว่ามีเวลาในการท่องเที่ยวในประเทศนั้นมากน้อยเพียงใด</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-12 mb-3">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12 pt-2">
+                                                            <p class="text-fix-best-blue">
+                                                                Eurail Scandinavia Pass
+                                                            </p>
+                                                            <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                <p class="text-dark">ใช้สำหรับการเดินทางโดยการรถไฟแห่งชาติเดนมาร์ก DSB ฟินแลนด์ (VR Ltd.) นอร์เวย์ (NSB) และสวีเดน (SJ)</p>
+                                                            </div>
+                                                            <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                <p class="text-dark">สามารถใช้ได้กับบริการเรือข้ามฟากภายในประเทศ (เดนมาร์ก) : Rodby (เดนมาร์ก) Puttgarden (เยอรมัน)</p>
+                                                            </div>
+                                                            <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                <p class="text-dark">สำหรับบัตร สแกนเรล พาส ผู้โดยสารสามารถเดินทางได้โดยไม่จำกัดระยะทาง ซึ่งวันเดินทางนั้นอาจต่อเนื่องหรือไม่ต่อเนื่องก็ได้</p>
+                                                            </div>
+                                                            <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                <p class="text-dark">บัตรโดยสารรถไฟสแกนเรล พาส สามารถนำมาใช้กับรถประจำทางสาย Lulea/Boden-Haparanda (ฟินแลนด์)</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Eurail One Country Pass
+                                </h2>
+                            </div>
+
+                            <?php }?>
+
+                            <?php if($dataid == 16){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Other Regional Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe04.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+
+                                                    <div class="col-md-12">
+                                                        <p class="text-fix-best-blue">European East Pass</p>
+                                                    </div>
+
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">
+                                                            ใช้สำหรับเดินทางโดยรถไฟในเครือข่ายของการรถไฟแห่งชาติโปแลนด์ สาธารณรัฐเชค สโลเวนีย ออสเตรีย และฮังการี โดยไม่จำกัดระยะทาง วันเดินทางอาจต่อเนื่องหรือไม่ต่อเนื่องก็ได้ และสามารถเลือกเดินทางโดยรถไฟแห่งชาติเยอรมัน ในเส้นทางคะฟสไตน์-ซาลส์บูร์ก
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            สิทธิประโยชน์สำหรับผู้ถือบัตร หากต้องการเดินทางไปกับขบวน Berlin Warszawa Express ท่านสามารถซื้อบัตรได้ในราคาพิเศษ
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">BritRail Pass</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ลักษณะบัตรมี 2 แบบ คือแบบต่อเนื่อง(ใช้เดินทางทุกวัน) แบบไม่ต่อเนื่อง(เดินทางแบบวันเว้นวัน) ใช้สำหรับการเดินทางโดยรถไฟในเครือข่ายของการรถไฟแห่งชาติของจักรภพอังกฤษ(อังกฤษ สก๊อตแลนด์ และเวลล์)
+                                                                    และสามารถใช้ร่วมเดินทางโดยรถไฟสายลอนดอนแอร์พอร์ต ได้แก่ Heathrow Express, Gatwick Express และ Stansted Sky Train
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">สิทธิประโยชน์สำหรับผู้ถือบัตร หากต้องการเดินทางไปกับขบวน Berlin Warszawa Express ท่านสามารถซื้อบัตรได้ในราคาพิเศษ
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">สิทธิพิเศษสำหรับผู้ถือบัตร</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ผู้โดยสารสามารถนำบัตรที่ถืออยู่นี้ ยื่นต่อเจ้าหน้าที่ เพื่อรับส่วนลดเมื่อท่านซื้อบัตรโดยสารของยูโรลสตาร์
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">บัตรปาร์ตี้พาส</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">สำหรับผู้โดยสารคนที่ 3 ถึง 9 ที่เดินทางด้วยกันตลอดเวลา จะได้รับส่วนลด 50% และส่วนลดนี้จะใช้สำหรับบัตรโดยสารผู้ใหญ่เท่านั้น ผู้ถือบัตรปาร์ตี้พาสจะต้องเดินทางร่วมกับผู้โดยสารที่ถือบัตรเต็มราคา
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ซึ่งส่วนลดที่ให้นั้น สำหรับผู้โดยสารที่เดินทางเป็นหมู่หรือคณะ โดนจะลดที่คนที่ 3 จนถึงคนที่ 9
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Other Regional Pass</h2>
+                            </div>
+                            <?php }?>
+
+                            <?php if($dataid == 17){ ?>
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">บัตรโดยสารรถไฟยุโรป Other National Pass</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters  border-0 bg-tranparent">
+                                            <div class="col-md-2">
+                                                <img src="<?php echo base_url(); ?>img/train/europe07.jpg" class="img" width="100%" height="170" alt="">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="card-block px-2">
+
+                                                    <div class="col-md-12">
+                                                        <p class="text-fix-best-blue">German Rail Pass</p>
+                                                    </div>
+
+                                                    <div class="col-md-12 pt-2">
+                                                        <p class="text-dark">
+                                                            ใช้สำหรับเดินทางโดยรถไฟสาย Deutsche Bahn (DB) ของการรถไฟแห่งชาติเยอรมันรวมถึงสาย Salzburg (ออสเตรีย) และ Basel Bad BF (สวิตเซอร์แลนด์) ไม่สามารถใช้ได้กับสาย DB Autozug และ DB Urlaubsexpress (UEx) แต่ถ้าผู้โดยสารต้องการเดินทางกับรถไฟด่วน ICE สำหรับบางขบวนแล้วท่านอาจจะต้องเสียค่าใช้จ่ายเพิ่มเติม
+                                                            ดังนั้นควรสอบถามรายละเอียดเพิ่มเติมที่ตัวแทนจำหน่ายในประเทศของท่านก่อนออกเดินทาง
+                                                        </p>
+                                                        <br>
+                                                        <p class="text-dark">
+                                                            ผู้ถือบัตรโดยสาร สามารถเดินทางโดยไม่จำกัดระยะทาง ซึ่งวันเดินทางอาจต่อเนื่องหรือไม่ต่อเนื่องก็ได้ วันเดินทางมีแบบ 4, 5, 6, 7, 8, 9 หรือ10 วัน ภายใน 1 เดือน
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">สิทธิประโยชน์
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        ผู้โดยสารที่ถือบัตรเยอรมันเรล พาส ท่านสามารถรับส่วนลดพิเศษ เมื่อเดินทางไปกับรถด่วนขนวน Berlin Warszawa Express, CityNightLine (ซึ่งวิ่งออกจากประเทศเยอรมนี) หรือออกจากปารีสไปยังเยอรมนีในเที่ยวกลางคืน</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        บัตรโดยสารเยอรมันเรล พาส ใช้เดินทางได้ทุกเมือง โดยไม่จำกัดระยะทาง ในประเทศเยอรมนี แต่หากการเดินทางของท่านนั้น ต้องใช้บริการของรถไฟด่วน ICE Sprinter ท่านจำเป็นจะต้องทำการสำรองที่นั่งล่วงหน้าและเสียค่าใช้จ่ายเพิ่มเติม สำหรับรถไฟด่วนบางขบวน ซึ่งท่านอาจไม่จำเป็นต้องสำรองที่นั่งล่วงหน้าหรือเสียค่าใช้จ่าย
+                                                                        เช่น InterCity (IC) หรือ EuroCity (EC)</p>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">France Rail Pass</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">ใช้สำหรับการเดินทางในเครือข่ายของการรถไฟแห่งชาติฝรั่งเศส โดยไม่จำกัดระยะทาง 3 วัน ภายใน 1 เดือน และผู้โดยสารสามารถเพิ่มจำนวนวันเดินทางได้ถึง 6 วัน ซึ่งการเดินทางนั้นเป็นแบบต่อเนื่องหรือไม่ต่อเนื่องก็ได้
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">สิทธิประโยชน์สำหรับผู้ถือบัตร ฟรานซเรล พาส ผู้โดยสารสามารถแสดงเพื่อเป็นส่วนลดในการเดินทางกับรถไฟด่วน เช่น Eurostar, Thalys, Artesia ขบวนกลางวัน และ กลางคืน, TGV Lyria, TGV Brussels-France,
+                                                                    Elipose, Geneva Med, TGV ที่วิ่งอยู่ในฝรั่งเศส Teoz และ Lunea หรืออาจนำไปร่วมใช้กับส่วนที่เป็นโบนัสพิเศษต่างๆ
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <p class="text-dark">กฏเกณฑ์สำหรับเด็ก : เด็กที่มีอายุ 4- 11 ปี ณ วันแรกของการเดินทาง ชำระครึ่งราคา ส่วนเด็กอายุต่ำกว่า 3 ปี ณ วันแรกของการเดินทาง : ฟรี โดยที่นั่งที่นอนใช้ร่วมกับผู้ใหญ่
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 pt-2">
+                                                <div class="card-block px-2">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-12">
+                                                                <p class="text-fix-best-blue">บัตรโดยสารสวิส ทรานสเฟอร์/สวิส การ์ด</p>
+                                                            </div>
+                                                            <div class="col-md-12">
+
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">สวิส ทรานสเฟอร์ ใช้สำหรับการเดินทางไปกลับระหว่างพรมแดนสวิวหรือสนามบินในสวิส กับจุดหมายปลายทางที่ต้องการ เหมาะสำหรับนักท่องเที่ยวที่เดินทางมาพำนัก ณ จุดเดียวในช่วงเวลาสั้นๆ การเดินทางแต่ละครั้งจะต้องสิ้นสุดภายในวันเดียว
+                                                                        โดยผู้โดยสารสามารถหยุดพักระหว่างการเดินทางได้
+                                                                    </p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        สวิส การ์ด เป็นบัตรที่ใช้เดินทางเที่ยวแรกและเที่ยวสุดท้ายได้ฟรี แต่การเดินทางในช่วงระหว่างนั้นจะใช้สวิส การ์ด เป็นส่วนลด 50% เมื่อซื้อบัตรโดยสารรถไฟ รถโพสต์บัส เรือ และรถไฟสู่ขึ้นยอดเขา เหมาะสำหรับผู้ที่ท่องเที่ยวอยู่เฉพาะในภูมิภาคเดียวและใช้ระบบขนส่งท้องถิ่นเท่านั้น</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">การเดินทางกับรถไฟสายกลาเชียร์ เอ็กซ์เพรส ต้องสำรองที่นั่งล่วงหน้าและต้องเสียค่าธรรมเนียมเพิ่ม ค่าธรรมเนียมจะแตกต่างกันขึ้นอยู่กับฤดูกาลและประเภทของรถไฟ ซึ่งท่านสามารถติดต่อสอบถามข้อมูลเพิ่มเติมได้ที่ตัวแทนจำหน่ายในประเทศของท่าน</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        ฟรี แฟมิลี่ การ์ด : เด็กอายุ 6-16 ปี เดินทางฟรีเมื่อมีบิดาหรือมารดาเดินทางด้วยเด็กเยาวชนที่เดินทางเองโดยไม่มีผู้ปกครองร่วมเดินทางด้วยจะได้รับส่วนลด 50% เมื่อซื้อ สวิส พาส, สวิส เฟล็กซี่ พาส และบัตรโดยสารสวิส ทรานสเฟอร์</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        ผู้มีสิทธิ์ซื้อบัตรโดยสารของสวิส แทรเวิล ซิสเต็ม ต้องไม่เป็นผู้ที่มีถิ่นพำนักอาศัยในสวิตเซอร์แลนด์และลิกเทนสไตน์ ไม่ต้องใช้รูปถ่าย ใช้เพียงพาสปอร์ตที่ยังมีอายุใช้งานเหลืออยู่หรือบัตรประจำตัวประชาชน</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        เซฟเวอร์ พาส : กำหนดผู้เดินทางร่วมกันสองคนขึ้นไป (อัตราเป็นรายบุคคล)</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2" style="color:green;"></i>
+                                                                    <p class="text-dark">
+                                                                        สวิส ยูธ พาส : สำหรับผู้เดินทางอายุไม่เกิน 26 ปี</p>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ราคาค่าบริการรถไฟยุโรป Other National Pass</h2>
+                            </div>
+                            <?php }?>
+
+
+
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="shadow rounded-0">
+                                        <div class="row no-gutters p-0 border-0 bg-tranparent">
+
+                                            <div class="col-md-12">
+                                                <div class="card-block px-2">
+                                                    <div class="row pt-2">
+                                                        <div class="col-md-2" ng-init="getListtrain_details_euroup_Group(<?php echo $dataid ?>)">
+                                                            <div class="list-group" role="tablist">
+                                                                <a style="cursor:pointer;" ng-repeat="item in list_group" ng-class="{'active': $first}" class="list-group-item text-center " class="list-group-item text-center" ng-click="getListtrain_details_euroup_bygroup('<?php echo $dataid?>',item.Group)" data-toggle="list"
+                                                                    role="tab" aria-controls="{{item.Group}}">{{item.Group}}</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-10" ng-repeat="x in listtrain_bygroup">
+                                                            <div class="col-md-12">
+                                                                <div class="table-responsive animated zoomIn" ng-bind-html="x.tag_html | trustAsHtml">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12" ng-if="x.note  != ''>
+                                                                <h4 class=" text-fix-best-blue ">หมายเหตุ</h4>
+                                                                <p class="text-dark " ng-bind-html="x.note | trustAsHtml ">
+                                                                </p>
+                                                            </div>
+
+                                                            <div class="col-md-12 pt-2 " ng-if="x.tag_Description !=''>
+                                                                <h4 class="text-fix-best-blue ">รายละเอียด</h4>
+                                                                <p class="text-dark " ng-bind-html="x.tag_Description | trustAsHtml ">
+                                                                </p>
+                                                            </div>
+
+                                                            <div class="col-md-12 pt-2 ">
+                                                                <h4 class="text-fix-best-blue ">เงื่อนไข</h4>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">ราคาสำหรับการซื้อตั๋วรถไฟ ระหว่างวันที่ 1 มกราคม - 31 ธันวาคม 2562</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">เด็กอายุระหว่าง 1-3 ปี สามารถเดินทางฟรีเมื่อไม่ต้องการที่นั่งหรือที่นอนส่วนตัว</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">เด็กอายุระหว่าง 4-11 ปี สามารถซื้อบัตรโดยสารได้ในอัตราครึ่งราคาของอัตราผู้ใหญ่ Saver : สำหรับบุคคล 2-5 คนที่เดินทางด้วยกันตลอดเวลา (ราคาต่อบุคคล)</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">Youth : สำหรับเยาวชนที่มีอายุระหว่าง 12-25 ปีเท่านั้น</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">การทำ Refund จะได้เงินคืน 85% ก็ต่อเมื่อตั๋วไม่มีการใช้ และต้องทำภายในระยะเวลา 1 ปี นับจากวันออกตั๋ว</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">กรณีตั๋วหายหรือถูกขโมยไม่สามารถทำการ Refund คืนได้</p>
+                                                                </div>
+                                                                <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
+                                                                    <p class="text-dark ">บุคคลที่ถิ่นฐานอยู่ในยุโรป สหราชอาณาจักร ตุรกี โมร็อคโค อัลจีเรีย ตูนีเซีย และรัสเซีย ไม่สามารถซื้อ หรือ ใช้ตั๋ว Eurail Global Pass ได้ (ยกเว้นมีหลักฐานยืนยันได้ว่ามีการเดินทางออกนอกประเทศดังกล่าวเป็นระยะเวลามากกว่า
+                                                                        6 เดือนจึงจะสามารถซื้อหรือใช้ตั๋วได้)</p>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+</body>
+
+</html </html
