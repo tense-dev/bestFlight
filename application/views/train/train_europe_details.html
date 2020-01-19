@@ -631,8 +631,7 @@
                                                     <div class="row pt-2">
                                                         <div class="col-md-2" ng-init="getListtrain_details_euroup_Group(<?php echo $dataid ?>)">
                                                             <div class="list-group" role="tablist">
-                                                                <a style="cursor:pointer;" ng-repeat="item in list_group" ng-class="{'active': $first}" class="list-group-item text-center " class="list-group-item text-center" ng-click="getListtrain_details_euroup_bygroup('<?php echo $dataid?>',item.Group)" data-toggle="list"
-                                                                    role="tab" aria-controls="{{item.Group}}">{{item.Group}}</a>
+                                                                <a style="cursor:pointer;" ng-repeat="item in list_group" ng-class="{'active': $first}" class="list-group-item text-center " ng-click="getListtrain_details_euroup_bygroup('<?php echo $dataid?>',item.Group)" data-toggle="list" role="tab" aria-controls="{{item.Group}}">{{item.Group}}</a>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-10" ng-repeat="x in listtrain_bygroup">

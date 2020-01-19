@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<?php $this->load->helper('url');?>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Martine</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+</head>
+<style>
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .card-block {
+        margin-bottom: 15px;
+    }
+    
+    .inline-group {
+        display: -webkit-inline-box;
+    }
+    
+    .fonticon {
+        font-size: 25px;
+    }
+    
+    tr td:nth-child(1) {
+        text-align: left;
+        width: 70%;
+    }
+    
+    tr td:nth-child(2) {
+        color: #f15c14;
+        font-weight: 600;
+        text-align: right;
+        width: 30%;
+    }
+    
+    tr td,
+    table tr th {
+        padding: 5px 0;
+        font-size: 16px !important;
+    }
+    
+    .sub-row {
+        padding-left: 15px;
+    }
+    
+    .highlight td {
+        background: #f7f7f7 !important;
+    }
+</style>
+
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
+
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn">โอเอซิสวีซ่า ประกันภัยการเดินทาง
+                                    <span class="text-fix-best-deep"></span></h2>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="row no-gutters p-0 border-0 bg-tranparent">
+                                    <div class="card-block px-2">
+                                        <div class="col-md-12">
+                                            <div class="cardtitle">
+                                                <h4 class="text-thai text-fix-best-blue font-weight-bold">
+                                                    ความคุ้มครองตามกรมธรรม์</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pt-2">
+                                            <div class="table-responsive">
+                                                <table class="ins-table" style="width: 100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>การสูญเสียชีวิต / อวัยวะจากอุบัติเหตุ</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sub-row">- ผู้เอาประกันที่มีอายุมากกว่า 16 ปี หรือน้อยกว่า 75 ปี<span class="benefit">2,000,000 บาท</span></td>
+                                                            <td>2,000,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sub-row">- ผู้เอาประกันที่มีอายุน้อยกว่า 16 ปี หรือมากกว่า 75 ปี<span class="benefit">1,000,000 บาท</span></td>
+                                                            <td>1,000,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ค่ารักษาพยาบาลในต่างประเทศ<span class="benefit">1,500,000 บาท</span></td>
+                                                            <td>1,500,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sub-row">- ค่ารักษาพยาบาลต่อเนื่องในประเทศไทย<span class="benefit">150,000 บาท</span></td>
+                                                            <td>150,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ความรับผิดชอบตามกฏหมายส่วนบุคคล<span class="benefit">1,000,000 บาท</span></td>
+                                                            <td>1,000,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>สัมภาระในการเดินทางสูญหาย/เสียหาย<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sub-row">- สิ่งของมีค่า<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sub-row">- ต่อสิ่งของหนึ่งชิ้น หนึ่งคู่ หรือหนึ่งชุด<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ค่าธรรมเนียมในการบอกเลิกการเดินทาง / การลดจำนวนวันเดินทาง<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>เงินพกติดตัวและเอกสารสูญหาย<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ความช่วยเหลือทางการแพทย์ / การส่งตัวกลับประเทศ<span class="benefit">2,000,000 บาท</span></td>
+                                                            <td>2,000,000 บาท</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ค่าพาหนะเดินทางเพิ่มเติมสำหรับญาติสนิทของผู้เอาประกันภัยหนึ่งท่าน หรือ ผู้ที่เดินทางมากับท่าน กรณีที่ท่านต้องถูกส่งตัวกลับประเทศ<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ค่าพาหนะเดินทางเพิ่มเติมสำหรับหนึ่งท่านซึ่งจะเป็นผู้เดินทางไปรับ และกลับมาพร้อมกับบุตรของท่าน เนื่องจากการส่งตัวกลับประเทศของท่าน<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ความล่าช้าของสัมภาระในการเดินทาง (สำหรับการล่าช้าทุกๆ 12 ชั่วโมง)<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>เที่ยวบินล่าช้า (สำหรับความล่าช้าทุกๆ 12 ชั่วโมง)<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>การพลาดต่อเที่ยวบิน (สำหรับทุกๆ 12 ชั่วโมง)<span class="benefit">-</span></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>การจำกัดอายุของผู้สมัคร<span class="benefit">กำหนดอายุต่ำสุดไม่ต่ำกว่า 6 เดือนและสูงสุดไม่เกิน 80 ปี</span></td>
+                                                            <td>กำหนดอายุต่ำสุดไม่ต่ำกว่า 6 เดือนและสูงสุดไม่เกิน 80 ปี</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ความเสียหายส่วนแรก<span class="benefit">ไม่มีค่าใช้จ่าย</span></td>
+                                                            <td>ไม่มีค่าใช้จ่าย</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="best_services  bg-best-low">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12">
+
+                            <div class="row">
+                                <div class="row no-gutters p-0 border-0 bg-tranparent">
+                                    <div class="card-block px-2">
+                                        <div class="col-md-12">
+                                            <div class="cardtitle">
+                                                <h4 class="text-thai text-fix-best-blue font-weight-bold">
+                                                    เงื่อนไขกรมธรรม์ประกันภัยการเดินทาง</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pt-2">
+                                            <p class="text-dark">1. เบี้ยประกันภัยรายปี ระยะเวลาความคุ้มครอง 1 ปี โดยการเดินทางแต่ละครั้งต่อเนื่องกันไม่เกิน 90 วัน</p>
+                                            <p class="text-dark">2. ประกันการเดินทางนี้ ไม่จำกัดอายุผู้เอาประกันภัย</p>
+                                            <p class="text-dark">3. ผู้เอาประกันภัยต้องถือพาสปอร์ตประเทศไทย กรณีเป็นชาวต่างชาติ ต้องแสดงเอกสารใบอนุญาตทำงานในประเทศไทย หรือ เป็นผู้ที่ได้รับวีซ่าแบบอยู่อาศัยในประเทศไทย</p>
+                                            <p class="text-dark">4. ประเทศที่ไม่อยู่ภายใต้ความคุ้มครอง : Syria, Nigeria, Colombia, Mexico, Pakistan, Iraq, Congo (DRC), Central African Republic, Republic of South Sudan, Cote d'lvoire, Afghanistan, Burundi, Eritrea, Kenya,
+                                                Guinea, North Korea, Iran, Lebanon, Mauritania, Mali, Libya, Algeria, Yemen, Somalia, Chad, Haiti, Niger, Saudi Arabia, Israel, The West Bank and Gaza</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xl-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-0 border-0 bg-tranparent">
+                                <div class="card-block px-2">
+                                    <div class="cardtitle">
+                                        <h4 class="text-thai text-fix-best-blue font-weight-bold">
+                                            ข้อมูลราคาประกันการเดินทาง</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="ins-table" style="width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>จำนวนวัน</td>
+                                                    <td style="text-align: right;color: #000000">ราคาต่อท่าน</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1 - 4 วัน</td>
+                                                    <td>290 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5 - 7 วัน</td>
+                                                    <td>355 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8 - 10 วัน</td>
+                                                    <td>420 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11 - 14 วัน</td>
+                                                    <td>655 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>15 - 22 วัน</td>
+                                                    <td>1,235 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>23 - 31 วัน</td>
+                                                    <td>1,330 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>32 - 45 วัน</td>
+                                                    <td>1,915 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>46 - 62 วัน</td>
+                                                    <td>2,075 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>63 - 75 วัน</td>
+                                                    <td>2,445 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>76 - 90 วัน</td>
+                                                    <td>2,605 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>91 - 120 วัน</td>
+                                                    <td>3,925 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>121 - 150 วัน</td>
+                                                    <td>5,955 บาท</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>151 - 180 วัน</td>
+                                                    <td>7,965 บาท</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+
+    <script>
+        $(function() {
+            //+ highlight row
+            $('.ins-table tr').mouseover(function() {
+
+                $(this).toggleClass('highlight');
+
+            });
+            $('.ins-table tr').mouseout(function() {
+
+                $(this).toggleClass('highlight');
+
+            });
+
+        })
+    </script>
+</body>
+
+</html>
