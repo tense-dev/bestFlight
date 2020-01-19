@@ -13,6 +13,8 @@ public $Seq;
 public $Visible;
 public $ImagePath;
 public $mst_packagepass_id;
+public $controller_name;
+
 public function DatatoObj($data)
 {
 $this->ObjectID=$data->ObjectID;
@@ -24,6 +26,7 @@ $this->Seq=$data->Seq;
 $this->Visible=$data->Visible;
 $this->ImagePath=$data->ImagePath;
 $this->mst_packagepass_id=$data->mst_packagepass_id;
+$this->controller_name=$data->controller_name;
 }
 
 public function ObjData()
@@ -38,6 +41,8 @@ $obj = array(
 'Visible'=>$this->Visible,
 'ImagePath'=>$this->ImagePath,
 'mst_packagepass_id'=>$this->mst_packagepass_id,
+'controller_name'=>$this->controller_name,
+
 );
 return $obj;
 }
