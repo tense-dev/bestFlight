@@ -54,21 +54,21 @@
                             <form action="#">
                                 <div class="form-row">
                                     <div class="form_colum">
-                                        <input class="input-bestf w-100 text-thai" name="name" id="name" type="text" placeholder="ชื่อประเทศ">
+                                        <input class="input-bestf w-100 text-thai" ng-model="searchModel.countryName" name="name" id="name" type="text" placeholder="ชื่อประเทศ">
                                     </div>
                                     <div class="form_colum">
-                                        <input class="input-bestf w-100 text-thai" name="name" id="programtour" type="text" placeholder="ชื่อทัวร์ / รหัสสินค้า">
+                                        <input class="input-bestf w-100 text-thai" ng-model="searchModel.codeStr" name="name" id="programtour" type="text" placeholder="ชื่อทัวร์ / รหัสสินค้า">
                                     </div>
                                     <div class="form_colum">
-                                        <input id="datepicker_1" class="text-thai" placeholder="ช่วงเวลาเดินทางไป">
+                                        <input id="datepicker_1" class="text-thai" ng-model="searchModel.datef" placeholder="ช่วงเวลาเดินทางไป">
                                     </div>
                                     <div class="form_colum">
-                                        <input id="datepicker_2" class="text-thai" placeholder="ช่วงเวลาเดินทางกลับ">
+                                        <input id="datepicker_2" class="text-thai" ng-model="searchModel.datet" placeholder="ช่วงเวลาเดินทางกลับ">
                                     </div>
 
                                     <div class="form_btn">
                                         <!--   <a href="#" class="btn_1 text-cnter">Read More</a> -->
-                                        <a href="#" class="btn_1 text-cnter">search</a>
+                                        <a href="#" class="btn_1 text-cnter text-white" ng-click="searchProgramTour()">search</a>
                                     </div>
                                 </div>
                             </form>
@@ -87,7 +87,7 @@
                 <div class="card shadow rounded-0 bd-best-blue">
                     <div class="card-body">
                         <p class="text-fix-best-blue font-weight-bold bd-b-best-blue text-center mb-4">โปรแกรมทัวร์ต่างประเทศ</p>
-                        <div class="row py-2 " ng-class="(isOdd($index))?'bg-best-low':''" ng-repeat="obj in ltsrBCt">
+                        <div class="row py-2 test" ng-class="(isOdd($index))?'bg-best-low':''" ng-click="clickCountry(obj.pgtCountry)" ng-repeat="obj in ltsrBCt">
                             <div class="col-auto my-auto p-0">
                                 <img src="{{obj.ctimg}}" class="max-img-country" alt="">
                             </div>

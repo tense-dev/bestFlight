@@ -85,4 +85,15 @@ public function getListProgramtourByCountry(){
     $result = $data->result();
     return $result;
 }
+public function getListProgramtourBySearch($datef, $datet, $codestr, $countryName){
+    $data = $this->db->query("CALL getListProgramtourBySearch('{$datef}','{$datet}','{$codestr}','{$countryName}')");
+    $result = $data->result();
+    return $result;
+}
+public function getListProgramtourBySearchNotDate($codestr, $countryName){
+    $data = $this->db->query("CALL getListProgramtourBySearchNotDate('{$codestr}','{$countryName}')");
+    $result = $data->result();
+    return $result;
+}
+
 }

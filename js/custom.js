@@ -71,8 +71,8 @@
     nc_select.niceSelect();
   }
 
-  $('#datepicker_1').datepicker();
-  $('#datepicker_2').datepicker();  
+  $('#datepicker_1').datepicker({ format: 'dd/mm/yyyy' });
+  $('#datepicker_2').datepicker({ format: 'dd/mm/yyyy' });  
   $('#datepicker_3').datepicker();
   $('#datepicker_4').datepicker();  
   $('#datepicker_5').datepicker();
@@ -106,10 +106,7 @@
 
 
  //------- Mailchimp js --------//  
-function mailChimp() {
-  $('#mc_embed_signup').find('form').ajaxChimp();
-}
-mailChimp();
+
 
 
 }(jQuery));

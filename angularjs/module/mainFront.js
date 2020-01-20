@@ -33,12 +33,17 @@ app.directive('owlCarouselItem', [function() {
         }
     };
 }]);
-const configapp = { baseUrl: 'http://localhost/bestFlightVersion/index.php/' }
-    //const configapp = {baseUrl:'http://devbestflight.com/'}
-    //const configapp = {baseUrl:'http://devbestflight.com/'}
-    //const configapp = {baseUrl:'http://devbestflight.com/'}
-    //const configapp = {baseUrl:'http://devbestflight.com/'}
-app.controller('mainctl', ($scope, $http) => {
+//const configapp = { baseUrl: 'http://devbestflight.com/' }
+const configapp = { baseUrl: 'http://localhost/bestFlightVersion/' }
+
+//const configapp = {baseUrl:'http://devbestflight.com/'}
+app.controller('mainctl', ($scope, $http, $window) => {
+    $scope.searchModel = {
+        datef: '',
+        datet: '',
+        codeStr: '',
+        countryName: ''
+    }
     $scope.optionCursor = {
 
         autoplay: true,
@@ -70,6 +75,38 @@ app.controller('mainctl', ($scope, $http) => {
                 nav: true
             }
         }
+    }
+    $scope.clickCountry = (str) => {
+        // var newurl = $window.location.protocol + "//" + $window.location.host + '/search' + $window.location.pathname + '?country=' + str;
+        //console.log()
+        var newurl = configapp.baseUrl + '/search?country=' + str;
+        $window.location = newurl;
+    }
+    $scope.searchProgramTour = () => {
+        $scope.param = [];
+        var cc = '';
+        if ($scope.searchModel.countryName.length > 0) {
+            $scope.param.push({ 'data': "country=" + $scope.searchModel.countryName });
+        }
+
+        if ($scope.searchModel.codeStr.length > 0) {
+            $scope.param.push({ 'data': "program=" + $scope.searchModel.codeStr });
+        }
+        if ($scope.searchModel.datef) {
+            $scope.param.push({ 'data': "startdate=" + $scope.searchModel.datef });
+        }
+        if ($scope.searchModel.datet) {
+            $scope.param.push({ 'data': "enddate=" + $scope.searchModel.datet });
+        }
+        //$scope.param.push({'data': ("startdate="+ $scope.searchModel.datef + "&enddate="+$scope.searchModel.datet)});      
+
+        angular.forEach($scope.param, function(dt, $index) {
+            cc = cc + ($index > 0 ? '&' + dt.data : dt.data);
+        });
+
+        var newurl = $window.location.protocol + "//" + $window.location.host + '/search' + $window.location.pathname + (cc !== '' ? '?' : '') + cc;
+        //console.log()
+        $window.location = newurl;
     }
     $scope.getLtPromotion = () => {
         $http({
@@ -460,3 +497,161 @@ app.filter('trustAsHtml', ['$sce', function($sce) {
         return $sce.trustAsHtml(text);
     };
 }]);
+app.controller('searchProgramtour', ($scope, $http, $window, $filter) => {
+    $scope.searchModel = {
+        datef: '',
+        datet: '',
+        codeStr: '',
+        countryName: ''
+    }
+    $scope.searchAgain = () => {
+        var newurl = $window.location.href;
+        var url = new URL(newurl);
+        $scope.sortcontry = (url.searchParams.get("country") == null ? '' : url.searchParams.get("country"));
+        $scope.sortprogramtour = (url.searchParams.get("program") == null ? '' : url.searchParams.get("program"));
+        const df = url.searchParams.get("startdate");
+        const dt = url.searchParams.get("enddate");
+        if (df !== null && dt !== null && $scope.sValidDate(df) == true && $scope.sValidDate(dt) == true) {
+            const udf = moment(df, 'DD/MM/YYYY').toDate();
+            const udt = moment(dt, 'DD/MM/YYYY').toDate();
+            $scope.start_date = moment(udf).format("DD/MM/YYYY");
+            $scope.end_date = moment(udt).format("DD/MM/YYYY");
+        }
+        if (!df) $scope.start_date = null;
+        if (!dt) $scope.end_date = null;
+        $scope.searchModel.codeStr = $scope.sortprogramtour;
+        $scope.searchModel.countryName = $scope.sortcontry;
+        $scope.searchModel.datef = df;
+        $scope.searchModel.datet = dt;
+
+        //#endregion  
+        $scope.list_view_by_web();
+    }
+    $scope.datepk_value = function(req) {
+        if (!req) return;
+        if (req instanceof Date === false) {
+            return new Date(req.split("/").reverse().join("-"));
+        }
+        return new Date($scope.date_format_datepk(req).split("/").reverse().join("-"));
+    }
+    $scope.sValidDate = (dt) => {
+        var date = moment(dt, 'DD/MM/YYYY', true);
+        return date.isValid();
+    }
+    $scope.getListCountryAll = () => {
+
+        $http({
+            method: 'post',
+            url: configapp.baseUrl + 'seachProgramTour/getListCountryAll',
+            headers: { 'Content-Type': undefined }
+        }).then(successCallback = (res) => {
+            //console.log(res.data)
+        })
+    }
+    $scope.list_view_by_web = () => {
+        $scope.loader_search = true;
+        //console.log($scope.sortprogramtour);
+        var fd = new FormData();
+        var date_start_from = $scope.datepk_value($scope.start_date);
+        var date_start_to = $scope.datepk_value($scope.end_date);
+        fd.append('data', angular.toJson({ 'datef': date_start_from, 'datet': date_start_to, 'codestr': $scope.sortprogramtour, 'countryName': $scope.sortcontry }));
+        const str = (!date_start_from || !date_start_to) ? 'getListProgramtourBySearchNotDate' : 'getListProgramtourBySearch';
+        //console.log(str)
+        $http({
+            method: 'post',
+            url: configapp.baseUrl + 'seachProgramTour/' + str,
+            data: fd,
+            headers: { 'Content-Type': undefined }
+        }).then(successCallback = (res) => {
+            const datares = res.data;
+            const pgtGroub = $scope.groubBy(datares, 'pgtID');
+            const pgtfil = pgtGroub.filter(o => (o.group_by_key));
+            const pgtGroubByPgtID = pgtfil.map((o) => {
+                const pr = pgtGroub.filter(r => r.pgtID === o.pgtID);
+                const priceLow = $filter('orderBy')(pr, '-prTwin');
+                o['groubVal'] = pr;
+                o.priceLow = priceLow[0].prTwin;
+                return o;
+            })
+            $scope.seklsoo = pgtGroubByPgtID;
+            //console.log($scope.seklsoo);
+
+        });
+    }
+    $scope.range = function(min, max, step) {
+        step = step || 1;
+        var input = [];
+        for (var i = min; i <= max; i += step) {
+            input.push(i);
+        }
+        return input;
+    };
+    $scope.groubBy = function(array, groupByField) {
+        var result = [];
+        var prev_item = null;
+        var groupKey = false;
+        var num_row;
+        var filteredData = $filter('orderBy')(array, groupByField);
+        if (!filteredData) { return; }
+        for (var i = 0; i < filteredData.length; i++) {
+            groupKey = false;
+            if (prev_item !== null) {
+                if (prev_item[groupByField] !== filteredData[i][groupByField]) {
+                    groupKey = true;
+                }
+            } else {
+                groupKey = true;
+            }
+            if (groupKey) {
+                filteredData[i]['group_by_key'] = true;
+
+                num_row = i;
+            } else {
+                filteredData[i]['group_by_key'] = false;
+            }
+            result.push(filteredData[i]);
+            prev_item = filteredData[i];
+        }
+        return result;
+
+    }
+    $scope.convertDateShot = function(date_start, date_end) {
+        var year_thai = 543; //ความห่างขอคริสต์ศักราชกับพุทธศักราช
+        var date_day = moment(new Date(date_start.replace(' ', 'T'))).locale('th').format('DD-') + moment(new Date(date_end)).locale('th').format('DD');
+        var date_month = moment(new Date(date_end.replace(' ', 'T'))).locale('th').format('MMM');
+        var date_year = moment(new Date(date_end.replace(' ', 'T'))).locale('th').format('YYYY');
+        date_year = parseInt(date_year) + year_thai;
+        return date_day + '  ' + date_month + '  ' + date_year.toString();
+    }
+    $scope.clickSearch = () => {
+        //console.log($scope.searchModel)
+        $scope.param = [];
+        var cc = '';
+        if ($scope.searchModel.countryName.length > 0) {
+            $scope.param.push({ 'data': "country=" + $scope.searchModel.countryName });
+        }
+
+        if ($scope.searchModel.codeStr.length > 0) {
+            $scope.param.push({ 'data': "program=" + $scope.searchModel.codeStr });
+        }
+        if ($scope.searchModel.datef) {
+            $scope.param.push({ 'data': "startdate=" + $scope.searchModel.datef });
+        }
+        if ($scope.searchModel.datet) {
+            $scope.param.push({ 'data': "enddate=" + $scope.searchModel.datet });
+        }
+        //$scope.param.push({'data': ("startdate="+ $scope.searchModel.datef + "&enddate="+$scope.searchModel.datet)});      
+
+        angular.forEach($scope.param, function(dt, $index) {
+            cc = cc + ($index > 0 ? '&' + dt.data : dt.data);
+        });
+
+        var newurl = $window.location.protocol + "//" + $window.location.host + $window.location.pathname + (cc !== '' ? '?' : '') + cc;
+        $window.location = newurl;
+        console.log(newurl);
+        $window.history.pushState({ path: newurl }, '', newurl);
+        $scope.searchAgain();
+    }
+    $scope.getListCountryAll();
+    $scope.searchAgain();
+});

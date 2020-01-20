@@ -4,6 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
 
 /* line 8, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_extends.scss */
+.test:hover {
+    background-color: rgb(28, 73, 185) !important;
+    cursor: pointer;
+}
+.test:hover h5{
+    color: white !important;
+}
 
 .text-thai {
     font-family: 'Kanit', sans-serif !important;
