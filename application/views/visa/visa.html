@@ -1,0 +1,227 @@
+<?php $this->load->view('components/include.html'); ?>
+<style>
+    .f_card {
+        font-size: 14px;
+    }
+    
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .btn-holder {
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    .c_hover:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .content {
+        height: 85px;
+    }
+    
+    .f_content {
+        font-size: 11px;
+        margin-bottom: 0px;
+    }
+    
+    .visa-flag {
+        display: block;
+        width: 60px;
+    }
+    
+    .visa-flag {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+</style>
+
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
+
+
+    <div class="row" ng-controller="visa">
+        <div class="col-lg-12 col-md-12 col-xl-12">
+            <section class="mt-5">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn">บริการทำ <span class="text-fix-best-deep">วีซ่า</span></h2>
+                                <p class="text-dark">เบสไฟลท์ แทรเวิล จำกัด บริการ ข้อมูลการขอวีซ่า ยื่นวีซ่า และ บริการขอวีซ่า และรับยื่นวีซ่าแทน สำหรับประเทศที่อนุญาตให้ยื่นวีซ่าแทน ในราคาประหยัด สำหรับท่านผู้สนใจ องค์กร หน่วยงาน ต่าง ๆ ศึกษารายละเอียดและเตรียมเอกสารของท่านให้พร้อม
+                                    เพื่อการยื่นวีซ่าที่ถูกต้องและรวดเร็ว แบบฟอร์มติดต่อเรื่องวีซ่า หรือ โทร.02-2918551</p>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">10 อันดับ ประเทศยอดฮิต ที่คนไทยนิยมขอวีซ่า </h2>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3 mb-3" ng-repeat="obj in listvisa">
+                                    <div class="card horizontal shadow rounded-0">
+                                        <div class="row c_hover no-gutters p-0 border-0 bg-tranparent">
+                                            <img src="<?php echo base_url(); ?>img/visa/{{obj.ImagePath}}" class="img" width="100%" height="170" alt="">
+                                            <img src="<?php echo base_url(); ?>img/image_country/{{obj.SubImagePath}}" class=" visa-flag " width="60 " height="50 " alt=" ">
+                                            <div class="row card-block px-2 ">
+                                                <div class="col-md-12">
+                                                    <div class="cardtitle ">
+                                                        <h4 class="text-thai text-fix-best-blue font-weight-bold text-center ">
+                                                            {{obj.Country}}
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 p-2 ">
+                                                    <div class="text-center">
+                                                        <a ng-repeat="x in obj.details" ng-if="x.type == 1" href="<?php echo base_url(); ?>visa/details/{{x.ObjectID}}" class="btn btn-sm btn-orange "><i class="fa fa-plane "></i>  ท่องเที่ยว</a>
+                                                        <a ng-repeat="x in obj.details" ng-if="x.type == 2" href="<?php echo base_url(); ?>visa/details/{{x.ObjectID}}" class="btn btn-sm btn-orange "><i class="fa fa-briefcase "></i>  ธุรกิจ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mt-5 best_services bg-best-low">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3 pt-4">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">กลุ่มประเทศที่ผู้เดินทางสัญชาติไทย ไม่ต้องขอวีซ่า</h2>
+                                <p class="text-dark">สำหรับบาง ประเทศนั้น ประเทศไทยได้ทำข้อตกลง ยกเว้นวีซ่าให้กับผู้ถือหนังสือเดินทางไทย โดยสามารถเดินทางไปประเทศนั้น ๆ ได้โดยใช้เพียงพาสสปอร์ต ไม่ต้องขอวีซ่า แค่ไปประทับตราเป็นหลักฐานการเข้าประเทศ ที่ด่านตรวจคนเข้าเมืองเท่านั้น</p>
+                            </div>
+                            <div class="pt-2">
+                                <h4 class="text-fix-best-blue mb-0 text-thai animated zoomIn">กลุ่มประเทศที่พำนักได้ไม่เกิน 90 วัน ไม่ต้องขอวีซ่า สำหรับผู้ถือหนังสือเดินทางธรรมดา</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/kr.png"><br>เกาหลีใต้</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/bl.png"><br>ชิลี</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/be.png"><br>บราซิล</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/prr.png"><br>เปรู</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/ar.png"><br>อาร์เจนติน่า</div>
+
+                            </div>
+                            <div class="pt-4">
+                                <h4 class="text-fix-best-blue mb-0 text-thai animated zoomIn">กลุ่มประเทศที่พำนักได้ไม่เกิน 30 วัน ไม่ต้องขอวีซ่า สำหรับผู้ถือหนังสือเดินทางธรรมดา</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/mn.png"><br>มองโกเลีย</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/mv.png"><br>มัลดีฟ</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/mo.png"><br>มาเก๊า</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/ru.png"><br>รัสเซีย</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/la.png"><br>ลาว</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/vn.png"><br>เวียดนาม</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/sg.png"><br>สิงคโปร์</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/idd.png"><br>อินโดนีเซีย</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/aff.png"><br>แอฟริกาใต้</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/hk.png"><br>ฮ่องกง</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/tw.png"><br>ไต้หวัน</div>
+
+                            </div>
+
+                            <div class="pt-4">
+                                <h4 class="text-fix-best-blue mb-0 text-thai animated zoomIn">กลุ่มประเทศที่พำนักได้ไม่เกิน 21 วัน ไม่ต้องขอวีซ่า สำหรับผู้ถือหนังสือเดินทางธรรมดา</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/ffi.png"><br>ฟิลิปปินส์</div>
+
+                            </div>
+                            <div class="pt-4">
+                                <h4 class="text-fix-best-blue mb-0 text-thai animated zoomIn">กลุ่มประเทศที่พำนักได้ไม่เกิน 14 วัน ไม่ต้องขอวีซ่า สำหรับผู้ถือหนังสือเดินทางธรรมดา</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/bn.png"><br>บรูไน</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/bh.png"><br>บาห์เรน</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/ir.png"><br>อิหร่าน</div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="best_services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3 pt-4">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">กลุ่มประเทศแชงเก้นวีซ่า (Schengen Visa)</h2>
+                                <p class="text-dark">Schengen Visa นั้นใช้ได้กับประเทศแถบยุโรปที่เป็นสมาชิก Schengen Visa เหมาะสำหรับนักท่องเที่ยว ที่เดินทางไปเที่ยวยุโรป หลายประเทศต่อเนื่องกันในทริปเดียว โดยสามารถยื่นคำร้องขอวีซ่า แบบเดินทางเข้า - ออกครั้งเดียว หรือเดินทางเข้า
+                                    - ออกหลายครั้งก็ได้ แต่ทั้งนี้รวมเวลาที่พำนักทั้งหมดแล้ว ต้องไม่เกิน 90 วัน ภายในระยะเวลา 6 เดือน โดยเริ่มนับตั้งแต่วันแรกที่เดินทางเข้าประเทศในกลุ่มสัญญาเชงเก็น</p>
+                                <p class="text-dark mt-2">การทำ Schengen Visa จะทำให้นักท่องเที่ยวไม่ต้องเสียเวลายื่นวีซ่าขอเข้าประเทศ กับทุกๆ ประเทศที่จะเดินทางเข้าไปเที่ยว มีเพียง Schengen Visa ก็สามารถเข้าได้ทุกประเทศที่เป็นสมาชิก Schengen สำหรับ Schengen Visa นั้น ให้ยื่นคำร้องขอวีซ่าต่อสถานทูตของประเทศที่
+                                    จะเดินทางเข้าไปเป็นประเทศแรกที่ผู้เดินทาง เดินทางไปถึงยุโรป (ตัวอย่างเช่น เดินทางไป อิตาลี - สวิส - ฝรั่งเศส ประเทศที่จะออก Schengen Visa ให้คือ ประเทศ อิตาลี)</p>
+                            </div>
+                            <div class="">
+                                <h4 class="text-fix-best-blue mb-0 text-thai animated zoomIn">กลุ่มประเทศแชงเก้นวีซ่า (Schengen Visa)</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/us.png"><br>สหรัฐอเมริกา</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/fr.png"><br>ฝรั่งเศส</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/fi.png"><br>ฟินแลนด์</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/it.png"><br>อิตาลี</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/au.png"><br>ออสเตรีย</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/de.png"><br>เยอรมนี</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/spp.png"><br>สเปน</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/gr.png"><br>กรีซ</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/us.png"><br>เนเธอร์แลนด์</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/se.png"><br>สวีเดน</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/sj.png"><br>นอร์เวย์</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/dk.png"><br>เดนมาร์ก</div>
+                                <div class="col-xs-4 col-sm-1 text-center pt-3"><img height="50" src="<?php echo base_url(); ?>img/visa/country/tr.png"><br>ตุรกี</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+</body>
+
+</html>

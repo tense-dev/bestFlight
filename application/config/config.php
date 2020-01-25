@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://devbestflight.com';
 
-//$config['base_url'] = 'http://localhost/bestFlightVersion';
-$config['base_url'] = 'http://yengyengto.com';
+$config['base_url'] = 'http://localhost/bestFlightVersion';
+//$config['base_url'] = 'http://yengyengto.com';
 
 /*
 |--------------------------------------------------------------------------

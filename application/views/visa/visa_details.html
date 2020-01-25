@@ -1,0 +1,186 @@
+<?php $this->load->view('components/include.html'); ?>
+<style>
+    .f_card {
+        font-size: 14px;
+    }
+    
+    .card-block .cardtitle {
+        text-align: left;
+        padding-top: 10px;
+        border-bottom: 1px solid rgb(28, 73, 185);
+    }
+    
+    .btn-holder {
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    .c_hover:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .content {
+        height: 85px;
+    }
+    
+    .f_content {
+        font-size: 11px;
+        margin-bottom: 0px;
+    }
+    
+    .visa-flag {
+        display: block;
+        width: 60px;
+    }
+    
+    .visa-flag {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .fontaw li:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        color: green;
+    }
+    
+    .fontaw li {
+        font-size: 16px;
+    }
+    
+    li>ul {
+        padding-left: 15px;
+    }
+    
+    td {
+        text-align: center
+    }
+</style>
+
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/callout.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
+
+
+    <div class="row" ng-controller="visa_details">
+        <div class="col-lg-12 col-md-12 col-xl-12" ng-init="getListvisa_detailsbyid(<?php echo $dataid ?>)">
+            <section class="mt-5" ng-repeat="obj in listvisadetails">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn">
+                                    {{obj.Country}}
+                                </h2>
+                            </div>
+
+                            <div class="section_tittle mb-3">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">เอกสารใช้ประกอบการขอวีซ่า </h2>
+                            </div>
+                            <div class="fontaw" ng-bind-html="obj.documentation | trustAsHtml ">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2 best_services " ng-repeat="obj in listvisadetails" ng-if="obj.servicerate != ''">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3 pt-4">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">อัตราค่าบริการ </h2>
+                            </div>
+                            <div class="table-responsive" style="width:100%" ng-bind-html="obj.servicerate | trustAsHtml ">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2 best_services " ng-repeat="obj in listvisadetails" ng-if="obj.description != ''">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_tittle mb-3 pt-4">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn" style="font-size:25px;">ข้อมูลเพิ่มเติม </h2>
+                            </div>
+                            <div class="fontaw" ng-bind-html="obj.description | trustAsHtml ">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2 best_services" ng-repeat="obj in listvisadetails" ng-if="obj.remark !='' ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-xl-12 ">
+                            <div class="section_tittle mb-3 pt-4 ">
+                                <h2 class="text-fix-best-blue mb-0 text-thai animated zoomIn " style="font-size:25px; ">หมายเหตุ </h2>
+                            </div>
+                            <div class="fontaw " ng-bind-html="obj.remark | trustAsHtml ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+    <!--::industries end::-->
+
+    <!-- footer part start-->
+
+    <?php $this->load->view('components/footer.html'); ?>
+    <!-- footer part end-->
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+
+    <script>
+        $(function() {
+            setTimeout(() => {
+                $('.table-responsive').removeAttr('style');
+                $('table').attr('style');
+                $('table tr').attr('style', '');
+                $('table').attr('style', 'width:100%');
+                $('table td').attr('style', '');
+                $('table').removeAttr('border');
+                $('.descriotion').attr('style', '');
+
+                $('table').addClass('table-bordered');
+
+            }, 200);
+        });
+    </script>
+</body>
+
+</html>

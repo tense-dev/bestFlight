@@ -5,9 +5,7 @@ class mainFront extends CI_Controller {
 	{
         $this->load->view('index.html');
     }
-    public function kuy(){
-        $this->load->view('home/packages.html');
-    }
+   
     public function packagestour(){
         $this->load->view('packages_tour.html');
     }
