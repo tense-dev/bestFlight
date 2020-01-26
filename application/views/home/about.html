@@ -1,519 +1,137 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <!-- fontawesome CSS -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <!-- magnific CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/gijgo.min.css">
-    <!-- niceselect CSS -->
-    <link rel="stylesheet" href="css/nice-select.css">
-    <!-- slick CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <!--::header part start::-->
-    <header class="main_menu">
-            <div class="sub_menu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-md-6">
-                            <div class="sub_menu_right_content">
-                                <span>Top destinations</span>
-                                <a href="#">Asia</a>
-                                <a href="#">Europe</a>
-                                <a href="#">America</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6">
-                            <div class="sub_menu_social_icon">
-                                <a href="#"><i class="flaticon-facebook"></i></a>
-                                <a href="#"><i class="flaticon-twitter"></i></a>
-                                <a href="#"><i class="flaticon-skype"></i></a>
-                                <a href="#"><i class="flaticon-instagram"></i></a>
-                                <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main_menu_iner">
-                <div class="container">
-                    <div class="row align-items-center ">
-                        <div class="col-lg-12">
-                            <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                                <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
+<?php $this->load->view('components/include.html'); ?>
+<style>
+    .card i {
+        color: #fe5c24;
+    }
     
-                                <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                                    id="navbarSupportedContent">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="index.html">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="about.html">About</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="packages.html">packages</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Blog
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="blog.html">Blog</a>
-                                                <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                pages
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                                <a class="dropdown-item" href="top_place.html">top place</a>
-                                                <a class="dropdown-item" href="tour_details.html">tour details</a>
-                                                <a class="dropdown-item" href="elements.html">Elements</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="btn_1 d-none d-lg-block">book now</a>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Header part end-->
+    .zoom {
+        transition: transform .2s;
+        margin: 0 auto;
+    }
+    
+    .zoom:hover {
+        transform: scale(1.5);
+    }
+</style>
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>About Us</h2>
-                            <p>home . about us</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
+<body ng-app="mainFront">
+    <?php $this->load->view('components/header.html'); ?>
+    <?php $this->load->view('components/banner.html'); ?>
 
-    <!-- about us css start-->
-    <section class="about_us section_padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about_img">
-                        <img src="img/about_img.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about_text">
-                        <h5>Who we are</h5>
-                        <h2>We love to discover around the world</h2>
-                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged night yielding land creeping that seed appear were bearing.</p>
-                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged night yielding land creeping that seed appear were bearing.</p>
-                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged night yielding land creeping that seed appear were bearing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- about us css end-->
 
-    <!--top place start-->
-    <section class="event_part section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="event_slider owl-carousel" >
-                        <div class="single_event_slider">
-                            <div class="row justify-content-end">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="event_slider_content">
-                                        <h5>Upcoming Event</h5>
-                                        <h2>Maldeve - Asia</h2>
-                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
-                                        </p>
-                                        <p>date: <span>12 Aug 2019</span> </p>
-                                        <p>Cost: <span>Start from $820</span> </p>
-                                        <p>Organizer: <span> Martine Agency</span> </p>
-                                        <div class="rating">
-                                            <span>Rating:</span>
-                                            <div class="place_review">
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn_1">Plan Details</a>
-                                    </div>
-                                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-xs mt-5 h-100">
+                <div class="card shadow rounded-0 bd-best-blue">
+                    <div class="card-body">
+                        <h3 class="text-fix-best-blue font-weight-bold bd-b-best-blue text-left mb-4">ช่องทางติดต่อบริษัท</h3>
+
+                        <p class="text-thai ng-binding text-dark ">
+                            <i class="fas fa-map-marker"></i> 2689/5 ถนนเจริญกรุง แขวงบางคอแหลม เขตบางคอแหลม กรุงเทพฯ 10120 </p>
+                        <p class="text-thai text-dark">
+                            <i class="fas fa-phone-square-alt"></i> (662) 291-8551 (auto) </p>
+                        <p class="text-thai text-dark ">
+                            <i class="fas fa-envelope"></i> info@bestflights.co.th
+                        </p>
+                        <p class="text-thai text-dark ">
+                            <i class="fab fa-line"></i> bestflights88
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="card shadow rounded-0 bd-best-blue mt-4">
+                    <div class="card-body">
+                        <h3 class="text-fix-best-blue font-weight-bold bd-b-best-blue text-left mb-4">เวลาทำการ</h3>
+                        <p class="text-thai ng-binding text-dark ">
+                            <i class="fas fa-clock"></i> จันทร์ - ศุกร์ 8.30-17.30 น. </p>
+                        <p class="text-thai ng-binding text-dark ">
+                            <i class="fas fa-clock"></i> เสาร์ 8.30-14.00 น. </p>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-9 col-md-12 mt-5 col-lg-9">
+                <div class="card shadow rounded-0 bd-best-blue">
+                    <div class="card-body">
+                        <h3 class="text-fix-best-blue font-weight-bold bd-b-best-blue text-left mb-4">เกี่ยวกับเรา</h3>
+                        <!-- ngRepeat: obj in ltsrBCt -->
+                        <p class="text-thai ng-binding text-dark ">บริษัทฯ ได้เริ่มทำการก่อตั้งและจดทะเบียนเว็บไซต์อย่างเป็นทางการในปี พ.ศ. 2550 เพื่อ ดำเนินธุรกิจเป็นตัวแทนด้านการท่องเที่ยวที่ครบวงจรโดยมุ่งเน้นการให้ บริการที่ดี หลากหลาย และมีคุณภาพโดยมีการนำเสนอข้อมูล และขายบริการด้านท่องเที่ยวและการเดินทางโดยผ่านช่องทางการติดต่อที่บริษัทฯ
+                            และผ่านทางอินเตอร์เน็ต โดยบริษัทฯ ได้มีการพัฒนาและปรับปรุงคุณภาพการให้บริการเพิ่มขึ้น เพื่อตอบสนองความต้องการของลูกค้าให้ดียิ่งขึ้น โดยบริษัทฯ มีทีมงานที่มีประสบการณ์การทำงานด้านนี้มากกว่า 20 ปี</p>
+                    </div>
+                </div>
+
+                <div class="card shadow rounded-0 bd-best-blue mt-4">
+                    <div class="card-body">
+                        <h3 class="text-fix-best-blue font-weight-bold bd-b-best-blue text-left mb-4">ข้อมูลบริษัท</h3>
+                        <!-- ngRepeat: obj in ltsrBCt -->
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <a target="_blank" href="<?php echo base_url(); ?>img/ททท.jpg" class="zoom"><img src="<?php echo base_url(); ?>img/ททท.jpg" height="100" class="img zoom"></a>
+                                <br>
+                                <a target="_blank" href="<?php echo base_url(); ?>img/IATA.jpg" class="zoom pt-4"><img src="<?php echo base_url(); ?>img/IATA.jpg" height="100" class="img zoom pt-4"></a>
                             </div>
-                        </div>
-                        <div class="single_event_slider">
-                            <div class="row justify-content-end">
-                                <div class="ol-lg-6 col-md-6">
-                                    <div class="event_slider_content">
-                                        <h5>Upcoming Event</h5>
-                                        <h2>Maldeve - Asia</h2>
-                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
-                                        </p>
-                                        <p>date: <span>12 Aug 2019</span> </p>
-                                        <p>Cost: <span>Start from $820</span> </p>
-                                        <p>Organizer: <span> Martine Agency</span> </p>
-                                        <div class="rating">
-                                            <span>Rating:</span>
-                                            <div class="place_review">
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn_1">Plan Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_event_slider">
-                            <div class="row justify-content-end">
-                                <div class="ol-lg-6 col-md-6">
-                                    <div class="event_slider_content">
-                                        <h5>Upcoming Event</h5>
-                                        <h2>Maldeve - Asia</h2>
-                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
-                                        </p>
-                                        <p>date: <span>12 Aug 2019</span> </p>
-                                        <p>Cost: <span>Start from $820</span> </p>
-                                        <p>Organizer: <span> Martine Agency</span> </p>
-                                        <div class="rating">
-                                            <span>Rating:</span>
-                                            <div class="place_review">
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn_1">Plan Details</a>
-                                    </div>
-                                </div>
+                            <div class="col-md-8">
+                                <p class="text-thai ng-binding text-dark ">1. ทุนจดทะเบียน 2,000,000 บาท </p>
+                                <p class="text-thai ng-binding text-dark ">2. ทะเบียนพาณิชย์เลขที่ 0105550000791 ออกโดยกรมพัฒนาธุรกิจการค้า กระทรวงพาณิชย์ </p>
+                                <p class="text-thai ng-binding text-dark ">3. ใบอนุญาตประกอบกิจการท่องเที่ยว เลขที่ 11/05941 จากสำนักทะเบียนธุรกิจนำเที่ยวและมัคคุเทศก์ กรมการท่องเที่ยว(ททท) </p>
+                                <p class="text-thai ng-binding text-dark ">4.สมาชิกสมาคมไทยบริการท่องเที่ยว เลขที่ 1039 โดยสมาคมบริการท่องเที่ยว (TTAA) </p>
+                                <p class="text-thai ng-binding text-dark ">5. ใบอนุญาตสมาคมขนส่งทางอากาศระหว่างประเทศ (IATA) หมายเลข 35308663</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!--top place end-->
 
-    <!--::industries start::-->
-    <section class="best_services section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="section_tittle text-center">
-                        <h2>We offered best services</h2>
-                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.</p>
+
+                <div class="card shadow rounded-0 bd-best-blue mt-4 mb-5">
+                    <div class="card-body">
+                        <h3 class="text-fix-best-blue font-weight-bold bd-b-best-blue text-left mb-4">บริการหลักของเรา</h3>
+                        <!-- ngRepeat: obj in ltsrBCt -->
+                        <p class="text-thai ng-binding text-dark ">1. บริการจำหน่ายตั๋วเครื่องบินทุกเส้นทางทั่วโลก ของสายการบินชั้นนำทั่วโลกมากกว่า 200 สายการบิน </p>
+                        <p class="text-thai ng-binding text-dark ">2. เป็นตัวแทนในการออกบัตรโดยสารของการบินไทย ทั้งภายในประเทศและต่างประเทศ (TG E - Direct) </p>
+                        <p class="text-thai ng-binding text-dark ">3. บริการ จำหน่ายแพ็คเกจทัวร์เดินทางในประเทศและต่างประเทศ รวมถึงบริการจำหน่ายแพ็คเกจทัวร์ของสายการบินชั้นนำ เช่นทัวร์เอื้องหลวงของการบินไทย และ SIA Holidays ของสายการบินสิงคโปร์ </p>
+                        <p class="text-thai ng-binding text-dark ">4. บริการ จัดหาและวางแผนการท่องเที่ยวแบบหมู่คณะ แบบกลุ่มส่วนตัว เพื่อดูงาน สัมมนา ท่องเที่ยวในประเทศ และต่างประเทศ และบริการกรุ๊ปทัวร์ที่มีคุณภาพในกลุ่มพันธมิตรบริษัทท่องเที่ยวชั้นนำ</p>
+                        <p class="text-thai ng-binding text-dark ">5. บริการ จองโรงแรม รีสอร์ท หรืออพาร์ทเม้นท์ ทั้งในประเทศ และต่างประเทศ โดยที่ท่านสามารถจองโรงแรมออนไลน์ได้ด้วยตัวเอง (ทราบผลและราคาทันที) หรือผ่านเจ้าหน้าที่</p>
+                        <p class="text-thai ng-binding text-dark "> 6. บริการประกันการเดินทางแบบท่องเที่ยว และครอบครัว ทั้งรายวันและรายปี จากบริษัทประกันภัยชั้นนำ เช่น AGA Services (Thailand) Co.,Ltd ,บริษัทประกันภัยไทยวิวัฒน์ จำกัด และ บริษัท Alliance Insurance จำกัด </p>
+                        <p class="text-thai ng-binding text-dark ">7. บริการจองตั๋วรถไฟต่างประเทศ เช่นเจแปนเรลล์พาส ยูโรสตาร์ ยูเรลพาส และอื่น ๆ </p>
+                        <p class="text-thai ng-binding text-dark "> 8. บริการจองรถเช่าทั้งในประเทศและต่างประเทศจากบริษัทรถเช่าชั้นนำ เช่น Budget, , Avis และ Herts ในราคาพิเศษ </p>
+                        <p class="text-thai ng-binding text-dark "> 9. บริการด้านวีซ่า โดยให้บริการยื่นวีซ่าแทนในกรณีที่ท่านไม่สะดวกที่จะดำเนินการเอง ในหลายๆประเทศทั่วโลก สอบถามรายละเอียด เพิ่มเติม: บริษัท เบส ไฟลท์ แทรเวิล จำกัด 2689/5 ถนนเจริญกรุง แขวงบางคอแหลม เขตบางคอแหลม กรุงเทพฯ 10120 เบอร์โทร
+                            : 02-291-8551-2 ( อัตโนมัติ) แฟกซ์ : 02-688-2936 อีเมล์ : info@bestflights.co.th www.bestflights.co.th เวลาเปิดบริการ จันทร์ – ศุกร์ : 08.30 - 18.00 น./ เสาร์ : 08.30 – 12.00 น.อาทิตย์ ติดต่อที่เบอร์ : 094-694-9498 แผนกขายและการตลาด
+                            สนาฎก รัตนไชย แผนกตั๋วเครื่องบิน กัญญารัตน์ ดำเกิงนิธิกุล,จันทร์จิรา เกตุจิ๋ว , แผนกทัวร์ กัลยาณี ปุยะติ</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_1.png" alt="">
-                        <h3> <a href="#"> Transportation</a></h3>
-                        <p>All transportation cost we bear</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_2.png" alt="">
-                        <h3> <a href="#"> Guidence</a></h3>
-                        <p>We offer the best guidence for you</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_3.png" alt="">
-                        <h3> <a href="#"> Accomodation</a></h3>
-                        <p>Luxarious and comfortable</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="img/services_4.png" alt="">
-                        <h3> <a href="#"> Discover world</a></h3>
-                        <p>Best tour plan for your next tour</p>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
-    </section>
+    </div>
     <!--::industries end::-->
 
-    <!--top place start-->
-    <section class="client_review section_padding">
-        <div class="container">
-            <div class="row ">
-                <div class="col-xl-6">
-                    <div class="section_tittle">
-                        <h2>What they said</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="client_review_slider owl-carousel">
-                        <div class="single_review_slider">
-                            <div class="place_review">
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                            </div>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue. Our Air very one whales grass is fish whales winged night yielding land creeping that seed </p>
-                            <h5> - Allen Miller</h5>
-                        </div>
-                        <div class="single_review_slider">
-                            <div class="place_review">
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                            </div>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue. Our Air very one whales grass is fish whales winged night yielding land creeping that seed </p>
-                            <h5> - Allen Miller</h5>
-                        </div>
-                        <div class="single_review_slider">
-                            <div class="place_review">
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                            </div>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue. Our Air very one whales grass is fish whales winged night yielding land creeping that seed </p>
-                            <h5> - Allen Miller</h5>
-                        </div>
-                        <div class="single_review_slider">
-                            <div class="place_review">
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                            </div>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue. Our Air very one whales grass is fish whales winged night yielding land creeping that seed </p>
-                            <h5> - Allen Miller</h5>
-                        </div>
-                        <div class="single_review_slider">
-                            <div class="place_review">
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                                <a href="#"><i class="fas fa-star"></i></a>
-                            </div>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue. Our Air very one whales grass is fish whales winged night yielding land creeping that seed </p>
-                            <h5> - Allen Miller</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--top place end-->
-
-     <!--::gallery part start::-->
-     <section class="our_gallery section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="section_tittle text-center">
-                        <h2>Our gallery</h2>
-                        <p>WWaters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card-columns">
-                        <div class="card">
-                            <a href="img/gallery/gallery_1.png" class="gallery_img">
-                               <img src="img/gallery/gallery_1.png" class="card-img-top" alt="">
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="img/gallery/gallery_3.png" class="gallery_img">
-                                <img src="img/gallery/gallery_3.png" class="card-img-top" alt="">
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="img/gallery/gallery_2.png" class="gallery_img">
-                                <img src="img/gallery/gallery_2.png" class="card-img-top" alt="">
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="img/gallery/gallery_4.png" class="gallery_img">
-                                <img src="img/gallery/gallery_4.png" class="card-img-top" alt="">
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="img/gallery/gallery_5.png" class="gallery_img">
-                                <img src="img/gallery/gallery_5.png" class="card-img-top" alt="">
-                            </a>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--::gallery part end::-->
-
     <!-- footer part start-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
-                    <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
-                        <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
-                            <li><a href="#">Saintmartine, Bangladesh</a></li>
-                            <li><a href="#">Mount Everast, India</a></li>
-                            <li><a href="#">Sidney, Australia</a></li>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
-                            <li><a href="#">Saintmartine, Bangladesh</a></li>
-                            <li><a href="#">Mount Everast, India</a></li>
-                            <li><a href="#">Sidney, Australia</a></li>
-                        </ul>
 
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                        <div class="social-icons">
-                            <a href="#"><i class="ti-facebook"></i></a>
-                            <a href="#"><i class="ti-twitter-alt"></i></a>
-                            <a href="#"><i class="ti-pinterest"></i></a>
-                            <a href="#"><i class="ti-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php $this->load->view('components/footer.html'); ?>
     <!-- footer part end-->
 
-    <!-- jquery plugins here-->
-    <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- magnific js -->
-    <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- masonry js -->
-    <script src="js/masonry.pkgd.js"></script>
-    <!-- masonry js -->
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <!-- contact js -->
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.12.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/masonry.pkgd.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/gijgo.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/mail-script.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact.js"></script>
+    <script src="<?php echo base_url(); ?>js/custom.js"></script>
+    <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
 </body>
 
 </html>

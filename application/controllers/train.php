@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class train extends CI_Controller {
+class Train extends CI_Controller {
     public function index(){
     }
 

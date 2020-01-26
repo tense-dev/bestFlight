@@ -1,15 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class contact extends CI_Controller {
+class Contact extends CI_Controller {
     public function index(){
-        $this->load->view('home/contact.html');
+        $booking['booking'] = '';
+        $this->load->view('home/contact.html',$booking);
         //$this->load->view('home/single-blog.html');
     }
 
     public function booking(){
-        $dataid['booking'] = $this->uri->segment(3);
-        $this->load->view('home/contact.html');
+      //  $booking['booking'] = $this->uri->segment(3);
+        $booking['booking'] = $this->input->get('title');
+        $this->load->view('home/contact.html',$booking);
         //$this->load->view('home/single-blog.html');
     }
 

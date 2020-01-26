@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class hotel extends CI_Controller {
+class Hotel extends CI_Controller {
     public function index(){
         $this->load->view('hotel/hotel.html');
         //$this->load->view('home/single-blog.html');

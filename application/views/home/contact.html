@@ -1,4 +1,5 @@
 <?php $this->load->view('components/include.html'); ?>
+
 <style>
     .contact-section {
         padding: 20px 0 100px;
@@ -17,6 +18,20 @@
     
     .pull-right {
         float: right!important;
+    }
+    
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 48px;
+    }
+    
+    .select2-container--default .select2-selection--single {
+        border: 1px solid #f0e9ff;
+        border-radius: 5px;
+        height: 48px;
+        padding-left: 18px;
+        font-size: 13px;
+        background: transparent;
     }
 </style>
 
@@ -41,6 +56,15 @@
                 <div class="col-lg-7">
                     <form class="form-contact" id="contactform" action="contact/send" method="post" id="contactForm">
                         <div class="row">
+                            <?php if($booking != ''){?>
+                            <div class="col-sm-12">
+                                <label class="control-label">หัวข้อ <span class="required"></span></label>
+                                <div class="form-group">
+                                    <input class="form-control" value="<?php echo $booking ?>" disabled name="contact_title" id="contact_title" type="text" placeholder="หัวข้อ">
+                                </div>
+                            </div>
+                            <?php } ?>
+
 
                             <div class="col-sm-6">
                                 <label class="control-label">ชื่อผู้ติดต่อ <span class="required">*</span></label>

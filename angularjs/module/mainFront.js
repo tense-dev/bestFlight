@@ -34,7 +34,7 @@ app.directive('owlCarouselItem', [function() {
     };
 }]);
 //const configapp = { baseUrl: 'http://devbestflight.com/' }
-const configapp = { baseUrl: 'http://localhost/bestFlightVersion/' }
+const configapp = { baseUrl: 'http://localhost/bestFlightVersion/index.php' }
     //const configapp = { baseUrl: 'http://yengyengto.com';
 
 //const configapp = {baseUrl:'http://devbestflight.com/'}
@@ -112,7 +112,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
     $scope.getLtPromotion = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'mainFront/getListPromotion',
+            url: configapp.baseUrl + 'MainFront/getListPromotion',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -124,7 +124,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
     $scope.getLtPromote = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'mainFront/getListPromote',
+            url: configapp.baseUrl + 'MainFront/getListPromote',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -136,7 +136,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
     $scope.getLtlowPrice = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'mainFront/getListLowPriceProgramtour',
+            url: configapp.baseUrl + 'MainFront/getListLowPriceProgramtour',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -148,7 +148,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
     $scope.getLtSarupByCountry = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'mainFront/getListProgramtourByCountry',
+            url: configapp.baseUrl + 'MainFront/getListProgramtourByCountry',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -197,7 +197,7 @@ app.controller('mainpgi', ($scope, $http) => {
     $scope.getLtAsiaPass = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagespass/getLtAsiaPass',
+            url: configapp.baseUrl + 'Packagespass/getLtAsiaPass',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -209,7 +209,7 @@ app.controller('mainpgi', ($scope, $http) => {
     $scope.getLtJapan = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagespass/getLtJapan',
+            url: configapp.baseUrl + 'Packagespass/getLtJapan',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -231,7 +231,7 @@ app.controller('mainpgitour', ($scope, $http) => {
     $scope.getListIndependent1 = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagestour/getListIndependent1',
+            url: configapp.baseUrl + 'Packagestour/getListIndependent1',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -243,7 +243,7 @@ app.controller('mainpgitour', ($scope, $http) => {
     $scope.getListIndependent2 = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagestour/getListIndependent2',
+            url: configapp.baseUrl + 'Packagestour/getListIndependent2',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -255,7 +255,7 @@ app.controller('mainpgitour', ($scope, $http) => {
     $scope.getListIndependent3 = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagestour/getListIndependent3',
+            url: configapp.baseUrl + 'Packagestour/getListIndependent3',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -267,7 +267,7 @@ app.controller('mainpgitour', ($scope, $http) => {
     $scope.getListIndependent4 = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'packagestour/getListIndependent4',
+            url: configapp.baseUrl + 'Packagestour/getListIndependent4',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -296,7 +296,7 @@ app.controller('mainticketplan', ($scope, $http) => {
     $scope.getListticketplane_byid = (id) => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'ticketplane/getticketplane_byid',
+            url: configapp.baseUrl + 'Ticketplane/getticketplane_byid',
             data: JSON.stringify({ id: id }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
@@ -308,7 +308,7 @@ app.controller('mainticketplan', ($scope, $http) => {
     $scope.getListticketplane = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'ticketplane/getListticketplane',
+            url: configapp.baseUrl + 'Ticketplane/getListticketplane',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -324,7 +324,7 @@ app.controller('mainticketplan_details', ($scope, $http) => {
     $scope.getlistticketplan_details = (ticketplane_id) => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'ticketplane/getListticketplane_details_byticketplaneID',
+            url: configapp.baseUrl + 'Ticketplane/getListticketplane_details_byticketplaneID',
             data: JSON.stringify({ ticketplane_id: ticketplane_id }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
@@ -346,7 +346,7 @@ app.controller('mainticketplan_details', ($scope, $http) => {
         if (ticketplanmenu_id > 0) {
             $http({
                 method: 'POST',
-                url: configapp.baseUrl + 'ticketplane/getListticketplane_details_bymenuid',
+                url: configapp.baseUrl + 'Ticketplane/getListticketplane_details_bymenuid',
                 data: JSON.stringify({ ticketplanmenu_id: ticketplanmenu_id }),
                 headers: { 'Content-Type': undefined },
             }).then(successCallback = (response) => {
@@ -377,7 +377,7 @@ app.controller('train_japan', ($scope, $http) => {
     $scope.getListtrainJapan = () => {
         $http({
             method: 'GET',
-            url: configapp.baseUrl + 'train/getListtrainJapan',
+            url: configapp.baseUrl + 'Train/getListtrainJapan',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -404,7 +404,7 @@ app.controller('train_japan', ($scope, $http) => {
 
                 $http({
                     method: 'POST',
-                    url: configapp.baseUrl + 'train/getListtrain_details_Japan',
+                    url: configapp.baseUrl + 'Train/getListtrain_details_Japan',
                     data: JSON.stringify({ train_oid: dataheader.ObjectID }),
                     headers: { 'Content-Type': undefined },
                 }).then(successCallback = (response) => {
@@ -423,7 +423,7 @@ app.controller('train_euroup', ($scope, $http) => {
     $scope.getListtrainJEurope = () => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'train/getListtrainJEurope',
+            url: configapp.baseUrl + 'Train/getListtrainJEurope',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -450,7 +450,7 @@ app.controller('train_euroup', ($scope, $http) => {
                 datas.push(data_new);
                 $http({
                     method: 'POST',
-                    url: configapp.baseUrl + 'train/getListtrain_details',
+                    url: configapp.baseUrl + 'Train/getListtrain_details',
                     data: JSON.stringify({ train_id: dataheader.ObjectID }),
                     headers: { 'Content-Type': undefined },
                 }).then(successCallback = (response) => {
@@ -470,7 +470,7 @@ app.controller('train_euroup_detail', ($scope, $http) => {
     $scope.getListtrain_details_euroup_Group = (train_id) => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'train/getListtrain_details_euroup_Group',
+            url: configapp.baseUrl + 'Train/getListtrain_details_euroup_Group',
             data: JSON.stringify({ train_id: train_id }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
@@ -483,7 +483,7 @@ app.controller('train_euroup_detail', ($scope, $http) => {
     $scope.getListtrain_details_euroup_bygroup = function(train_id, Group) {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'train/getListtrain_details_euroup_bygroup',
+            url: configapp.baseUrl + 'Train/getListtrain_details_euroup_bygroup',
             data: JSON.stringify({ train_id: train_id, Group: Group }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
@@ -543,7 +543,7 @@ app.controller('searchProgramtour', ($scope, $http, $window, $filter) => {
 
         $http({
             method: 'post',
-            url: configapp.baseUrl + 'seachProgramTour/getListCountryAll',
+            url: configapp.baseUrl + 'SeachProgramTour/getListCountryAll',
             headers: { 'Content-Type': undefined }
         }).then(successCallback = (res) => {
             //console.log(res.data)
@@ -560,7 +560,7 @@ app.controller('searchProgramtour', ($scope, $http, $window, $filter) => {
         //console.log(str)
         $http({
             method: 'post',
-            url: configapp.baseUrl + 'seachProgramTour/' + str,
+            url: configapp.baseUrl + 'SeachProgramTour/' + str,
             data: fd,
             headers: { 'Content-Type': undefined }
         }).then(successCallback = (res) => {
@@ -664,7 +664,7 @@ app.controller('insurance', ($scope, $http) => {
     $scope.getListinsurance = () => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'insurance/getListinsurance',
+            url: configapp.baseUrl + 'Insurance/getListinsurance',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -690,7 +690,7 @@ app.controller('insurance', ($scope, $http) => {
                 datas.push(data_new);
                 $http({
                     method: 'POST',
-                    url: configapp.baseUrl + 'insurance/getListinsurance_details_byheaderid',
+                    url: configapp.baseUrl + 'Insurance/getListinsurance_details_byheaderid',
                     data: JSON.stringify({ insuranceOID: dataheader.ObjectID }),
                     headers: { 'Content-Type': undefined },
                 }).then(successCallback = (response) => {
@@ -711,7 +711,7 @@ app.controller('insurance_details', ($scope, $http) => {
     $scope.getListinsurance_details_byid = (id) => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'insurance/getListinsurance_details_byid',
+            url: configapp.baseUrl + 'Insurance/getListinsurance_details_byid',
             data: JSON.stringify({ id: id }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
@@ -748,7 +748,7 @@ app.controller('visa', ($scope, $http) => {
     $scope.getListvisa = () => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'visa/getListvisa',
+            url: configapp.baseUrl + 'Visa/getListvisa',
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
@@ -772,7 +772,7 @@ app.controller('visa', ($scope, $http) => {
                 datas.push(data_new);
                 $http({
                     method: 'POST',
-                    url: configapp.baseUrl + 'visa/getListvisa_details',
+                    url: configapp.baseUrl + 'Visa/getListvisa_details',
                     data: JSON.stringify({ visaoid: dataheader.ObjectID }),
                     headers: { 'Content-Type': undefined },
                 }).then(successCallback = (response) => {
@@ -797,7 +797,7 @@ app.controller('visa_details', ($scope, $http) => {
     $scope.getListvisa_detailsbyid = (id) => {
         $http({
             method: 'POST',
-            url: configapp.baseUrl + 'visa/getListvisa_detailsbyid',
+            url: configapp.baseUrl + 'Visa/getListvisa_detailsbyid',
             data: JSON.stringify({ id: id }),
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {

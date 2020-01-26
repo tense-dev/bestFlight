@@ -6,7 +6,7 @@
 </style>
 <?php $this->load->helper('url');?>
 
-<header class="main_menu">
+<header class="main_menu" ng-controller="mainctl">
     <div class="sub_menu">
         <div class="container">
             <div class="row m-0">
@@ -20,11 +20,6 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 col-md-6">
                     <div class="sub_menu_social_icon">
-                        <a href="#"><i class="flaticon-facebook"></i></a>
-                        <a href="#"><i class="flaticon-twitter"></i></a>
-                        <a href="#"><i class="flaticon-skype"></i></a>
-
-                        <a href="#"><i class="flaticon-instagram"></i></a>
                         <span><i class="flaticon-phone-call"></i>0-2291-8551 (auto)</a></span>
                     </div>
                 </div>
@@ -46,16 +41,25 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url(); ?>">หน้าหลัก</a>
                                 </li>
-                                <li class="nav-item">
+                                <!--  <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url();?>search">ทัวร์ต่างประเทศ</a>
+                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            ทัวร์ต่างประเทศ
+                                            </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" ng-click="clickCountry(obj.pgtCountry)" ng-repeat="obj in ltsrBCt" ng-bind="obj.countryContent"></a>
+                                    </div>
                                 </li>
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             แพคเกจทัวร์
                                         </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="<?php echo base_url(); ?>packagestour">แพคเกจทัวร์อิสระ</a>
-                                        <a class="dropdown-item" href="<?php echo base_url(); ?>packagespass">บัตร Pass สวนสนุก</a>
+                                        <a class="dropdown-item" href="<?php echo base_url(); ?>Packagestour">แพคเกจทัวร์อิสระ</a>
+                                        <a class="dropdown-item" href="<?php echo base_url(); ?>Packagespass">บัตร Pass สวนสนุก</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -63,10 +67,10 @@
                                             ตั๋วเครื่องบิน
                                         </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="<?php echo base_url();?>ticketplane/airwayscountry">ราคาตั๋วเครื่องบินต่างประเทศ</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>ticketplane/airwaysthai">ตั๋วเครื่องบินโปรโมชั่นการบินไทย</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>ticketplane/airwayslowcost">ตั๋วเครื่องบิน LOW COST และตั๋วข้าราชการ</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>ticketplane/airwaysstudent">ตั๋วนักเรียน</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Ticketplane/airwayscountry">ราคาตั๋วเครื่องบินต่างประเทศ</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Ticketplane/airwaysthai">ตั๋วเครื่องบินโปรโมชั่นการบินไทย</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Ticketplane/airwayslowcost">ตั๋วเครื่องบิน LOW COST และตั๋วข้าราชการ</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Ticketplane/airwaysstudent">ตั๋วนักเรียน</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -74,8 +78,8 @@
                                             รถไฟต่างประเทศ
                                         </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="<?php echo base_url();?>train/train_europe">รถไฟยุโรป</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>train/train_japan">รถไฟญีปุ่น</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Train/train_europe">รถไฟยุโรป</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Train/train_japan">รถไฟญีปุ่น</a>
                                     </div>
                                 </li>
 
@@ -84,21 +88,21 @@
                                                 จองโรงแรม
                                             </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="<?php echo base_url();?>hotel">จองโรงแรม</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>hotel/disneylandhotel">ฮ่องกงดิสนีย์ แลนด์</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>hotel/universalhotel">ยูนิเวอร์แซล สตูดิโอ สิงคโปร์</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>hotel/macaohotel">เดอะเวเนเชี่ยน มาเก๊า รีสอร์ท</a>
-                                        <a class="dropdown-item" href="<?php echo base_url();?>hotel/sanriohotel">ซานริโอ พูโรแลนด์ โตเกียว ดินแดน เฮลโล คิตตี้</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Hotel">จองโรงแรม</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Hotel/disneylandhotel">ฮ่องกงดิสนีย์ แลนด์</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Hotel/universalhotel">ยูนิเวอร์แซล สตูดิโอ สิงคโปร์</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Hotel/macaohotel">เดอะเวเนเชี่ยน มาเก๊า รีสอร์ท</a>
+                                        <a class="dropdown-item" href="<?php echo base_url();?>Hotel/sanriohotel">ซานริโอ พูโรแลนด์ โตเกียว ดินแดน เฮลโล คิตตี้</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url(); ?>visa">วีซ่า</a>
+                                    <a class="nav-link" href="<?php echo base_url(); ?>Visa">วีซ่า</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url(); ?>insurance">ประกันการเดินทาง</a>
+                                    <a class="nav-link" href="<?php echo base_url(); ?>Insurance">ประกันการเดินทาง</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url(); ?>insurance">เกี่ยวกับเรา</a>
+                                    <a class="nav-link" href="<?php echo base_url(); ?>About">เกี่ยวกับเรา</a>
                                 </li>
                                 <!--  <li class="nav-item">
                                         <a class="nav-link" href="contact.html">วีซ่า</a>
@@ -107,7 +111,7 @@
                                         <a class="nav-link" href="contact.html">ประกันการเดินทาง</a>
                                     </li> -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url(); ?>contact">ติดต่อเรา</a>
+                                    <a class="nav-link" href="<?php echo base_url(); ?>Contact">ติดต่อเรา</a>
                                 </li>
                             </ul>
                         </div>

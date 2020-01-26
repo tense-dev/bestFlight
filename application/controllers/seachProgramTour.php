@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class seachProgramTour extends CI_Controller {
+class SeachProgramTour extends CI_Controller {
 	public function index()
 	{
         $this->load->view('searchProgramTour/searchTour.html');

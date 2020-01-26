@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ticketplane extends CI_Controller {
+class Ticketplane extends CI_Controller {
     public function index(){
 
     }

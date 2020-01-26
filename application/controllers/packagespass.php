@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class packagespass extends CI_Controller {
+class Packagespass extends CI_Controller {
     public function index(){
         $this->load->view('pagekage/packages_pass.html');
         //$this->load->view('home/single-blog.html');

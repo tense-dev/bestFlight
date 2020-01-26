@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class visa extends CI_Controller {
+class Visa extends CI_Controller {
     public function index(){
         $this->load->view('visa/visa.html');
     }

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class insurance extends CI_Controller {
+class Insurance extends CI_Controller {
     public function index(){
         $this->load->view('insurance/insurance.html');
     }

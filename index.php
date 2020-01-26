@@ -281,7 +281,7 @@ switch (ENVIRONMENT)
 		}
 		else
 		{
-			$view_folder = strtr(
+	   		$view_folder = strtr(
 				rtrim($view_folder, '/\\'),
 				'/\\',
 				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
