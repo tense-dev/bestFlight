@@ -35,7 +35,9 @@ app.directive('owlCarouselItem', [function() {
 }]);
 //const configapp = { baseUrl: 'http://devbestflight.com/' }
 const configapp = { baseUrl: 'http://localhost/bestFlightVersion/index.php' }
-    //const configapp = { baseUrl: 'http://yengyengto.com';
+    /*const configapp = {
+        baseUrl: 'http://yengyengto.com/'
+    };*/
 
 //const configapp = {baseUrl:'http://devbestflight.com/'}
 app.controller('mainctl', ($scope, $http, $window) => {
