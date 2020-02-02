@@ -3,6 +3,21 @@
         background-color: white;
         box-shadow: 0px 10px 40px 0px rgba(204, 203, 203, 0.3);
     }
+    
+    .main_menu .main-menu-item ul li .nav-link {
+        padding-right: .5rem !important;
+        padding-left: .5rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1em !important;
+    }
+       .sub_menu .sub_menu_social_icon span i {
+            margin-right: 0px;
+        }
+        .hide{display:none;}
+        .sub_menu{
+            background-color: floralwhite !important;
+        }
+       
 </style>
 <?php $this->load->helper('url');?>
 
@@ -12,23 +27,51 @@
             <div class="row m-0">
                 <div class="col-lg-6 col-sm-12 col-md-6">
                     <div class="sub_menu_right_content">
-                        <span> <a  > <img class="logo-bestf" src="<?php echo base_url(); ?>img/logo.jpg" alt="logo"> </a></span>
+                        <span> <a  > <img class="" width="350"  src="<?php echo base_url(); ?>img/main/Logoheader.png" alt="logo"> </a></span>
                         <!-- <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a> -->
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-md-6">
-                    <div class="sub_menu_social_icon">
-                        <span><i class="flaticon-phone-call"></i>0-2291-8551 (auto)</a></span>
+                    <div class="pull-right">
+                        <span>
+                            <a data-toggle="popover"  data-trigger="focus"  tabindex="0" data-original-title="Line"  data-container="body" data-placement="bottom" data-html="true" data-popover-content="line"> <i class="fab fa-line" style="font-size: 34px;color:#00b902;"></i></a>
+                            <div id="popover-content-line" class="hide">
+                                    <p class="text-dark">bestflights88</p>
+                            </div>
+
+                        </span>
+                        <span>
+                         
+                        <span>
+                         <a data-toggle="popover"  data-trigger="focus"  tabindex="0" data-container="body" data-placement="bottom" data-html="true" data-popover-content="facebook"><i class="fab fa-facebook-square" style="font-size: 34px;color:#1875f1"></i></a>
+                      
+                        </span>
+                            <span>
+                                <a data-toggle="popover" data-trigger="focus"  tabindex="0" data-container="body" data-placement="bottom" data-html="true" data-popover-content=""> 
+                                    <i class="fas fa-envelope-square" style="font-size: 34px;color:pink;"></i>
+                                </a>
+                               
+                            </span>
+                              
+                            <span>
+                                    <a data-toggle="popover" data-trigger="focus"  tabindex="0" data-original-title="เบอร์โทรศัพท์" data-container="body" data-placement="bottom" data-html="true" data-popover-content="phone"> <i class="fas fa-phone-square-alt" style="font-size: 34px;color:#024469;"></i></a>
+                                    <div id="popover-content-phone" class="hide">
+                                            <p class="text-dark">Tel : (662) 291-8551 (auto)</p>
+                                            <p class="text-dark">Fax : 02-688-2936</p>
+                                    </div>
+                                </span>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="main_menu_iner">
-        <div class="">
-            <div class="row align-items-center m-0 ">
+        <div class="container">
+            <div class="row ">
                 <div class="col-md-12 pr-0">
                     <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
                         <!--  <a class="navbar-brand" > <img class="logo-bestf" src="img/logo.jpg" alt="logo"> </a> -->
@@ -49,7 +92,10 @@
                                             ทัวร์ต่างประเทศ
                                             </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" ng-click="clickCountry(obj.pgtCountry)" ng-repeat="obj in ltsrBCt" ng-bind="obj.countryContent"></a>
+                                        <a class="dropdown-item" style="cursor:pointer" ng-click="clickCountry(obj.pgtCountry)" ng-repeat="obj in ltsrBCt">
+                                            <img class="" width="30" height="20" src="<?php echo base_url(); ?>img/flag/{{obj.ctimg}}" alt="logo"> 
+                                            {{obj.countryContent}}
+                                        </a>
                                     </div>
                                 </li>
 

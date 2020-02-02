@@ -105,8 +105,38 @@
   });
 
 
+  
  //------- Mailchimp js --------//  
-
+//  enable popovers everywhere
 
 
 }(jQuery));
+
+$(document).ready(function(){
+
+$('[data-toggle="popover"]').popover()
+})
+
+moveButton = function() {
+	$("#toggle").css('left', "100px")
+}
+
+var x
+window.setInterval(function() {
+	newx = $("#toggle").css('left')
+  if (newx != x) {
+     $("#toggle").popover('update')
+     x = newx
+  }
+}, 100);
+$("[data-toggle=popover][data-container=body]").each(function(i, obj) {
+
+$(this).popover({
+  html: true,
+  //PROBLEM: clicking button again doesn't close.
+  content: function() {
+    var id = $(this).attr('data-popover-content')
+    return $('#popover-content-' + id).html();
+  }
+});
+});

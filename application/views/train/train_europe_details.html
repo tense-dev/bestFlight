@@ -31,6 +31,10 @@
         background-color: #f15c14;
         border-color: #f15c14;
     }
+    .table tr th,td{
+        padding-bottom: 2px !important;
+        padding-top: 2px!important;
+    }
 </style>
 
 <body ng-app="mainFront" ng-controller="train_euroup_detail">
@@ -357,7 +361,7 @@
                                     <div class="shadow rounded-0">
                                         <div class="row no-gutters  border-0 bg-tranparent">
                                             <div class="col-md-2">
-                                                <img src="<?php echo base_url(); ?>img/train/europe04.jpg" class="img" width="100%" height="170" alt="">
+                                                <img src="<?php echo base_url(); ?>img/train/europe05.jpg" class="img" width="100%" height="170" alt="">
                                             </div>
                                             <div class="col-md-10">
                                                 <div class="card-block px-2">
@@ -627,6 +631,12 @@
                                                                 </p>
                                                             </div>
 
+
+                                                               <div class="col-md-12 pt-2 text-center">
+                                                                    <a href="http://localhost/bestFlightVersion/Contact/booking?title=รถไฟยุโรบ" class="btn btn-sm btn-success">จองเลย</a>
+                                                                </div>
+
+
                                                             <div class="col-md-12 pt-2 ">
                                                                 <h4 class="text-fix-best-blue ">เงื่อนไข</h4>
                                                                 <div class="inline-group "><i class="fas fa-caret-right iconsize p-2 " style="color:green; "></i>
@@ -651,7 +661,6 @@
                                                                     <p class="text-dark ">บุคคลที่ถิ่นฐานอยู่ในยุโรป สหราชอาณาจักร ตุรกี โมร็อคโค อัลจีเรีย ตูนีเซีย และรัสเซีย ไม่สามารถซื้อ หรือ ใช้ตั๋ว Eurail Global Pass ได้ (ยกเว้นมีหลักฐานยืนยันได้ว่ามีการเดินทางออกนอกประเทศดังกล่าวเป็นระยะเวลามากกว่า
                                                                         6 เดือนจึงจะสามารถซื้อหรือใช้ตั๋วได้)</p>
                                                                 </div>
-
                                                             </div>
 
 
@@ -701,6 +710,20 @@
     <script src="<?php echo base_url(); ?>javascript/contact.js"></script>
     <script src="<?php echo base_url(); ?>javascript/custom.js"></script>
     <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+    <script>
+            $(function() {
+                setTimeout(() => {
+                    $('.table-responsive').removeAttr('style');
+                    $('table').attr('style');
+                    $('table tr').attr('style', '');
+                    $('table').attr('style', 'width:100%');
+                    $('table td').attr('style', '');
+                    $('table').removeAttr('border');
+                    $('table').addClass('table table-bordered');
+                }, 500);
+            })
+        </script>
+        
 </body>
 
-</html </html
+</html>

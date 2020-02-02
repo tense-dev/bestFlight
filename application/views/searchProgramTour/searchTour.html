@@ -9,9 +9,12 @@
     .card-block {
         margin-bottom: 15px;
     }
+    .btn-outline-success:hover{
+        color:#ffffff !important;
+    }
 </style>
 
-<body ng-app="mainFront">
+<body ng-app="mainFront" class="bg-c-fw">
     <?php $this->load->view('components/header.html'); ?>
     <?php $this->load->view('components/banner.html'); ?>
     <?php $this->load->view('components/callout.html'); ?>
@@ -150,6 +153,11 @@
                                             </div>
                                         </div>
                                         <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="row pull-left">
+                                                        <a class="btn btn-outline-success" style="color:green;" urldata="{{obj.filePDF}}" ng-click="previewpdf2($event)" ><i class="far fa-file-pdf"></i>  รายละเอียดเพิ่มเติม</a>
+                                                    </div>
+                                                </div>
                                             <div class="col my-auto">
                                                 <img src="{{obj.airimg}}" class="img-airline" alt="">
                                             </div>
@@ -158,9 +166,8 @@
                                                     <p class="my-auto">ราคาเริ่มต้น</p>&nbsp;&nbsp;
                                                     <h1 class="text-fix-best-deep font-weight-bold" ng-bind="obj.prTwin | number:0"></h1>
                                                 </div>
-
-
                                             </div>
+
                                         </div>
 
                                     </div>

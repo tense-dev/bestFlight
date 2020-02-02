@@ -7105,3 +7105,21 @@ tr td span {
     font-weight: 400 !important;
     color: #000 !important;
 }
+
+.bg-c-fw{
+    background-color: floralwhite !important;
+
+}
+
+.bg-c-w{
+    background-color : #f5f9fd;
+}
+.bg-c-white{
+    background-color : #fff !important;
+}
+
+a {cursor: pointer !important;}
+
+.shadow {
+    box-shadow: 0 0 1rem rgba(0,0,0,.15)!important;
+}

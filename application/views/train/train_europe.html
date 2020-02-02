@@ -13,6 +13,10 @@
     p {
         color: #343a40!important;
     }
+    .table tr th,td{
+        padding-bottom: 2px !important;
+        padding-top: 2px!important;
+    }
 </style>
 
 <body ng-app="mainFront">
@@ -120,6 +124,19 @@
     <script src="<?php echo base_url(); ?>javascript/contact.js"></script>
     <script src="<?php echo base_url(); ?>javascript/custom.js"></script>
     <script src="<?php echo base_url(); ?>angularjs/module/mainFront.js"></script>
+    <script>
+            $(function() {
+                setTimeout(() => {
+                    $('.table-responsive').removeAttr('style');
+                    $('table').attr('style');
+                    $('table tr').attr('style', '');
+                    $('table').attr('style', 'width:100%');
+                    $('table td').attr('style', '');
+                    $('table').removeAttr('border');
+                    $('table').addClass('table table-bordered');
+                }, 500);
+            })
+        </script>
 </body>
 
 </html>

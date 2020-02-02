@@ -1,29 +1,5 @@
-<!doctype html>
-<html lang="en">
+<?php $this->load->view('components/include.html'); ?>
 
-<?php $this->load->helper('url');?>
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
-</head>
 <style>
     .card-block .cardtitle {
         text-align: left;
@@ -40,6 +16,13 @@
         vertical-align: middle !important;
         text-align: center;
     }
+    
+    
+    img.hotel {
+        width: 330px;
+        height: 215px;
+    }
+    
 </style>
 
 <body ng-app="mainFront">
@@ -48,13 +31,13 @@
     <?php $this->load->view('components/banner.html'); ?>
 
 
-    <div class="container">
+    <div class="container" ng-controller="hotel">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12">
                 <section class="client_review bd-b-best-blue mt-5">
                     <div class="row ">
                         <div class="col-xl-6">
-                            <div class="section_tittle">
+                                <div class="section_tittle mb-4">
                                 <h2 class="text-fix-best-blue mb-0 text-thai">UNIVERSAL SYUDIOS SINGAPORE <br><span class="text-fix-best-deep">ยูนิเวอร์แซล สตูดิโอ สิงคโปร์</span></h2>
                                 <!-- <p class="text-thai">แพคเกจมัลดิฟส์ ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี</p> -->
                             </div>
@@ -71,18 +54,18 @@
                                     </p>
 
                                     <div class="row mb-3" style="padding:inherit">
-                                        <div class="col-md-4"><img src="..\img\hotel-michael\Hotel_Michael.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\hotel-michael\Hotel_Michael4.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\hotel-michael\Hotel_Michael2.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\hotel-michael\Hotel_Michael5.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\hotel-michael\Hotel_Michael3.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\hotel-michael\Hotel_Michael6.webp" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListHotelBylocationType('universal',1)">
                                                         <thead class="tablebackgroud">
                                                             <tr>
                                                                 <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา</th>
@@ -90,40 +73,17 @@
                                                                 <th style="width:15%;">จองเลย!</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listhoteldetails1">
                                                             <tr>
-                                                                <td rowspan="2">
-                                                                    Deluxe Room
-                                                                </td>
-                                                                <td>
-                                                                    Weekday
-                                                                </td>
-                                                                <td>
-                                                                    7,300
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Room_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Time_period}}</td>
+                                                                <td>{{objpmt.listgroup[0].Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{objpmt.listgroup[0].Room_type}} {{objpmt.listgroup[0].Time_period}} {{objpmt.listgroup[0].Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Weekend
-                                                                </td>
-                                                                <td>
-                                                                    9,050
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4">
-                                                                    <a href="<?php echo base_url(); ?>contact/booking" target="_blank"><span style="color: <?php echo base_url(); ?>contact/booking98ce44;">ดูช่วงเวลาการจอง คลิก</span></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="period_detail">
-                                                                <td colspan="4">
-
-                                                                    <span>ราคาด้านบนนี้แสดงในหน่วยเงินบาท (Thai Baht)</span>
-                                                                    <span>Block out Period : 28-31 Dec 18, 6-9 Feb 19</span>
-
-                                                                </td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Time_period}}</td>
+                                                                <td>{{v.Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{v.Room_type}} {{v.Time_period}} {{v.Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -146,18 +106,18 @@
                                     </p>
 
                                     <div class="row mb-3" style="padding:inherit">
-                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel.webp" alt="">
+                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel5.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel2.webp" alt="">
+                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel6.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel3.jpg" alt="">
+                                        <div class="col-md-4"><img src="..\img\hard-rock-hotel\Hard_Rock_Hotel7.webp" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListHotelBylocationType('universal',2)">
                                                         <thead class="tablebackgroud">
                                                             <tr>
                                                                 <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา
@@ -169,28 +129,17 @@
                                                                 <th style="width:15%;">จองเลย!</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listhoteldetails2">
                                                             <tr>
-                                                                <td rowspan="2">Deluxe Room</td>
-                                                                <td>Weekday</td>
-                                                                <td>7,550</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Room_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Time_period}}</td>
+                                                                <td>{{objpmt.listgroup[0].Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{objpmt.listgroup[0].Room_type}} {{objpmt.listgroup[0].Time_period}} {{objpmt.listgroup[0].Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>Weekend</td>
-                                                                <td>9,300</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank
-                                                                        " class="btn btn-success btn-block ">จอง</a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4"><a href="<?php echo base_url(); ?>contact/booking" target="_blank"><span style="color: <?php echo base_url(); ?>contact/booking98ce44;">ดูช่วงเวลาการจอง คลิก</span></a></td>
-                                                            </tr>
-                                                            <tr class="period_detail">
-                                                                <td colspan="4">
-                                                                    <span>ราคาด้านบนนี้แสดงในหน่วยเงินบาท (Thai Baht)</span>
-                                                                    <span>Block out Period : 28-31 Dec 18, 6-9 Feb 19</span>
-                                                                </td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Time_period}}</td>
+                                                                <td>{{v.Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{v.Room_type}} {{v.Time_period}} {{v.Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -212,18 +161,18 @@
                                     </p>
 
                                     <div class="row mb-3" style="padding:inherit">
-                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel.webp" alt="">
+                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel4.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel2.jpg" alt="">
+                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel5.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel3.webp" alt="">
+                                        <div class="col-md-4"><img src="..\img\festive-hotel\Festive_Hotel6.webp" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListHotelBylocationType('universal',3)">
                                                         <thead class="tablebackgroud">
                                                             <tr>
                                                                 <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา</th>
@@ -231,61 +180,17 @@
                                                                 <th style="width:15%;">จองเลย!</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listhoteldetails3">
                                                             <tr>
-                                                                <td rowspan="2">
-                                                                    Deluxe Room
-                                                                </td>
-                                                                <td>
-                                                                    Weekday
-                                                                </td>
-                                                                <td>
-                                                                    7,300
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Room_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Time_period}}</td>
+                                                                <td>{{objpmt.listgroup[0].Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{objpmt.listgroup[0].Room_type}} {{objpmt.listgroup[0].Time_period}} {{objpmt.listgroup[0].Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Weekend
-                                                                </td>
-                                                                <td>
-                                                                    9,050
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td rowspan="2">
-                                                                    Deluxe Family Room
-                                                                </td>
-                                                                <td>
-                                                                    Weekday
-                                                                </td>
-                                                                <td>
-                                                                    8,550
-                                                                </td>
-                                                                <td><a href="$" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Weekend
-                                                                </td>
-                                                                <td>
-                                                                    10,300
-                                                                </td>
-                                                                <td><a href="$" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4">
-                                                                    <a href="<?php echo base_url(); ?>contact/booking" target="_blank"><span style="color: <?php echo base_url(); ?>contact/booking98ce44;">ดูช่วงเวลาการจอง คลิก</span></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="period_detail">
-                                                                <td colspan="4">
-
-                                                                    <span>ราคาด้านบนนี้แสดงในหน่วยเงินบาท (Thai Baht)</span>
-                                                                    <span>Block out Period : 28-31 Dec 18, 6-9 Feb 19</span>
-
-                                                                </td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Time_period}}</td>
+                                                                <td>{{v.Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{v.Room_type}} {{v.Time_period}} {{v.Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -319,7 +224,7 @@
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListHotelBylocationType('universal',4)">
                                                         <thead class="tablebackgroud">
                                                             <tr>
                                                                 <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา</th>
@@ -330,40 +235,17 @@
                                                                 <th style="width:15%;">จองเลย!</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listhoteldetails4">
                                                             <tr>
-                                                                <td rowspan="2">
-                                                                    Deluxe Room
-                                                                </td>
-                                                                <td>
-                                                                    Weekday
-                                                                </td>
-                                                                <td>
-                                                                    8,050
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Room_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Time_period}}</td>
+                                                                <td>{{objpmt.listgroup[0].Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{objpmt.listgroup[0].Room_type}} {{objpmt.listgroup[0].Time_period}} {{objpmt.listgroup[0].Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Weekend
-                                                                </td>
-                                                                <td>
-                                                                    9,800
-                                                                </td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4">
-                                                                    <a href="<?php echo base_url(); ?>contact/booking" target="_blank"><span style="color: <?php echo base_url(); ?>contact/booking98ce44;">ดูช่วงเวลาการจอง คลิก</span></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="period_detail">
-                                                                <td colspan="4">
-
-                                                                    <span>ราคาด้านบนนี้แสดงในหน่วยเงินบาท (Thai Baht)</span>
-                                                                    <span>Block out Period : 28-31 Dec 18, 6-9 Feb 19</span>
-
-                                                                </td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Time_period}}</td>
+                                                                <td>{{v.Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{v.Room_type}} {{v.Time_period}} {{v.Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

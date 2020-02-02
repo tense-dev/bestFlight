@@ -1,29 +1,5 @@
-<!doctype html>
-<html lang="en">
+<?php $this->load->view('components/include.html'); ?>
 
-<?php $this->load->helper('url');?>
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
-</head>
 <style>
     .card-block .cardtitle {
         text-align: left;
@@ -40,6 +16,11 @@
         vertical-align: middle !important;
         text-align: center;
     }
+    
+    img.hotel {
+        width: 330px;
+        height: 215px;
+    }
 </style>
 
 <body ng-app="mainFront">
@@ -49,13 +30,13 @@
 
 
 
-    <div class="container">
+    <div class="container" ng-controller="hotel">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12">
                 <section class="client_review bd-b-best-blue mt-5">
                     <div class="row ">
                         <div class="col-xl-6">
-                            <div class="section_tittle">
+                            <div class="section_tittle mb-4">
                                 <h2 class="text-fix-best-blue mb-0 text-thai">THE VENETIAN MACAO RESORT <br><span class="text-fix-best-deep">เดอะเวเนเชี่ยน มาเก๊า รีสอร์ท</span></h2>
                                 <!-- <p class="text-thai">แพคเกจมัลดิฟส์ ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี</p> -->
                             </div>
@@ -72,18 +53,18 @@
                                     </p>
 
                                     <div class="row mb-3" style="padding:inherit">
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian1.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\venetian-hotel\macauvenetian5.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian2.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\venetian-hotel\macauvenetian6.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian3.webp" alt="">
+                                        <div class="col-md-4"><img  class="hotel" src="..\img\venetian-hotel\macauvenetian7.webp" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListHotelBylocationType('macao',1)">
                                                         <thead class="tablebackgroud">
                                                             <tr>
                                                                 <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา</th>
@@ -94,38 +75,17 @@
                                                                 <th style="width:15%;">จองเลย!</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listhoteldetails1">
                                                             <tr>
-                                                                <td rowspan="3">Royale Suites<br>(1 King size Bed)</td>
-                                                                <td>Sun-Thu</td>
-                                                                <td>8,450</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Room_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Time_period}}</td>
+                                                                <td>{{objpmt.listgroup[0].Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{objpmt.listgroup[0].Room_type}} {{objpmt.listgroup[0].Time_period}} {{objpmt.listgroup[0].Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>Fri</td>
-                                                                <td>10,600</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Sat</td>
-                                                                <td>13,400</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td rowspan="3">Bella Suites<br>(2 Queen size Bed)</td>
-                                                                <td>Sun-Thu</td>
-                                                                <td>9,200</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Fri</td>
-                                                                <td>11,350</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Sat</td>
-                                                                <td>14,650</td>
-                                                                <td><a href="<?php echo base_url(); ?>contact/booking" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Time_period}}</td>
+                                                                <td>{{v.Price}}</td>
+                                                                <td><a href="<?php echo base_url(); ?>contact/booking?title={{v.Room_type}} {{v.Time_period}} {{v.Price}}" target="_blank" class="btn btn-orange">จอง</a></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

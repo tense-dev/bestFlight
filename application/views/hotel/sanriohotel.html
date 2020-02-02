@@ -1,29 +1,5 @@
-<!doctype html>
-<html lang="en">
+<?php $this->load->view('components/include.html'); ?>
 
-<?php $this->load->helper('url');?>
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/flaticon.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/magnific-popup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/nice-select.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/slick.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
-</head>
 <style>
     .card-block .cardtitle {
         text-align: left;
@@ -34,6 +10,17 @@
     .card-block {
         margin-bottom: 15px;
     }
+    
+    td,
+    th {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+    
+    img.hotel {
+        width: 330px;
+        height: 215px;
+    }
 </style>
 
 <body ng-app="mainFront">
@@ -42,83 +29,61 @@
     <?php $this->load->view('components/banner.html'); ?>
 
 
-    <div class="container">
+    <div class="container" ng-controller="entrance_ticket">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12">
                 <section class="client_review bd-b-best-blue mt-5">
                     <div class="row ">
                         <div class="col-xl-6">
-                            <div class="section_tittle">
+                                <div class="section_tittle mb-4">
                                 <h2 class="text-fix-best-blue mb-0 text-thai">SANRIO PUROLAND <br><span class="text-fix-best-deep">ซานริโอ พูโรแลนด์</span></h2>
                                 <!-- <p class="text-thai">แพคเกจมัลดิฟส์ ราคาพิเศษตลอดปี ราคาถูก คุณภาพดี</p> -->
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="container" id="hotels-tab">
+                    <div class="container" id="hotels-tab">
                         <h2></h2>
                         <div class="row image-box style5">
                             <div class="col-md-12 shadow rounded-0" style="margin-bottom:30px;">
                                 <div class="col-md-12" style="background:white;padding-bottom:25px;">
-                                    <h3 style="padding:10px 0 10px;margin-bottom:0;"><a href="#" target="_blank">ราคาห้องพักโรงแรม เดอะเวเนเชี่ยน มาเก๊า รีสอร์ท</a></h3>
-                                    <p style="margin-bottom:10px;">ย่างก้าวเข้าสู่สวนสวยงาม ที่ตกแต่งด้วยรายละเอียดของฮอลลีวู้ด อย่างเช่น ป้ายฮอลลีวู้ด อันโด่งดังและรถสะสมสไตล์แคลิฟอร์เนียน ดิสนีย์ ฮอลลีวู้ด ประกอบด้วยห้องพักหลากหลายรูปแบบและราคา สำหรับนักท่องเที่ยวทุกคน ซึ่งแต่ละห้องพักจะมีเครื่องอำนวยความสะดวกต่างๆ
-                                        ไว้คอยบริการท่าน พร้อมด้วยพนักงานคอยรับใช้ท่านตลอดเวลา ด้วยความเป็นกันเอง ทั้งการให้คำแนะนำและบริการเสริมต่างๆ
+                                    <h3 style="padding:10px 0 10px;margin-bottom:0;"><a href="#" target="_blank">ซานริโอ พูโรแลนด์ โตเกียว</a></h3>
+                                    <p style="margin-bottom:10px;">ดินแดน เฮลโล คิตตี้ แหล่งบันเทิงสำหรับเด็กๆ และผู้ที่ชื่นชอบในความน่ารักของคิตตี้ สวนสนุกแห่งนี้ มีเครื่องเล่นนานาชนิด และการแสดงอีกมากมาย มากไปกว่านั้น ยังมีสินค้าลิขสิทธิ์ของ Sanrio ให้เลือกช้อปปิ้งได้อย่างจุใจ ที่นี่เป็นแหล่งรวบรวมสินค้าของซานริโอทั้งหมด
+                                        ไม่ว่าจะเป็น คิตตี้, แบด แบด มารุ, เดอะ ทวิน สตาร์, เมโลดี้ และตัวการ์ตูนอื่นๆ อีกมากมาย อีกทั้ง ยังมีสินค้าของที่ระลึกให้ท่านได้เลือกซื้ออย่างจุใจ ไม่ว่าจะเป็นตุ๊กตา แก้วน้ำ กระเป๋า พวงกุญแจ ฯลฯ
                                     </p>
 
                                     <div class="row mb-3" style="padding:inherit">
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian1.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\sanrio-puroland\sanrio1.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian2.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\sanrio-puroland\sanrio2.webp" alt="">
                                         </div>
-                                        <div class="col-md-4"><img src="..\img\venetian-hotel\macauvenetian3.webp" alt="">
+                                        <div class="col-md-4"><img class="hotel" src="..\img\sanrio-puroland\sanrio3.webp" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="card-block px-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0">
+                                                    <table class="table table-bordered table-sm" cellspacing="0" cellpadding="0" ng-init="getListentranceticket()">
                                                         <thead class="tablebackgroud">
                                                             <tr>
-                                                                <th rowspan="2" colspan="2">ประเภทห้องพัก / ช่วงเวลา</th>
-                                                                <th colspan="2" style="padding:5px;">ราคาที่พัก 2 วัน 1 คืน (บาท / ท่าน)</th>
+                                                                <th></th>
+                                                                <th>ผู้ใหญ่</th>
+                                                                <th>เด็ก</th>
+                                                                <th>ผู้สูงอายุ</th>
                                                             </tr>
-                                                            <tr>
-                                                                <th>ราคา</th>
-                                                                <th style="width:15%;">จองเลย!</th>
-                                                            </tr>
+
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody ng-repeat="objpmt in listticket">
                                                             <tr>
-                                                                <td rowspan="3">Royale Suites<br>(1 King size Bed)</td>
-                                                                <td>Sun-Thu</td>
-                                                                <td>8,450</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                                <td>{{objpmt.listgroup[0].Card_type}}</td>
+                                                                <td>{{objpmt.listgroup[0].Adult}}</td>
+                                                                <td>{{objpmt.listgroup[0].Child}}</td>
+                                                                <td rowspan="{{objpmt.rowgrouplength}}">{{objpmt.listgroup[0].Senior}}</td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>Fri</td>
-                                                                <td>10,600</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Sat</td>
-                                                                <td>13,400</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td rowspan="3">Bella Suites<br>(2 Queen size Bed)</td>
-                                                                <td>Sun-Thu</td>
-                                                                <td>9,200</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Fri</td>
-                                                                <td>11,350</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Sat</td>
-                                                                <td>14,650</td>
-                                                                <td><a href="" target="_blank" class="btn btn-success btn-block">จอง</a></td>
+                                                            <tr ng-repeat="v in objpmt.listgroup" ng-if="$index > 0">
+                                                                <td>{{v.Card_type}}</td>
+                                                                <td>{{v.Adult}}</td>
+                                                                <td>{{v.Child}}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -131,7 +96,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </section>
             </div>
         </div>

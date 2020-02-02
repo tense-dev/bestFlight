@@ -118,7 +118,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
-            //console.log(datares);
+            console.log(datares);
             $scope.ltPromotion = datares;
         });
 
@@ -154,7 +154,7 @@ app.controller('mainctl', ($scope, $http, $window) => {
             headers: { 'Content-Type': undefined },
         }).then(successCallback = (response) => {
             const datares = response.data;
-            //console.log(datares);
+            console.log(datares);
             $scope.ltsrBCt = datares;
         });
 
@@ -173,6 +173,59 @@ app.controller('mainctl', ($scope, $http, $window) => {
     $scope.getLtSarupByCountry();
     $scope.getLtlowPrice();
     $scope.getLtPromote();
+
+    /*$scope.previewpdf = (obj) => {
+       const pdf_file = obj.target.attributes.urldata.value;
+       $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'PdfReader/preview',
+            data: JSON.stringify({ pdf_file: pdf_file }),
+            headers: { 'Content-Type': undefined },
+            responseType:'arraybuffer',
+        }).then(successCallback = (response) => {
+            const datares = response.data;
+            var file = new Blob([datares], {type: 'application/pdf'});
+            var fileURL = URL.createObjectURL(file);
+          //  alert(2);
+
+          window.open("data:application/pdf," + escape(fileURL));
+
+          window.open(fileURL,'_blank');
+        });
+    }*/
+       $scope.previewpdf2 = function(obj){
+            const pdf_file = obj.target.attributes.urldata.value;
+            var params = { 
+            'pdf_file': pdf_file
+             };
+            var ramdom = Math.floor((Math.random() * 10000) + 1)
+            OpenWindowWithPost(configapp.baseUrl + 'PdfReader/preview', 'preview_' +ramdom, params,'');
+        }
+        function OpenWindowWithPost(url, name, params, windowoption) {
+            if (windowoption == null || windowoption == undefined)
+                windowoption = "width=730,height=345,left=100,top=100,resizable=yes,scrollbars=yes";
+    
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", url);
+            form.setAttribute("target", name);
+    
+            for (var i in params) {
+                if (params.hasOwnProperty(i)) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = i;
+                    input.value = params[i];
+                    form.appendChild(input);
+                }
+            }
+    
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+        }
+
+        
 
     /*   var fd=new FormData();
              fd.append('Model',angular.toJson(data_report));  
@@ -479,7 +532,6 @@ app.controller('train_euroup_detail', ($scope, $http) => {
             const datares = response.data;
             $scope.list_group = datares;
             $scope.getListtrain_details_euroup_bygroup(train_id, datares[0].Group);
-
         });
     }
     $scope.getListtrain_details_euroup_bygroup = function(train_id, Group) {
@@ -492,7 +544,22 @@ app.controller('train_euroup_detail', ($scope, $http) => {
             const datares = response.data;
             $scope.listtrain_bygroup = datares;
         });
+        
+        addclass();
     }
+
+    function addclass(){
+        setTimeout(() => {
+        $('.table-responsive').removeAttr('style');
+        $('table').attr('style');
+        $('table tr').attr('style', '');
+        $('table').attr('style', 'width:100%');
+        $('table td').attr('style', '');
+        $('table').removeAttr('border');
+        $('table').addClass('table table-bordered');
+        },20);
+    }
+
 });
 
 app.filter('trustAsHtml', ['$sce', function($sce) {
@@ -657,6 +724,41 @@ app.controller('searchProgramtour', ($scope, $http, $window, $filter) => {
     }
     $scope.getListCountryAll();
     $scope.searchAgain();
+
+    $scope.previewpdf2 = function(obj){
+        const pdf_file = obj.target.attributes.urldata.value;
+        var params = { 
+        'pdf_file': pdf_file
+         };
+        var ramdom = Math.floor((Math.random() * 10000) + 1)
+        OpenWindowWithPost(configapp.baseUrl + 'PdfReader/preview', 'preview_' +ramdom, params,'');
+    }
+    function OpenWindowWithPost(url, name, params, windowoption) {
+        if (windowoption == null || windowoption == undefined)
+            windowoption = "width=730,height=345,left=100,top=100,resizable=yes,scrollbars=yes";
+
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", url);
+        form.setAttribute("target", name);
+
+        for (var i in params) {
+            if (params.hasOwnProperty(i)) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = i;
+                input.value = params[i];
+                form.appendChild(input);
+            }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    }
+
+
+    
 });
 
 
@@ -806,5 +908,109 @@ app.controller('visa_details', ($scope, $http) => {
             const datares = response.data;
             $scope.listvisadetails = datares;
         });
+    }
+});
+
+app.controller('hotel', ($scope, $http) => {
+
+    $scope.getListHotelBylocationType = (location, type) => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'Hotel/getListHotelBylocationType',
+            data: JSON.stringify({ location: location, type: type }),
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const data = response.data;
+            if (type == 1) {
+                const groups = data.reduce(function(obj, item) {
+                    obj[item.Room_type] = obj[item.Room_type] || [];
+                    obj[item.Room_type].push(item);
+                    console.log(item.Room_type)
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: data.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.listhoteldetails1 = myArray;
+                console.log('data1', data);
+            } else if (type == 2) {
+                const groups = data.reduce(function(obj, item) {
+                    obj[item.Room_type] = obj[item.Room_type] || [];
+                    obj[item.Room_type].push(item);
+                    console.log(item.Room_type)
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: data.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.listhoteldetails2 = myArray;
+                console.log('data2', data);
+            } else if (type == 3) {
+                const groups = data.reduce(function(obj, item) {
+                    obj[item.Room_type] = obj[item.Room_type] || [];
+                    obj[item.Room_type].push(item);
+                    console.log(item.Room_type)
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: data.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.listhoteldetails3 = myArray;
+
+                console.log('data3', myArray);
+            } else if (type == 4) {
+                const groups = data.reduce(function(obj, item) {
+                    obj[item.Room_type] = obj[item.Room_type] || [];
+                    obj[item.Room_type].push(item);
+                    console.log(item.Room_type)
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: data.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.listhoteldetails4 = myArray;
+                console.log('data4', data);
+            } else {
+                const groups = data.reduce(function(obj, item) {
+                    obj[item.Room_type] = obj[item.Room_type] || [];
+                    obj[item.Room_type].push(item);
+                    console.log(item.Room_type)
+                    return obj;
+                }, {});
+                const myArray = Object.keys(groups).map(function(key) {
+                    return { rowlength: data.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+                });
+                $scope.listhoteldetails5 = myArray;
+                console.log('data5', data);
+            }
+
+            //console.log(data);
+        });
+
+    }
+});
+
+app.controller('entrance_ticket', ($scope, $http) => {
+
+    $scope.getListentranceticket = () => {
+        $http({
+            method: 'POST',
+            url: configapp.baseUrl + 'Hotel/getListEntranceTicket',
+            headers: { 'Content-Type': undefined },
+        }).then(successCallback = (response) => {
+            const dataress = response.data;
+            const groups = dataress.reduce(function(obj, item) {
+                obj[item.Senior] = obj[item.Senior] || [];
+                obj[item.Senior].push(item);
+                console.log(item.Senior)
+                return obj;
+            }, {});
+            const myArray = Object.keys(groups).map(function(key) {
+                return { rowlength: dataress.length, groupname: key, rowgrouplength: groups[key].length, listgroup: groups[key] };
+            });
+            $scope.listticket = myArray;
+            console.log(myArray);
+        });
+
     }
 });

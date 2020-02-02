@@ -172,12 +172,13 @@
             setTimeout(() => {
                 $('.table-responsive').removeAttr('style');
                 $('table').attr('style');
+                
                 $('table tr').attr('style', '');
                 $('table').attr('style', 'width:100%');
                 $('table td').attr('style', '');
                 $('table').removeAttr('border');
                 $('.descriotion').attr('style', '');
-                console.log($('table'));
+
                 $('table tr').mouseover(function() {
 
                     $(this).toggleClass('highlight');
